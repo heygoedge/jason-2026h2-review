@@ -68,8 +68,97 @@ footer{padding:44px 22px 70px;font-size:12px;color:var(--ink3);border-top:1px so
 .only-d{display:none}.only-m{display:block}.ev li{grid-template-columns:1fr auto;gap:2px 10px}.ev .t{grid-column:1/-1;order:3}
 nav div{gap:18px}}
 @media print{nav{display:none}details.ev>ul{display:block}}
+</style><style id="dash-css">
+nav b{margin-right:0;padding-right:0;flex:none}
+.seg{position:relative;display:grid;grid-template-columns:1fr 1fr;flex:none;margin-right:auto;padding:2px;border-radius:9px;background:color-mix(in srgb,var(--ink) 9%,transparent)}
+.seg i{position:absolute;top:2px;bottom:2px;left:2px;width:calc(50% - 2px);border-radius:7px;background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.14),0 0 0 .5px rgba(0,0,0,.05);transition:transform .32s cubic-bezier(.3,.7,.2,1)}
+.seg a{position:relative;z-index:1;padding:4px 16px;font-size:12px;font-weight:500;line-height:18px;text-align:center;color:var(--ink2);border-radius:7px;transition:color .2s}
+.seg a:hover{text-decoration:none;color:var(--ink)}.seg a[aria-selected=true]{color:var(--ink);font-weight:600}
+.seg a:focus-visible,.dnav a:focus-visible,.dz-tg button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+html.dash .seg i{transform:translateX(100%);background:#636366;box-shadow:none}
+.dnav{display:none;gap:inherit}.dnav a{cursor:pointer}
+html.dash{--bg:#000;--bg2:#101012;--ink:#f5f5f7;--ink2:#a1a1a6;--ink3:#86868b;--line:#424245;--hair:#232326;--accent:#2997ff;--card:#1c1c1e;color-scheme:dark}
+html.dash nav div>a{display:none}html.dash .dnav{display:flex}
+html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
+#view-dash{--k:#000;--s1:#0c0c0e;--ln:rgba(255,255,255,.1);--hr:rgba(255,255,255,.06);--i1:#f5f5f7;--i2:#a1a1a6;--i3:#86868b;--acc:#2997ff;--org:#d95926;--aqu:#199e70;--app:#a4a4ab;--oth:#4c4c52;
+ background:var(--k);color:var(--i1);padding:0 22px 40px;font-size:15px;line-height:1.5;font-variant-numeric:tabular-nums}
+.dz-w{max-width:1180px;margin:0 auto}
+.dz-hero{padding:92px 0 56px}
+.dz-eb{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--i3);margin:0 0 14px;text-transform:uppercase}
+.dz-hero h1{font-size:clamp(34px,5.4vw,64px);line-height:1.08;letter-spacing:-.022em;margin:0 0 18px}
+.dz-hero p.s{font-size:clamp(16px,1.6vw,19px);color:var(--i2);max-width:720px;margin:0}
+.dz-kpi{padding:0;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.dz-kpi>div{padding:22px 18px 18px;min-width:0}.dz-kpi>div+div{border-left:1px solid var(--hr)}
+.dz-kpi .k{font-size:12px;color:var(--i2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dz-kpi .v{font:600 clamp(34px,3.5vw,46px)/1.1 -apple-system,"SF Pro Display","PingFang SC",sans-serif;letter-spacing:-.03em;margin:10px 0 0;font-variant-numeric:normal;white-space:nowrap}
+.dz-kpi .v small{font-size:13px;font-weight:500;letter-spacing:0;color:var(--i2);margin-left:6px}
+.dz-kpi .sp{height:34px;margin:14px 0 8px}.dz-kpi .sp svg{display:block;width:100%;height:34px;overflow:visible}
+.dz-kpi .c{font-size:11px;color:var(--i3);line-height:1.35}
+.pn{margin-top:18px;background:var(--s1);border:1px solid var(--hr);border-radius:22px;padding:34px 34px 26px;scroll-margin-top:64px;min-width:0}
+.pn-h{display:flex;gap:16px 28px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;margin-bottom:26px}
+.pn-h>div:first-child{max-width:820px;min-width:0}
+.pn h2{font-size:clamp(20px,2.1vw,27px);line-height:1.28;letter-spacing:-.012em;font-weight:600;margin:0}
+.pn h2 em{font-style:normal;color:var(--i2);font-weight:500}
+.pn-f{font-size:12px;line-height:1.55;color:var(--i3);margin:22px 0 0;max-width:900px}
+.pn svg{display:block;overflow:visible;max-width:100%}
+.dz2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.dz2>.pn{margin-top:18px}
+.dz-split{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:44px;align-items:start}
+.dz-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+.dz-sub h3{font-size:14px;font-weight:600;margin:0 0 4px}.dz-sub p{font-size:12px;color:var(--i2);margin:0 0 14px;min-height:36px}
+.dz-lg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--i2);margin:0 0 14px;align-items:center}
+.dz-lg i{display:inline-block;width:9px;height:9px;border-radius:2.5px;margin-right:6px;vertical-align:-.5px}
+.dz-lg i.ln{width:14px;height:2px;border-radius:1px;vertical-align:3px}.dz-lg i.rg{border-radius:50%;background:transparent!important;box-shadow:inset 0 0 0 1.5px currentColor}
+.dz-lg b{font-weight:600;color:var(--i1);margin-left:5px}.dz-lg .sep{width:1px;height:12px;background:var(--ln)}
+.dz-tg{display:inline-flex;padding:2px;border-radius:9px;background:rgba(120,120,128,.24);flex:none}
+.dz-tg button{appearance:none;border:0;background:transparent;color:var(--i2);font:500 12px/18px inherit;font-family:inherit;padding:4px 13px;border-radius:7px;cursor:pointer;transition:background .2s,color .2s}
+.dz-tg button[aria-pressed=true]{background:#636366;color:#fff}
+.dz-ev{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 28px;margin-top:20px;padding:0;list-style:none}
+.dz-ev li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:12px;color:var(--i2);line-height:1.5}
+.dz-ev b{display:block;color:var(--i1);font-size:13px;font-weight:600}
+.dz-no{width:18px;height:18px;border-radius:50%;border:1px solid var(--i3);color:var(--i1);font-size:10px;font-weight:600;display:grid;place-items:center;margin-top:1px}
+.dz-st{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ln)}
+.dz-st>div{padding:14px 14px 0 0}.dz-st>div+div{padding-left:16px;border-left:1px solid var(--hr)}
+.dz-st .n{font:600 clamp(28px,3vw,40px)/1.1 -apple-system,"SF Pro Display",sans-serif;letter-spacing:-.03em;font-variant-numeric:normal}
+.dz-st .n small{display:block;font-size:12px;font-weight:500;color:var(--i2);letter-spacing:0;margin:5px 0 0}
+.dz-st .l{font-size:12px;color:var(--i2);margin-top:4px}
+.dz-chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:var(--i1);border:1px solid var(--ln);border-radius:99px;padding:5px 12px 5px 10px;white-space:nowrap}
+.dz-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--org)}
+.dz-as{border-top:1px solid var(--ln)}
+.dz-as .r{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(90px,1fr) minmax(0,1.05fr);gap:6px 18px;align-items:center;padding:13px 0;border-bottom:1px solid var(--hr)}
+.dz-as .nm{font-size:13px;font-weight:500}.dz-as .nt{display:block;font-size:11px;color:var(--i3);font-weight:400;line-height:1.4;margin-top:2px}
+.dz-as .stt{font-size:12px;color:var(--i2);text-align:right;line-height:1.45}.dz-as .stt b{color:var(--i1);font-weight:600}
+.dz-as .r.ns .nm,.dz-as .r.ns .stt b{color:var(--i2)}
+.dz-tb{width:100%;border-collapse:collapse;font-size:12px;margin-top:18px}
+.dz-tb th,.dz-tb td{padding:8px 10px 8px 0;border-bottom:1px solid var(--hr);text-align:right;white-space:nowrap;color:var(--i2);font-weight:400}
+.dz-tb .nt{display:block;font-size:11px;color:var(--i3)}.dz-tb th{font-size:11px;color:var(--i3);font-weight:500}.dz-tb td:first-child,.dz-tb th:first-child{text-align:left;color:var(--i1);white-space:normal}
+#view-dash svg text{font-family:-apple-system,"SF Pro Text","PingFang SC",sans-serif;font-size:11px;fill:var(--i3)}
+#view-dash svg text.t1{fill:var(--i1)}#view-dash svg text.t2{fill:var(--i2)}#view-dash svg text.b{font-weight:600}#view-dash svg text.s12{font-size:12px}#view-dash svg text.s10{font-size:10px}
+#view-dash svg .g{stroke:var(--hr);stroke-width:1;shape-rendering:crispEdges}#view-dash svg .ax{stroke:var(--ln);stroke-width:1;shape-rendering:crispEdges}
+#view-dash svg .hit{fill:transparent;stroke:transparent;cursor:default;outline:none}
+#view-dash svg .hc{cursor:default;outline:none;transition:opacity .15s}
+#view-dash svg .cell:hover,#view-dash svg .cell:focus{stroke:#fff;stroke-width:1.2}
+#view-dash svg .lk{transition:opacity .2s;cursor:default;outline:none}
+#view-dash svg .lk:hover,#view-dash svg .lk:focus{opacity:.82!important}
+#view-dash svg .hb:hover,#view-dash svg .hb:focus{filter:brightness(1.25)}
+#view-dash svg .dot:hover{stroke:#fff;stroke-width:1.5}
+.dz-foot{max-width:1180px;margin:44px auto 0;padding:26px 0 30px;border-top:1px solid var(--hr);font-size:12px;color:var(--i3)}.dz-foot p{margin:0 0 8px;max-width:900px}
+#dtip{position:fixed;z-index:9;pointer-events:none;left:0;top:0;min-width:120px;max-width:300px;background:rgba(44,44,46,.92);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:9px 12px 10px;font-size:12px;line-height:1.45;color:#f5f5f7;opacity:0;transition:opacity .12s;font-variant-numeric:tabular-nums;box-shadow:0 12px 36px rgba(0,0,0,.5)}
+#dtip b{display:block;font-weight:600;margin-bottom:3px}#dtip .tt{color:#a1a1a6;display:block;margin-bottom:5px;overflow-wrap:anywhere}
+#dtip .rw{display:flex;justify-content:space-between;gap:18px;color:#a1a1a6}#dtip .rw span:last-child{color:#f5f5f7;font-weight:500;white-space:nowrap}
+#dtip .rw i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px}
+.an:not(.in) .draw{stroke-dashoffset:var(--len)}.an .draw{stroke-dasharray:var(--len)}
+.an.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s cubic-bezier(.35,.6,.2,1)}
+.an:not(.in) .fx{opacity:0}.an.in .fx{transition:opacity .7s ease calc(var(--i,0)*14ms)}
+@media (prefers-reduced-motion:reduce){.an .draw{stroke-dasharray:none!important;stroke-dashoffset:0!important;transition:none!important}.an .fx{opacity:1!important;transition:none!important}.seg i{transition:none}#dtip{transition:none}}
+@media (max-width:1000px){.dz-kpi{grid-template-columns:repeat(3,1fr)}.dz-kpi>div:nth-child(4){border-left:0}.dz-kpi>div:nth-child(n+4){border-top:1px solid var(--hr)}.dz2{grid-template-columns:1fr;gap:0}.dz-split{grid-template-columns:1fr;gap:34px}}
+@media (max-width:760px){#view-dash{padding:0 12px 28px}.dz-hero{padding:56px 8px 40px}.pn{padding:24px 16px 20px;border-radius:18px;margin-top:12px}.dz2>.pn{margin-top:12px}.pn-h{margin-bottom:20px}
+.dz-kpi{grid-template-columns:1fr 1fr}.dz-kpi>div{padding:18px 12px 14px}.dz-kpi>div:nth-child(odd){border-left:0}.dz-kpi>div:nth-child(4){border-left:1px solid var(--hr)}.dz-kpi>div:nth-child(n+3){border-top:1px solid var(--hr)}
+.dz-3{grid-template-columns:1fr;gap:34px}.dz-sub p{min-height:0}.dz-ev{grid-template-columns:1fr;gap:14px}
+.dz-as .r{grid-template-columns:1fr 1fr}.dz-as .nm{grid-column:1/-1}.dz-as .stt{text-align:right}
+.dz-foot{padding-left:8px;padding-right:8px}}
+@media print{html.dash nav{display:none}}
 </style></head><body>
-<nav><div><b>代码工作复盘</b><a href="#numbers">概览</a><a href="#rhythm">节奏</a><a href="#lines">需求线</a><a href="#arch">架构</a><a href="#value">价值</a><a href="#limits">局限</a><a href="#method">方法</a></div></nav>
+<nav><div><b>代码工作复盘</b><span class="seg" role="tablist" aria-label="视图切换"><i aria-hidden="true"></i><a href="#report" role="tab" id="tab-report" aria-selected="true">报告</a><a href="#dashboard" role="tab" id="tab-dash" aria-selected="false">仪表盘</a></span><script>if(location.hash.indexOf('#dashboard')===0)document.documentElement.classList.add('dash')</script><span class="dnav"><a data-go="d-kpi">概览</a><a data-go="d-cum">节奏</a><a data-go="d-shift">结构</a><a data-go="d-lanes">需求线</a><a data-go="d-speed">速度</a><a data-go="d-gate">相关</a></span><a href="#numbers">概览</a><a href="#rhythm">节奏</a><a href="#lines">需求线</a><a href="#arch">架构</a><a href="#value">价值</a><a href="#limits">局限</a><a href="#method">方法</a></div></nav><div id="view-report">
 
 <section class="hero"><div class="w">
 <p class="eyebrow">Jason · 2026-08-24 至 11-25</p>
@@ -213,5 +302,286 @@ nav div{gap:18px}}
 <p>他花了多少时间；这些改动中有多少本来会由工程师更快或更好地完成；AI 写的代码质量如何；合入后有没有引发线上问题。也没有其他人的同口径数据可以对比，所以这里没有“比别人多或少”的结论。</p>
 </div></section>
 <footer><p>数据截止 2026-11-25。来源：GitHub PR 元数据、Paseo 会话记录、AI 聊天记录、Bug 反馈群话题。PR 链接指向私有仓库，无权限时无法打开。</p><p>局限：PR 作者为共享 bot 账号，归属靠时间窗口和话题推断，存在误差；时间覆盖实际为 8 月 24 日之后；合入不等于已发版；未包含任何线上效果数据。</p></footer>
+</div>
+<main id="view-dash" role="tabpanel" aria-labelledby="tab-dash">
+<div class="dz-w">
+<header class="dz-hero"><p class="dz-eb">仪表盘 · 2026-08-24 至 11-25 · 核心集 172 个 PR</p>
+<h1>从修 App，到建 Agent 的基建。</h1>
+<p class="s">与报告同一份数据的图形视图。每张图上方是它说明的一件事，下方是口径。所有数字只算核心集 172 个 PR，与报告一致；这一页新算的指标都写明了算法。</p></header>
+
+<section id="d-kpi" class="dz-kpi an" aria-label="关键数字"></section>
+
+<section class="pn an" id="d-cum"><div class="pn-h"><div><p class="dz-eb">01 · 节奏</p><h2>产出不是匀速的：09-21 起两周合入 53 个（38%），11-16 起三天又合入 24 个（17%）。</h2></div></div>
+<div class="dz-lg" id="lg-cum"></div><div id="c-cum"></div><ol class="dz-ev" id="ev-cum"></ol>
+<p class="pn-f">口径：两条线各自除以期末值后画在同一根 0–100% 轴上（合入 PR 140 个；已合入有效行 37,178 行），按合入日累计，北京时间。有效行 = 增加 + 删除，去掉评测 JSON、锁文件等生成文件，同报告。</p></section>
+
+<section class="pn an" id="d-heat"><div class="pn-h"><div><p class="dz-eb">02 · 节奏</p><h2>94 天里有 49 天新建了 PR；最密的一天是 11-16，15 个。<em>周末新建 26 个，占 15%。</em></h2></div>
+<div class="dz-tg" id="tg-heat" role="group" aria-label="热力图指标"><button data-m="0" aria-pressed="true">新建 PR</button><button data-m="1" aria-pressed="false">合入 PR</button><button data-m="2" aria-pressed="false">有效行</button></div></div>
+<div id="c-heat"></div>
+<p class="pn-f">口径：左侧一格一天，列为周（周一起），行为星期；右侧一格是“星期 × 小时”的合计，北京时间。新建 PR 与有效行按创建时间计，合入 PR 按合入时间计。颜色分四档，档位按非零格的 40 / 70 / 90 分位切分。</p></section>
+
+<section class="pn an" id="d-shift"><div class="pn-h"><div><p class="dz-eb">03 · 结构</p><h2>App 仓占新建 PR 的比例从 9 月的 65% 降到 11 月的 12%；Agent 服务仓从 13% 升到 51%。</h2></div></div>
+<div class="dz-lg" id="lg-shift"></div>
+<div class="dz-split"><div id="c-stream"></div><div id="c-month"></div></div>
+<p class="pn-f">口径：左图按创建周（周一起）堆叠各仓库层的新建 PR 数；右图按创建月归一到 100%，8 月只有 3 个未单列。按仓库归层，与报告“按月”表的 App 仓、Agent 服务仓两列一致。报告里的“Agent 层占比”是另一口径（按需求线主题归层，含后端与中台里的 Agent 相关改动）：9 月 22.1%、10 月 24.4%、11 月 82.4%。</p></section>
+
+<section class="pn an" id="d-flow"><div class="pn-h"><div><p class="dz-eb">04 · 结构</p><h2>Bug 群来的 PR 有 67% 落在 App；Paseo 来的有 60% 落在 Agent 服务。<em>后端仓合入率最低，58%。</em></h2></div></div>
+<div id="c-sankey"></div>
+<p class="pn-f">口径：带宽与 PR 数成正比，三列各自合计 172。报告里来源可多选（Bug 群 85、Paseo 52、私聊 43、群聊 26）；这里为了让每个 PR 只走一条带，按“含 Bug 群 → 否则含 Paseo → 其余为 AI 助手私聊或群聊”取一个，所以 Paseo 是 45 而不是 52。状态取自 11-25。</p></section>
+
+<section class="pn an" id="d-lanes"><div class="pn-h"><div><p class="dz-eb">05 · 需求线</p><h2>17 条跨仓需求线里，12 条的各端 PR 在同一小时内提出；11 条已全部合入。</h2></div></div>
+<div class="dz-lg" id="lg-lanes"></div><div id="c-lanes"></div>
+<p class="pn-f">口径：报告“跨端需求定义”一节的 17 条需求线、41 个 PR。每条细线是一个 PR，从创建画到合入或关闭；未合入的画到 11-25。同一条需求线的 PR 在创建处分叉。“同一小时内”= 该线各 PR 创建时间的最大间隔不超过 60 分钟。报告写“12 条已合入”，其中 1 条（日报训练建议不截断）是 3 个 PR 里合入 2 个、关闭 1 个，这里按逐个 PR 的状态画。</p></section>
+
+<section class="pn an" id="d-speed"><div class="pn-h"><div><p class="dz-eb">06 · 速度与规模</p><h2>快而小：合入中位 1.4 小时，Bug 群指令到 PR 中位 6 分钟，单个 PR 中位 106.5 行。</h2></div></div>
+<div class="dz-3">
+<div class="dz-sub"><h3>建 PR → 合入</h3><p>63 个在 1 小时内合入，其中 47 个不到 10 分钟；16 个超过 3 天。</p><div id="c-h1"></div></div>
+<div class="dz-sub"><h3>Bug 群指令 → 建出 PR</h3><p>59 个里 52 个在 15 分钟内建出，没有超过 1 小时的。</p><div id="c-h2"></div></div>
+<div class="dz-sub"><h3>单个 PR 的规模（有效行）</h3><p>不超过 10 行的 28 个，超过 500 行的 30 个；100 个在 31–500 行之间。</p><div id="c-h3"></div></div>
+</div>
+<p class="pn-f">口径：合入时长 = 合入时间 − 创建时间，只算已合入的 140 个。Bug 群响应 = 话题里最后一条用户消息到 PR 创建，只有保留了逐条时间戳的 59 个，不是全部 85 个。规模为去掉生成文件后的增删行数，172 个。亮色柱是中位数所在的档。</p></section>
+
+<section class="pn an" id="d-rev"><div class="pn-h"><div><p class="dz-eb">07 · 质量</p><h2>合得快的另一面：bot 自合并且 GitHub 上没有评审痕迹的占比，9 月 50%，10 月 69%，11 月 80%。</h2></div></div>
+<div class="dz-lg" id="lg-rev"></div>
+<div class="dz-split"><div id="c-rev"></div><div><div class="dz-st" id="st-rev"></div><p class="pn-f" style="margin-top:18px">bot 账号合并 92 个，合入中位 0.39 小时；人工合并 48 个，中位 12.96 小时。其中 42 个由 bot 在建 PR 后 10 分钟内合并。</p></div></div>
+<p class="pn-f">口径：按合入周堆叠 140 个已合入 PR。“无评审痕迹”= 由共享 bot 账号合并，且 GitHub 上没有任何其他人的 review 或评论，合计 88 个，同报告。月度占比的分母是当月合入数（8 月只有 1 个，未列）。飞书里的评审不在数据内，所以这是 GitHub 侧痕迹的下限，不等于“没人看过”。</p></section>
+
+<section class="pn an" id="d-gate"><div class="pn-h"><div><p class="dz-eb">08 · 相关，不是因果</p><h2>回归门禁合入后的 8 天里，Agent 服务仓 8 个新 PR 没有返工；之前是 36 个里 9 个。<em>样本太小，下不了结论。</em></h2></div><span class="dz-chip">时间先后，不等于因果</span></div>
+<div class="dz-lg" id="lg-gate"></div>
+<div class="dz-split"><div id="c-gate"></div><div><div class="dz-st" id="st-gate" style="grid-template-columns:1fr 1fr"></div><p class="pn-f" style="margin-top:18px">Fisher 精确检验 p = 0.17，不显著。11-16 当天同一问题连出 6 个提示词 PR（含 1 个回滚），门禁 PR 同一天提出、次日合入。反方向的信号也在：机械指标“7 天内再次改动同一文件”从 25/36 变为 8/8，门禁之后仍在同一批文件上密集迭代。全部仓库口径是 14/157 对 0/15。第二个门禁 PR 目前只观察、不拦截。</p></div></div>
+<p class="pn-f">口径：Agent 服务仓的 44 个核心 PR，一点一个，按创建时间排列、同一时间段内向上堆叠。分界线是回归门禁 PR 的合入时刻（11-17 17:04）。“返工”沿用报告的人工认定（14 个，其中 9 个在本仓）。“7 天内再次改动同一文件”是这一页新算的机械指标：该 PR 改动的非测试、非生成文件，与同仓此前 7 天内任一核心 PR 有重合。检验为 Fisher 双侧精确检验。</p></section>
+
+<div class="dz2">
+<section class="pn an" id="d-assoc"><div class="pn-h"><div><p class="dz-eb">09 · 相关，不是因果</p><h2>与返工相关最强的是“小”：不超过 10 行的 PR 有 39% 是返工，其余只有 2%。<em>这是返工的形态，不是原因。</em></h2></div></div>
+<div class="dz-lg"><span><i style="background:var(--acc);border-radius:50%"></i>该组的返工占比</span><span style="color:var(--i3)"><i class="rg"></i>其余 PR 的返工占比</span></div>
+<div class="dz-as" id="c-assoc"></div>
+<table class="dz-tb" id="tb-cmp"></table>
+<p class="pn-f">口径：分母为核心集 172，返工为报告认定的 14 个。每行一个 2×2 表，Fisher 双侧精确检验，五项未做多重比较校正。各项之间高度重叠（小、无测试、合得快往往是同一批 PR），不能当作五个独立发现。下表的合入率分母含未合入与已关闭，中位时长只算已合入的。</p></section>
+
+<section class="pn an" id="d-scat"><div class="pn-h"><div><p class="dz-eb">10 · 相关，不是因果</p><h2>PR 大小与合入时长只有弱相关（ρ = 0.21，n = 140）。<em>更能区分快慢的是谁按下合并。</em></h2></div></div>
+<div class="dz-lg" id="lg-scat"></div><div id="c-scat"></div>
+<p class="pn-f">口径：已合入的 140 个 PR，双对数坐标；0 行按 1 行、不足 1 分钟按 1 分钟画。ρ 为 Spearman 秩相关。横线是两组各自的合入时长中位数。谁来合并本身与改动类型有关（要人合的往往是更大或更敏感的改动），所以这里也只是相关。</p></section>
+</div>
+
+<footer class="dz-foot"><p>数据截止 2026-11-25。来源与报告相同：GitHub PR 元数据、Paseo 会话记录、AI 聊天记录、Bug 反馈群话题。本页由脚本从同一份逐 PR 数据生成，生成时逐项核对了与报告一致的数字。</p><p>局限同报告：归属靠时间窗口和话题推断；合入不等于已发版；不含线上效果数据；没有其他人的同口径数据可比。</p></footer>
+</div></main>
+<div id="dtip" role="tooltip"></div>
 <div id="tip" role="tooltip"></div><script>(function(){var t=document.getElementById('tip');function show(e){var el=e.target.closest('[data-tip]');if(!el){t.style.opacity=0;return}t.textContent=el.getAttribute('data-tip');t.style.opacity=1;var r=el.getBoundingClientRect(),w=t.offsetWidth,h=t.offsetHeight;var x=Math.min(Math.max(8,r.left+r.width/2-w/2),innerWidth-w-8);var y=r.top-h-8;if(y<8)y=r.bottom+8;t.style.left=x+'px';t.style.top=y+'px'}
-['mouseover','focusin','click'].forEach(function(n){document.addEventListener(n,show)});document.addEventListener('scroll',function(){t.style.opacity=0},{passive:true})})();</script></body></html>
+['mouseover','focusin','click'].forEach(function(n){document.addEventListener(n,show)});document.addEventListener('scroll',function(){t.style.opacity=0},{passive:true})})();</script><script id="dash-data" type="application/json">{"meta":{"d0":"2026-08-24","nday":94,"nweek":14,"grp":["App 客户端","Agent 服务","后端","其他 9 个仓库"],"src":["Bug 反馈群","Paseo 工作区","AI 助手私聊/群聊"],"sta":["已合入","未合入","已关闭"]},"kpi":[{"k":"核心集 PR","v":"172","u":"","s":"按周新建，峰值 33","sp":[3,6,18,5,29,33,6,15,4,2,12,2,28,9]},{"k":"已合入","v":"140","u":"81.4%","s":"按创建周的合入数","sp":[1,5,13,2,27,28,6,12,4,2,11,2,26,1]},{"k":"单 PR 规模中位","v":"106.5","u":"行","s":"每周中位行数（对数刻度），已去评测数据","sp":[243,90.0,84.0,16,102,94,129.0,64,122.0,99.5,132.5,27.5,130.5,696],"log":1},{"k":"建 PR → 合入中位","v":"1.4","u":"小时","s":"每周中位小时数（对数刻度），n=140","sp":[0.65,18.52,114.9,0.8,3.26,1.1,0.11,0.03,0.05,0.15,0.86,0.01,1.48,15.81],"log":1},{"k":"Bug 群指令 → PR 中位","v":"6","u":"分钟","s":"每周中位分钟，无数据的周留空，n=59","sp":[null,null,5.0,0,9,8,4.5,1.0,null,null,1.0,7,6,null]},{"k":"结构性改动","v":"38","u":"27 已合入","s":"按周新建，11 月 26 个","sp":[0,0,0,0,5,4,0,2,0,1,3,0,14,9]}],"cum":{"pr":[0,0,1,1,1,1,1,1,1,2,4,4,4,4,6,6,6,7,9,11,11,11,12,20,21,21,21,21,22,22,29,35,36,38,42,51,57,65,68,71,74,74,75,75,75,75,76,79,81,82,86,89,92,92,93,94,96,97,98,98,98,98,98,98,98,98,98,100,100,100,100,100,102,103,109,110,110,113,113,113,113,113,113,113,122,135,137,138,139,139,139,139,139,140],"ln":[0,0,8,8,8,8,8,8,8,20,569,569,569,569,815,815,815,823,974,1608,1608,1608,1618,2757,2773,2773,2773,2773,2828,2828,5031,7205,7207,7974,8794,9788,13560,14020,14784,16035,17457,17457,17502,17502,17502,17502,17504,18081,22335,22469,22555,23120,24692,24692,24768,24774,24971,25134,25244,25244,25244,25244,25244,25244,25244,25244,25244,25443,25443,25443,25443,25443,25704,26013,27115,27563,27563,27842,27842,27842,27842,27842,27842,27842,30597,35044,36362,36919,37172,37172,37172,37172,37172,37178],"new":[0,0,2,2,2,3,3,3,4,8,8,9,9,9,9,10,11,18,24,27,27,28,29,29,30,32,32,32,34,36,45,48,50,54,61,67,72,80,84,89,94,94,94,94,94,94,95,98,100,101,105,111,114,114,114,115,117,118,119,119,119,119,119,119,119,119,119,121,121,121,121,122,126,126,133,133,133,135,135,135,135,135,135,135,150,158,161,161,163,163,163,163,171,172],"note":{"oct_pr":71.4,"oct_ln":68.4,"oct_pr_n":100,"oct_ln_n":25443,"nov_pr":40,"nov_ln":11735},"peak2":62,"ev":[{"d":28,"d2":41,"t":"09-21 起两周","s":"新建 62 个，占全部的 36%；以 App 界面、商业化与多语言修复为主"},{"d":69,"d2":93,"t":"11 月重心转向 Agent","s":"Agent 层占新建 PR 的 82.4%；本月合入的有效行占全期 32%"},{"d":84,"t":"11-16 单日 15 个","s":"同一问题连改 6 个提示词 PR，当天提出回归门禁"}]},"day":{"c":[0,0,2,0,0,1,0,0,1,4,0,1,0,0,0,1,1,7,6,3,0,1,1,0,1,2,0,0,2,2,9,3,2,4,7,6,5,8,4,5,5,0,0,0,0,0,1,3,2,1,4,6,3,0,0,1,2,1,1,0,0,0,0,0,0,0,0,2,0,0,0,1,4,0,7,0,0,2,0,0,0,0,0,0,15,8,3,0,2,0,0,0,8,1],"m":[0,0,1,0,0,0,0,0,0,1,2,0,0,0,2,0,0,1,2,2,0,0,1,8,1,0,0,0,1,0,7,6,1,2,4,9,6,8,3,3,3,0,1,0,0,0,1,3,2,1,4,3,3,0,1,1,2,1,1,0,0,0,0,0,0,0,0,2,0,0,0,0,2,1,6,1,0,3,0,0,0,0,0,0,9,13,2,1,1,0,0,0,0,1],"l":[0,0,251,0,0,486,0,0,233,697,0,13,0,0,0,6,63,915,1217,258,0,7,10,0,16,833,0,0,467,223,3298,1129,126,1038,629,3577,590,437,2465,272,5047,0,0,0,0,0,2,577,863,134,86,6716,925,0,0,6,197,163,110,0,0,0,0,0,0,0,0,199,0,0,0,448,650,0,1326,0,0,55,0,0,0,0,0,0,6489,787,1875,0,315,0,0,0,6411,785]},"punch":[[[1,1,0,0,0,0,0,0,0,0,1,0,3,1,7,0,2,1,1,3,0,4,2,2],[0,0,0,0,0,0,0,0,0,1,1,1,4,0,0,2,4,0,11,1,3,1,2,1],[1,0,0,0,0,0,0,0,0,1,3,2,5,4,0,4,3,2,8,0,2,1,1,2],[0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,2,2,0,1,0,5,1,1,2],[0,0,0,0,0,0,0,0,0,1,2,0,1,2,3,5,4,0,3,3,0,2,1,1],[3,0,0,0,0,0,0,0,0,4,0,1,1,0,3,1,0,1,1,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,2,2,0,2,0,0]],[[1,3,0,0,0,0,0,0,0,0,3,0,1,2,5,0,3,2,1,2,1,1,3,0],[1,0,0,0,0,0,0,0,0,0,0,1,2,0,1,1,2,2,5,1,5,1,2,1],[0,0,0,0,0,0,0,0,0,1,2,2,3,3,3,1,1,3,4,7,2,1,0,1],[1,0,0,0,0,0,0,0,0,1,1,2,0,3,2,2,0,2,0,0,2,2,0,0],[0,0,0,0,0,0,0,0,0,0,0,2,1,0,2,1,4,2,1,1,0,0,0,2],[0,0,0,0,0,0,0,0,0,0,2,1,1,3,1,2,2,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,2,0,2,1,1,0,0,0,0]],[[63,209,0,0,0,0,0,0,0,0,7,0,553,2,1640,0,50,1844,762,1179,0,1137,2316,1164],[0,0,0,0,0,0,0,0,0,448,6,105,430,0,0,114,267,0,6743,121,202,74,445,2],[55,0,0,0,0,0,0,0,0,4,779,261,1362,267,0,1051,1339,361,2488,0,378,257,133,6147],[0,0,0,0,0,0,0,0,0,0,0,65,0,0,499,1267,165,0,150,0,1397,8,65,1834],[0,0,0,0,0,0,0,0,0,62,271,0,13,415,223,511,70,0,855,1081,0,634,86,82],[258,0,0,0,0,0,0,0,0,1038,0,118,716,0,945,75,0,48,4114,94,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,6,723,140,0,302,155,53,0,119,0,0]]],"week":{"g":[[0,3,13,3,18,19,3,12,2,1,2,1,2,1],[0,0,1,0,7,4,3,1,1,1,3,1,17,5],[0,1,1,1,2,8,0,2,0,0,5,0,2,2],[3,2,3,1,2,2,0,0,1,0,2,0,7,1]],"n":[3,6,18,5,29,33,6,15,4,2,12,2,28,9]},"months":[{"m":9,"n":77,"g":[50,10,9,8],"agent":17},{"m":10,"n":41,"g":[24,8,6,3],"agent":10},{"m":11,"n":51,"g":[6,26,9,10],"agent":42}],"sankey":{"a":[[57,9,13,6],[3,27,4,11],[20,8,7,7]],"b":[[69,2,9],[39,5,0],[14,7,3],[18,4,2]]},"lanes":[{"name":"立刃问题正式名","repos":3,"merged":3,"n":3,"prs":[{"id":"HeygoAgent#22","t":"refactor(knowledge): 立刃相关两个 issue 改用户可理解的正式名","g":3,"s":0,"c":9.788,"e":10.556},{"id":"heygo-software-rfcs#18","t":"docs(platform): 同步立刃两个 issue 的新正式名","g":3,"s":0,"c":9.788,"e":10.56},{"id":"app_flutter#1622","t":"chore(copy): 对齐立刃两个 issue 的新正式名","g":0,"s":0,"c":9.789,"e":9.84}]},{"name":"随机状态语","repos":2,"merged":0,"n":2,"prs":[{"id":"AISkiCoach#444","t":"fix(coach): 按设计接入双语随机状态语词库","g":2,"s":2,"c":18.567,"e":18.98},{"id":"app_flutter#1981","t":"fix(go): 随机展示双语 agent 开场状态语","g":0,"s":2,"c":18.568,"e":18.98}]},{"name":"协议页拆分与 App 内打开","repos":2,"merged":2,"n":2,"prs":[{"id":"heygo-web#8","t":"feat: 独立中英文协议页面并对齐 brand-kit","g":3,"s":0,"c":18.911,"e":19.451},{"id":"app_flutter#2018","t":"feat: 用户协议与隐私政策改为 App 内 WebView","g":0,"s":0,"c":18.911,"e":19.45}]},{"name":"日报训练建议不截断","repos":3,"merged":2,"n":3,"prs":[{"id":"heygo-agent-server-agno#58","t":"fix(day-report): keep stage and next action separate","g":1,"s":0,"c":19.024,"e":23.812},{"id":"app_flutter#2045","t":"fix(day-report): compose guidance below training links","g":0,"s":0,"c":19.024,"e":23.812},{"id":"heygo-agent-server#128","t":"fix(day-report): include complete training advice in stage_position","g":3,"s":2,"c":19.024,"e":23.776}]},{"name":"演示账号内容","repos":2,"merged":0,"n":2,"prs":[{"id":"AISkiCoach#479","t":"feat: connect Demo Studio manifest to demo account","g":2,"s":2,"c":25.771,"e":35.883},{"id":"app_flutter#2199","t":"feat: render Demo Studio content for demo account","g":0,"s":2,"c":25.771,"e":35.893}]},{"name":"进阶指标缺值兜底","repos":2,"merged":2,"n":2,"prs":[{"id":"AISkiCoach#537","t":"fix(iq): 历史最佳段缺值的进阶指标也下发（value 为 null）","g":2,"s":0,"c":34.913,"e":35.049},{"id":"app_flutter#2396","t":"fix(profile): IQ 进阶指标缺值时显示 -- 和空进度条","g":0,"s":0,"c":34.913,"e":35.049}]},{"name":"免费账号可见每趟标题","repos":2,"merged":2,"n":2,"prs":[{"id":"AISkiCoach#564","t":"feat(entitlement): Free 账号也能看到每趟的标题","g":2,"s":0,"c":36.787,"e":36.788},{"id":"app_flutter#2462","t":"feat(report): Free 账号也能看到每趟的标题","g":0,"s":0,"c":36.919,"e":36.92}]},{"name":"无问题报告的数据段","repos":2,"merged":2,"n":2,"prs":[{"id":"heygo-agent-server-agno#125","t":"feat(run-report): 无问题报告 Insight 数据写滑行表现 + 还能往上提（读中台指标四档文案）","g":1,"s":0,"c":38.986,"e":39.501},{"id":"heygo-platform-foundation#42","t":"feat(knowledge): 新增指标四档文案表 metric_level_copy 与导入工具","g":3,"s":0,"c":38.987,"e":40.686}]},{"name":"注销账号","repos":2,"merged":0,"n":2,"prs":[{"id":"AISkiCoach#724","t":"feat(account): App 内注销账号（冷静期 + 永久删除 + 登录行为）","g":2,"s":1,"c":51.963,"e":null},{"id":"app_flutter#2875","t":"feat(account): App 内删除账号与冷静期恢复（Apple 5.1.1(v)）","g":0,"s":1,"c":51.964,"e":null}]},{"name":"勾选某趟的标识对齐","repos":2,"merged":3,"n":3,"prs":[{"id":"heygo-agent-server-agno#197","t":"fix(coach): 勾选某趟的 source_id 为「日期:当天趟次」时也能读到这趟报告","g":1,"s":0,"c":72.642,"e":72.776},{"id":"AISkiCoach#835","t":"fix(coach): 勾选某趟只带 day+run_idx 时，给 Agent 的 source_id 换成 run UUID","g":2,"s":0,"c":72.783,"e":72.853},{"id":"heygo-agent-server-agno#199","t":"feat(coach): 记住本会话最近勾选的数据源，追问没勾选时作为 recent_sources 带上","g":1,"s":0,"c":72.862,"e":73.613}]},{"name":"联系我们的账号信息","repos":2,"merged":2,"n":2,"prs":[{"id":"app_flutter#3187","t":"fix(profile): 联系我们「你的账号」在大陆版从手机号凭证取号","g":0,"s":0,"c":74.455,"e":74.458},{"id":"AISkiCoach#843","t":"fix(users): /users/me 返回 phone，与登录响应一致","g":2,"s":0,"c":74.455,"e":74.458}]},{"name":"俱乐部使用人昵称","repos":3,"merged":3,"n":3,"prs":[{"id":"AISkiCoach#848","t":"feat(deviceadmin): 俱乐部绑定查询返回使用人昵称","g":2,"s":0,"c":74.647,"e":74.683},{"id":"heygo-biz-club-bff#18","t":"feat(club): 设备绑定透传使用人昵称","g":3,"s":0,"c":74.65,"e":74.683},{"id":"heygo-web#140","t":"feat(club-console): 当前使用人显示昵称，去掉 L / R","g":3,"s":0,"c":74.65,"e":74.683}]},{"name":"App 使用说明进 Coach","repos":2,"merged":3,"n":3,"prs":[{"id":"heygo-platform-foundation#83","t":"feat(knowledge): 新增 app_guide 实体类型与 App 使用说明导入工具","g":3,"s":0,"c":84.608,"e":84.609},{"id":"heygo-agent-server-agno#228","t":"feat(coach): 新增 find_app_guide，教练能答 App 里功能在哪、卡片是什么","g":1,"s":0,"c":84.608,"e":84.609},{"id":"heygo-platform-foundation#92","t":"docs(app-guide): 「昨天 vs 今天」补技术问题出现率行的口径","g":3,"s":0,"c":85.661,"e":85.765}]},{"name":"段卡片克制肯定","repos":2,"merged":2,"n":2,"prs":[{"id":"AISkiCoach#928","t":"fix(highlight): 段卡片兜底加 60 分门槛，低分只给「收着夸」裁决","g":2,"s":0,"c":84.889,"e":85.764},{"id":"heygo-agent-server-agno#242","t":"feat(segment-highlight): 段卡片「收着夸」——praise_level=modest 时不许强肯定（配合 AISkiCoach #928）","g":1,"s":0,"c":85.707,"e":85.835}]},{"name":"检查清单按 diff 触发","repos":2,"merged":2,"n":2,"prs":[{"id":"heygo-agent-server-agno#247","t":"ci(gate): 改动不能修改评判它自己的标准——豁免只认签字人标签、回归题期望与门禁文件受保护（observe）+ REVIEW.md 清单","g":1,"s":0,"c":86.7,"e":86.747},{"id":"heygo-context#3","t":"loop(pr): 按 diff 触发目标仓库 base 上的 REVIEW.md 清单，命中条目逐条给结论","g":3,"s":0,"c":86.702,"e":86.746}]},{"name":"示范视频卡","repos":4,"merged":0,"n":4,"prs":[{"id":"AISkiCoach#1010","t":"feat(coach): 接受 agno teaching_video 聊天卡","g":2,"s":1,"c":92.767,"e":null},{"id":"app_flutter#3647","t":"feat(go): Coach 聊天里的教学视频卡","g":0,"s":1,"c":92.767,"e":null},{"id":"heygo-agent-server-agno#271","t":"feat(coach): 用户要视频时推送中台示范视频卡","g":1,"s":1,"c":92.768,"e":null},{"id":"heygo-platform-foundation#120","t":"docs(app-guide): 新增「动作演示视频」，回放条目与示范视频分开","g":3,"s":1,"c":92.768,"e":null}]},{"name":"主动心跳","repos":2,"merged":0,"n":2,"prs":[{"id":"AISkiCoach#1011","t":"feat(heartbeat): 心跳骨架——每人每雪日一份状态、单一路径唤醒、只记不说的决策日志（Agent 主动心跳 PR-1）","g":2,"s":1,"c":92.772,"e":null},{"id":"heygo-agent-server-agno#278","t":"feat(rest-summary): 休息小结 workflow——停下来休息时 Go 对话单独发一条（Agent 主动心跳 PR-2）","g":1,"s":1,"c":93.635,"e":null}]}],"hist":{"ttm":{"b":[{"l":"≤10 分","n":47},{"l":"10–60 分","n":16},{"l":"1–6 时","n":29},{"l":"6–24 时","n":21},{"l":"1–3 天","n":11},{"l":">3 天","n":16}],"mi":2,"n":140},"lat":{"b":[{"l":"≤5 分","n":28},{"l":"6–15 分","n":24},{"l":"16–30 分","n":3},{"l":"31–60 分","n":4},{"l":">60 分","n":0}],"mi":1,"n":59},"net":{"b":[{"l":"≤10","n":28},{"l":"11–30","n":14},{"l":"31–100","n":42},{"l":"101–200","n":29},{"l":"201–500","n":29},{"l":"501–1000","n":16},{"l":">1000","n":14}],"mi":3,"n":172}},"rev":{"w":[[0,0,1],[0,0,3],[1,0,6],[2,0,8],[15,0,6],[19,1,12],[6,0,1],[11,1,1],[2,0,2],[0,0,2],[7,0,3],[3,0,0],[22,2,2],[0,0,1]],"m":[{"m":9,"n":64,"k":32},{"m":10,"n":35,"k":24},{"m":11,"n":40,"k":32}],"bot":92,"botmed":0.39,"hummed":12.96},"gate":{"c":84.718,"m":85.711,"before":{"n":36,"rew":9,"ret":25},"after":{"n":8,"rew":0,"ret":8},"p":0.17,"all_before":{"n":157,"rew":14},"all_after":{"n":15,"rew":0},"days_after":8,"prs":[{"id":"heygo-agent-server-agno#58","t":"fix(day-report): keep stage and next action separate","c":19.024,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#84","t":"feat: emphasize the heygo insight of the Run Report (from Jason)","c":28.62,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#96","t":"fix(coach): confirm missing dates and preserve riding-fact meaning","c":29.817,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#98","t":"feat(coach): 收敛教学回答、排版与资料读取规则","c":29.835,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#101","t":"fix(coach): 对齐表达规范的禁词、咬系用词与角度口径（from Jason）","c":30.74,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#102","t":"feat(copy-policy): 文案词表随 Git 发版，废弃中台 agent.copy_rules（from Jason）","c":30.767,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#103","t":"feat(copy-policy): 文案词表随 Git 发版，废弃中台 agent.copy_rules（补合 #102 到 develop，from Jason）","c":30.77,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#104","t":"feat(iq): 按搓雪/走刃分场景的个人 IQ 画像","c":31.858,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#111","t":"feat: 日文输出——英文业务提示词 + 按语言追加表达模块","c":35.967,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#116","t":"fix(run-report): 彩虹卡片与 Insight 数据去重，数据不再带指标数值","c":37.689,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#125","t":"feat(run-report): 无问题报告 Insight 数据写滑行表现 + 还能往上提（读中台指标四档文案）","c":38.986,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#129","t":"fix(copy): 用户文案不再出现 session 概念，趟次只用当天编号","c":40.776,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#151","t":"fix(highlight): 历史首次按「有记录以来」写，不写「滑雪以来」","c":47.474,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#154","t":"fix(run-report): 不写雪道级别，坡度均值不进文案","c":47.622,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#155","t":"feat(iq): 同日再创新高换说法，出发前简报补上一雪日走势","c":48.604,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#171","t":"fix(coach): 走刃自检改为单板「一条细线」","c":55.548,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#172","t":"fix(coach): 不再索要视频/照片；数据看不到姿势时按骨架作答；说法对不上时显式映射","c":57.521,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#180","t":"fix(chat): get_day_run_facts 剥掉 best_segment_source","c":67.773,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#197","t":"fix(coach): 勾选某趟的 source_id 为「日期:当天趟次」时也能读到这趟报告","c":72.642,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#199","t":"feat(coach): 记住本会话最近勾选的数据源，追问没勾选时作为 recent_sources 带上","c":72.862,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#200","t":"feat(coach): 新增 list_concepts，教练能答进阶指标、评分维度等概念","c":74.808,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#203","t":"fix(coach): 问指标怎么算时按含义回答，不先表态拒答","c":77.454,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#223","t":"fix(coach): 问指标怎么算、多少分达标、公式时像教练一样回答，不再说「不展开」","c":84.573,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#225","t":"fix(coach): 问达标/公式不提有没有线、不提公式，按「AI 读你的弯、看水平和自身进步」来讲","c":84.584,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#227","t":"fix(coach): 三语补「问达标、公式」正例：按水平和自己的进步讲，说是 Heygo 的 AI 从弯里读出来的","c":84.605,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#228","t":"feat(coach): 新增 find_app_guide，教练能答 App 里功能在哪、卡片是什么","c":84.608,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#229","t":"fix(coach): 问公式时第一句直接讲 Heygo 的 AI 在读什么，去掉规则里的 formulas 字样","c":84.618,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#231","t":"revert(coach): 回滚 #229","c":84.686,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#232","t":"ci: 提示词改动必须过回归（需求 4-2）","c":84.718,"rew":0,"s":0,"gate":1},{"id":"heygo-agent-server-agno#233","t":"feat(coach): 固定上下文窗口——原生档案/记忆/摘要三块按统一预算选条并标来源，历史与今天概况定上限（3-1）","c":84.783,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#234","t":"fix(coach): 问怎么算/公式/达标时当作「Heygo 怎么判断我」来答，先讲 AI 从弯里读什么","c":84.806,"rew":1,"s":0,"gate":0},{"id":"heygo-agent-server-agno#236","t":"feat(coach): 勾选趟/段时带上报告要点，练法以报告为准（1-1 对话部分 / 3-2）","c":84.897,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#238","t":"fix(report): 单板报告不写 ski、不对上半身下结论、Next run 不把关节动作套到具体刃","c":85.519,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#239","t":"fix(run-report): 雪道名与难度不再送进 Run Report 模型入参【架构】","c":85.667,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#240","t":"fix(coach): 通用题规则合成一段，按知识题作答不反问","c":85.668,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#242","t":"feat(segment-highlight): 段卡片「收着夸」——praise_level=modest 时不许强肯定（配合 AISkiCoach #928）","c":85.707,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#245","t":"fix(prompts): 英文习语直译成别扭中文/日文的说法配上原话【非架构】","c":85.905,"rew":0,"s":1,"gate":0},{"id":"heygo-agent-server-agno#246","t":"fix(coach): 今天概况 today_overview 进 context_view（含已入库趟数），今天的趟数不再沿用历史旧结论","c":86.418,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#247","t":"ci(gate): 改动不能修改评判它自己的标准——豁免只认签字人标签、回归题期望与门禁文件受保护（observe）+ REVIEW.md 清单","c":86.7,"rew":0,"s":0,"gate":1},{"id":"heygo-agent-server-agno#271","t":"feat(coach): 用户要视频时推送中台示范视频卡","c":92.768,"rew":0,"s":1,"gate":0},{"id":"heygo-agent-server-agno#272","t":"fix(data): 修复「最近几趟报告」查询在线上 json 列上报错（jsonb_typeof 不接受 json）","c":92.771,"rew":0,"s":0,"gate":0},{"id":"heygo-agent-server-agno#273","t":"feat(learning): 记忆 L3 回合结束后在后台记下用户说过的练习意向和练后反馈（只记事实，开关默认关）","c":92.784,"rew":0,"s":1,"gate":0},{"id":"heygo-agent-server-agno#274","t":"feat(memory): 记忆基建 M1 当天报告投影 + 「今天说过什么」只读接口 + memory_read 读取日志","c":92.786,"rew":0,"s":1,"gate":0},{"id":"heygo-agent-server-agno#278","t":"feat(rest-summary): 休息小结 workflow——停下来休息时 Go 对话单独发一条（Agent 主动心跳 PR-2）","c":93.635,"rew":0,"s":1,"gate":0}],"burst":6},"assoc":[{"name":"不超过 10 行的 PR","a":11,"b":28,"c":3,"d":144,"p":8.2e-08,"note":"返工多为一两行的提示词改动，“小”本身就是返工的形态"},{"name":"不含测试文件的 PR","a":8,"b":44,"c":6,"d":128,"p":0.0089,"note":"与上一项重叠：小改动通常不带测试"},{"name":"bot 在 10 分钟内自合并","a":7,"b":42,"c":7,"d":130,"p":0.045,"note":"合得快与返工同时出现"},{"name":"Agent 层（主题口径）","a":7,"b":72,"c":7,"d":100,"p":0.58,"note":"差异在抽样波动内"},{"name":"结构性改动","a":2,"b":38,"c":12,"d":134,"p":0.74,"note":"差异在抽样波动内"}],"cmp":[{"name":"结构性改动","an":38,"am":27,"bn":134,"bm":113,"at":12.3,"bt":1.2},{"name":"Agent 层（主题口径）","an":72,"am":54,"bn":100,"bm":86,"at":2.5,"bt":1.0},{"name":"含测试文件","an":128,"am":105,"bn":44,"bm":35,"at":1.7,"bt":1.2}],"rho":{"r":0.21,"n":140},"scatter":[{"x":8,"y":0.649,"b":0,"id":"heygo-agent-server#110"},{"x":233,"y":144.716,"b":0,"id":"app_flutter#1597"},{"x":44,"y":18.438,"b":0,"id":"HeygoAgent#22"},{"x":505,"y":18.517,"b":0,"id":"heygo-software-rfcs#18"},{"x":12,"y":1.212,"b":0,"id":"app_flutter#1622"},{"x":13,"y":82.885,"b":0,"id":"app_flutter#1676"},{"x":482,"y":151.483,"b":0,"id":"app_flutter#1864"},{"x":158,"y":146.968,"b":0,"id":"app_flutter#1870"},{"x":150,"y":145.437,"b":0,"id":"app_flutter#1889"},{"x":2,"y":142.939,"b":0,"id":"app_flutter#1906"},{"x":50,"y":142.861,"b":0,"id":"app_flutter#1909"},{"x":8,"y":0.049,"b":1,"id":"heygo-agent-server#127"},{"x":65,"y":25.332,"b":0,"id":"app_flutter#1932"},{"x":221,"y":12.966,"b":0,"id":"heygo-web#8"},{"x":413,"y":12.944,"b":0,"id":"app_flutter#2018"},{"x":86,"y":1.195,"b":0,"id":"app_flutter#2023"},{"x":82,"y":115.775,"b":0,"id":"app_flutter#2037"},{"x":158,"y":114.897,"b":0,"id":"app_flutter#2045"},{"x":57,"y":114.902,"b":0,"id":"heygo-agent-server-agno#58"},{"x":10,"y":0.04,"b":1,"id":"app_flutter#2120"},{"x":16,"y":1.564,"b":1,"id":"app_flutter#2177"},{"x":412,"y":148.919,"b":1,"id":"heygo-web#26"},{"x":55,"y":3.004,"b":0,"id":"heygo-agent-server-agno#84"},{"x":121,"y":18.703,"b":1,"id":"heygo-agent-server-agno#96"},{"x":102,"y":18.347,"b":1,"id":"heygo-agent-server-agno#98"},{"x":71,"y":2.215,"b":0,"id":"app_flutter#2273"},{"x":769,"y":32.631,"b":1,"id":"app_flutter#2274"},{"x":88,"y":0.678,"b":0,"id":"heygo-agent-server-agno#101"},{"x":273,"y":119.101,"b":0,"id":"app_flutter#2298"},{"x":782,"y":0.048,"b":0,"id":"heygo-agent-server-agno#102"},{"x":207,"y":16.537,"b":1,"id":"app_flutter#2300"},{"x":782,"y":0.017,"b":0,"id":"heygo-agent-server-agno#103"},{"x":69,"y":20.992,"b":0,"id":"app_flutter#2302"},{"x":257,"y":0.028,"b":1,"id":"AISkiCoach#520"},{"x":49,"y":0.025,"b":1,"id":"app_flutter#2309"},{"x":7,"y":1.587,"b":1,"id":"app_flutter#2317"},{"x":1073,"y":0.027,"b":1,"id":"heygo-agent-server-agno#104"},{"x":2,"y":1.204,"b":1,"id":"app_flutter#2342"},{"x":151,"y":52.715,"b":0,"id":"app_flutter#2364"},{"x":120,"y":48.995,"b":0,"id":"app_flutter#2365"},{"x":76,"y":3.601,"b":1,"id":"app_flutter#2366"},{"x":691,"y":3.878,"b":1,"id":"app_flutter#2367"},{"x":302,"y":0.023,"b":1,"id":"heygo-web#42"},{"x":55,"y":0.027,"b":1,"id":"app_flutter#2384"},{"x":100,"y":23.607,"b":1,"id":"app_flutter#2385"},{"x":51,"y":0.129,"b":1,"id":"app_flutter#2388"},{"x":49,"y":3.259,"b":1,"id":"AISkiCoach#537"},{"x":70,"y":3.259,"b":1,"id":"app_flutter#2396"},{"x":209,"y":0.031,"b":1,"id":"app_flutter#2399"},{"x":6,"y":0.867,"b":0,"id":"app_flutter#2424"},{"x":16,"y":0.165,"b":1,"id":"app_flutter#2429"},{"x":2182,"y":2.499,"b":0,"id":"app_flutter#2436"},{"x":1044,"y":14.821,"b":1,"id":"heygo-agent-server-agno#111"},{"x":120,"y":41.606,"b":1,"id":"AISkiCoach#547"},{"x":4,"y":0.034,"b":1,"id":"app_flutter#2440"},{"x":113,"y":2.307,"b":0,"id":"app_flutter#2447"},{"x":217,"y":0.041,"b":1,"id":"AISkiCoach#564"},{"x":44,"y":14.978,"b":0,"id":"app_flutter#2457"},{"x":212,"y":0.038,"b":1,"id":"app_flutter#2462"},{"x":55,"y":9.73,"b":0,"id":"app_flutter#2464"},{"x":190,"y":0.364,"b":0,"id":"app_flutter#2481"},{"x":4,"y":0.211,"b":1,"id":"app_flutter#2487"},{"x":8,"y":0.097,"b":1,"id":"AISkiCoach#583"},{"x":18,"y":0.042,"b":1,"id":"app_flutter#2492"},{"x":21,"y":0.036,"b":1,"id":"heygo-agent-server-agno#116"},{"x":133,"y":11.607,"b":1,"id":"app_flutter#2511"},{"x":435,"y":1.343,"b":0,"id":"AISkiCoach#601"},{"x":196,"y":0.028,"b":1,"id":"app_flutter#2528"},{"x":1203,"y":12.345,"b":1,"id":"heygo-agent-server-agno#125"},{"x":631,"y":40.787,"b":0,"id":"heygo-platform-foundation#42"},{"x":44,"y":0.286,"b":1,"id":"app_flutter#2551"},{"x":45,"y":75.648,"b":0,"id":"AI_SkiMetric#58"},{"x":4,"y":1.495,"b":1,"id":"app_flutter#2557"},{"x":716,"y":1.729,"b":0,"id":"app_flutter#2578"},{"x":75,"y":0.599,"b":1,"id":"app_flutter#2590"},{"x":4114,"y":188.837,"b":1,"id":"heygo-agent-server-agno#129"},{"x":2,"y":0.007,"b":1,"id":"app_flutter#2651"},{"x":118,"y":0.004,"b":1,"id":"heygo-agent-server-agno#151"},{"x":360,"y":0.202,"b":1,"id":"app_flutter#2669"},{"x":99,"y":0.248,"b":1,"id":"heygo-agent-server-agno#154"},{"x":723,"y":82.059,"b":0,"id":"heygo-agent-server-agno#155"},{"x":140,"y":0.026,"b":1,"id":"app_flutter#2689"},{"x":134,"y":0.031,"b":1,"id":"app_flutter#2708"},{"x":26,"y":8.1,"b":1,"id":"AISkiCoach#701"},{"x":2,"y":3.787,"b":1,"id":"app_flutter#2797"},{"x":56,"y":0.001,"b":1,"id":"app_flutter#2803"},{"x":2,"y":0.006,"b":1,"id":"app_flutter#2815"},{"x":200,"y":0.019,"b":1,"id":"app_flutter#2830"},{"x":22,"y":3.035,"b":1,"id":"app_flutter#2833"},{"x":343,"y":0.026,"b":1,"id":"app_flutter#2841"},{"x":64,"y":0.027,"b":1,"id":"app_flutter#2895"},{"x":785,"y":0.019,"b":1,"id":"app_flutter#2903"},{"x":76,"y":43.257,"b":1,"id":"app_flutter#2926"},{"x":6,"y":0.005,"b":1,"id":"heygo-agent-server-agno#171"},{"x":63,"y":0.032,"b":1,"id":"app_flutter#2999"},{"x":134,"y":0.041,"b":1,"id":"heygo-web#100"},{"x":163,"y":0.059,"b":0,"id":"heygo-agent-server-agno#172"},{"x":110,"y":0.101,"b":0,"id":"app_flutter#3025"},{"x":177,"y":0.087,"b":0,"id":"app_flutter#3092"},{"x":22,"y":0.22,"b":0,"id":"heygo-agent-server-agno#180"},{"x":448,"y":98.416,"b":1,"id":"AISkiCoach#818"},{"x":185,"y":3.222,"b":1,"id":"heygo-agent-server-agno#197"},{"x":76,"y":1.671,"b":1,"id":"AISkiCoach#835"},{"x":309,"y":18.015,"b":1,"id":"heygo-agent-server-agno#199"},{"x":248,"y":0.081,"b":1,"id":"app_flutter#3187"},{"x":23,"y":0.078,"b":1,"id":"AISkiCoach#843"},{"x":40,"y":0.858,"b":0,"id":"AISkiCoach#848"},{"x":13,"y":0.805,"b":0,"id":"heygo-biz-club-bff#18"},{"x":45,"y":0.8,"b":0,"id":"heygo-web#140"},{"x":224,"y":62.615,"b":1,"id":"heygo-agent-server-agno#200"},{"x":733,"y":0.063,"b":1,"id":"AISkiCoach#852"},{"x":7,"y":0.003,"b":1,"id":"heygo-agent-server-agno#203"},{"x":48,"y":0.021,"b":1,"id":"app_flutter#3257"},{"x":2,"y":0.01,"b":1,"id":"heygo-agent-server-agno#223"},{"x":2,"y":0.016,"b":1,"id":"heygo-agent-server-agno#225"},{"x":153,"y":0.493,"b":1,"id":"heygo-platform-foundation#82"},{"x":26,"y":0.065,"b":1,"id":"heygo-agent-server-agno#227"},{"x":1065,"y":0.042,"b":1,"id":"heygo-platform-foundation#83"},{"x":337,"y":0.022,"b":1,"id":"heygo-agent-server-agno#228"},{"x":2,"y":1.26,"b":1,"id":"heygo-agent-server-agno#229"},{"x":2,"y":0.001,"b":1,"id":"heygo-agent-server-agno#231"},{"x":1844,"y":23.835,"b":1,"id":"heygo-agent-server-agno#232"},{"x":762,"y":25.242,"b":1,"id":"heygo-agent-server-agno#233"},{"x":1166,"y":0.959,"b":1,"id":"heygo-context#1"},{"x":7,"y":24.061,"b":1,"id":"heygo-agent-server-agno#234"},{"x":296,"y":21.01,"b":1,"id":"AISkiCoach#928"},{"x":754,"y":23.806,"b":0,"id":"heygo-agent-server-agno#236"},{"x":71,"y":19.145,"b":1,"id":"heygo-context#2"},{"x":105,"y":0.226,"b":0,"id":"app_flutter#3484"},{"x":237,"y":2.696,"b":1,"id":"heygo-agent-server-agno#238"},{"x":108,"y":2.565,"b":1,"id":"AISkiCoach#937"},{"x":6,"y":2.494,"b":1,"id":"heygo-platform-foundation#92"},{"x":51,"y":2.459,"b":1,"id":"heygo-agent-server-agno#239"},{"x":37,"y":1.705,"b":1,"id":"heygo-agent-server-agno#240"},{"x":169,"y":3.082,"b":1,"id":"heygo-agent-server-agno#242"},{"x":557,"y":25.006,"b":1,"id":"heygo-agent-server-agno#246"},{"x":1038,"y":1.133,"b":1,"id":"heygo-agent-server-agno#247"},{"x":280,"y":1.036,"b":1,"id":"heygo-context#3"},{"x":253,"y":0.159,"b":1,"id":"app_flutter#3595"},{"x":6,"y":15.815,"b":0,"id":"heygo-agent-server-agno#272"}]}</script>
+<script id="dash-js">
+(function(){
+'use strict';
+var D=JSON.parse(document.getElementById('dash-data').textContent),root=document.documentElement,view=document.getElementById('view-dash');
+var NS='http://www.w3.org/2000/svg',ND=D.meta.nday,NW=D.meta.nweek,D0=new Date(D.meta.d0+'T00:00:00Z');
+var C={acc:'#2997ff',org:'#d95926',aqu:'#199e70',app:'#a4a4ab',oth:'#4c4c52',wht:'#d1d1d6',i1:'#f5f5f7',i2:'#a1a1a6',i3:'#86868b',bg:'#0c0c0e'};
+var GC=[C.app,C.acc,C.aqu,C.oth],WD=['一','二','三','四','五','六','日'];
+function S(t,a,p,x){var e=document.createElementNS(NS,t);for(var k in a)if(a[k]!=null)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;if(p)p.appendChild(e);return e}
+function H(t,c,p,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;if(p)p.appendChild(e);return e}
+function $(id){return document.getElementById(id)}
+function svg(el,w,h,label){el.textContent='';return S('svg',{width:w,height:h,viewBox:'0 0 '+w+' '+h,role:'img','aria-label':label},el)}
+function p2(n){return(n<10?'0':'')+n}
+function dl(i){var d=new Date(D0.getTime()+Math.floor(i)*864e5);return p2(d.getUTCMonth()+1)+'-'+p2(d.getUTCDate())}
+function dt(f){var m=Math.round((f-Math.floor(f))*1440);if(m>=1440)m=1439;return dl(f)+' '+p2(Math.floor(m/60))+':'+p2(m%60)}
+function wd(i){return WD[((i%7)+7)%7]}
+function nf(n){return Math.round(n).toLocaleString('en-US')}
+function pc(a,b,d){return(a/b*100).toFixed(d||0)+'%'}
+function dur(h){if(h<1)return Math.max(1,Math.round(h*60))+' 分钟';if(h<48)return(Math.round(h*10)/10)+' 小时';return(Math.round(h/24*10)/10)+' 天'}
+function r1(x){return Math.round(x*10)/10}
+var mob=function(){return view.clientWidth<700};
+/* ---------- tooltip ---------- */
+var tip=$('dtip'),tipOn=null;
+function tipHTML(o){tip.textContent='';if(o.t)H('b',null,tip,o.t);if(o.s)H('span','tt',tip,o.s);(o.r||[]).forEach(function(r){var d=H('div','rw',tip),a=H('span',null,d);if(r[2]){var i=H('i',null,a);i.style.background=r[2]}a.appendChild(document.createTextNode(r[0]));H('span',null,d,r[1])});if(o.n)H('span','tt',tip,o.n).style.margin='5px 0 0'}
+function tipAt(x,y){var w=tip.offsetWidth,h=tip.offsetHeight,X=x+14,Y=y-h-12;if(X+w>innerWidth-8)X=x-w-14;if(X<8)X=8;if(Y<56)Y=y+16;if(Y+h>innerHeight-8)Y=Math.max(8,innerHeight-h-8);tip.style.transform='translate('+Math.round(X)+'px,'+Math.round(Y)+'px)'}
+function tipShow(o,x,y){tipHTML(o);tip.style.opacity=1;tipAt(x,y)}
+function tipHide(){tip.style.opacity=0;tipOn=null}
+function owner(n){while(n&&n!==view){if(n.__tip)return n;n=n.parentNode}return null}
+view.addEventListener('pointerover',function(e){var o=owner(e.target);if(o){tipOn=o;tipShow(o.__tip(),e.clientX,e.clientY)}else if(tipOn&&!tipOn.__sticky)tipHide()});
+view.addEventListener('pointermove',function(e){if(tipOn&&!tipOn.__sticky&&e.pointerType==='mouse')tipAt(e.clientX,e.clientY)});
+view.addEventListener('pointerleave',function(){tipHide()});
+view.addEventListener('focusin',function(e){var o=owner(e.target);if(o&&o.matches(':focus-visible')){var r=o.getBoundingClientRect();tipOn=o;tipShow(o.__tip(),r.left+r.width/2,r.top)}});
+view.addEventListener('focusout',function(){if(tipOn&&!tipOn.__sticky)tipHide()});
+document.addEventListener('pointerdown',function(e){if(!owner(e.target))tipHide()});
+window.addEventListener('scroll',function(){if(tipOn)tipHide()},{passive:true});
+function T(el,fn,focus){el.__tip=fn;if(focus)el.setAttribute('tabindex','0');return el}
+/* ---------- paths ---------- */
+function mono(P){var n=P.length,i,dx=[],m=[],t=[],o=[];for(i=0;i<n-1;i++){dx[i]=P[i+1][0]-P[i][0];m[i]=(P[i+1][1]-P[i][1])/dx[i]}t[0]=m[0];t[n-1]=m[n-2];for(i=1;i<n-1;i++)t[i]=m[i-1]*m[i]<=0?0:(m[i-1]+m[i])/2;
+ for(i=0;i<n-1;i++){if(m[i]===0){t[i]=0;t[i+1]=0}else{var a=t[i]/m[i],b=t[i+1]/m[i],s=a*a+b*b;if(s>9){var k=3/Math.sqrt(s);t[i]=k*a*m[i];t[i+1]=k*b*m[i]}}}
+ for(i=0;i<n-1;i++)o.push([P[i],[P[i][0]+dx[i]/3,P[i][1]+t[i]*dx[i]/3],[P[i+1][0]-dx[i]/3,P[i+1][1]-t[i+1]*dx[i]/3],P[i+1]]);return o}
+function f1(v){return Math.round(v*10)/10}
+function pt(p){return f1(p[0])+','+f1(p[1])}
+function segF(s){return s.map(function(q){return'C'+pt(q[1])+' '+pt(q[2])+' '+pt(q[3])}).join('')}
+function segR(s){return s.slice().reverse().map(function(q){return'C'+pt(q[2])+' '+pt(q[1])+' '+pt(q[0])}).join('')}
+function drawable(p){try{var L=Math.ceil(p.getTotalLength())+2;p.style.setProperty('--len',L);p.classList.add('draw')}catch(e){}}
+function topR(x,y,w,h,r){r=Math.min(r,h,w/2);return'M'+x+','+(y+h)+'V'+(y+r)+'q0,-'+r+' '+r+',-'+r+'h'+(w-2*r)+'q'+r+',0 '+r+','+r+'V'+(y+h)+'Z'}
+function monthTicks(g,X,y0,y1,labY){[[0,dl(0)],[8,'9 月'],[38,'10 月'],[69,'11 月']].forEach(function(m,i){if(i)S('line',{class:'g',x1:X(m[0]),x2:X(m[0]),y1:y0,y2:y1},g);if(i||X(8)-X(0)>46)S('text',{x:X(m[0])+(i?5:0),y:labY,class:i?'t2':''},g,m[1])})}
+function legend(el,items){el.textContent='';items.forEach(function(it){if(it==='|'){H('span','sep',el);return}var s=H('span',null,el),i=H('i',it[2]||null,s);i.style.background=it[0];i.style.color=it[0];s.appendChild(document.createTextNode(it[1]));if(it[3])H('b',null,s,it[3])})}
+/* ---------- KPI ---------- */
+function kpi(){var el=$('d-kpi');el.textContent='';D.kpi.forEach(function(k,ki){var d=H('div',null,el);H('div','k',d,k.k);var v=H('div','v',d,k.v);if(k.u)H('small',null,v,k.u);var sp=H('div','sp',d);H('div','c',d,k.s);
+ var w=Math.max(60,sp.clientWidth),h=34,s=S('svg',{viewBox:'0 0 '+w+' '+h,width:w,height:h,'aria-hidden':'true'},sp);
+ var vals=k.sp.map(function(x){return x==null?null:(k.log?Math.log(Math.max(x,.01)):x)}),ok=vals.filter(function(x){return x!=null}),mn=Math.min.apply(0,ok),mx=Math.max.apply(0,ok);if(!k.log)mn=Math.min(mn,0);
+ var X=function(i){return 3+i*(w-6)/(vals.length-1)},Y=function(v){return h-4-(v-mn)/(mx-mn||1)*(h-9)};
+ S('line',{class:'g',x1:0,x2:w,y1:h-.5,y2:h-.5},s);var d0='',pen=false,last=null;
+ vals.forEach(function(v,i){if(v==null){pen=false;return}d0+=(pen?'L':'M')+f1(X(i))+','+f1(Y(v));var iso=(i===0||vals[i-1]==null)&&(i===vals.length-1||vals[i+1]==null);if(iso)S('circle',{cx:X(i),cy:Y(v),r:1.6,fill:C.acc,class:'fx'},s);pen=true;last=i});
+ drawable(S('path',{d:d0,fill:'none',stroke:C.acc,'stroke-width':1.5,'stroke-linejoin':'round','stroke-linecap':'round'},s));
+ var mi=vals.indexOf(k.log?Math.max.apply(0,ok):mx);S('circle',{cx:X(last),cy:Y(vals[last]),r:2.6,fill:C.acc,stroke:'#000','stroke-width':1.5,class:'fx'},s);
+ for(var i=0;i<vals.length;i++){(function(i){var r=S('rect',{class:'hit',x:X(i)-(w-6)/(vals.length-1)/2,y:0,width:(w-6)/(vals.length-1),height:h},s);T(r,function(){return{t:dl(i*7)+' 起一周',r:[[k.k,k.sp[i]==null?'无数据':String(k.sp[i])+(k.pu||'')]]}})})(i)}
+})}
+/* ---------- 01 累计 ---------- */
+function cum(){var el=$('c-cum'),W=el.clientWidth,m=mob(),Hh=m?270:370,ml=38,mr=14,mt=30,mb=26,s=svg(el,W,Hh,'累计已合入 PR 与累计已合入有效行，各自占期末值的百分比');
+ var X=function(d){return ml+d/(ND-1)*(W-ml-mr)},Y=function(p){return mt+(1-p)*(Hh-mt-mb)},N=D.cum.pr[ND-1],L=D.cum.ln[ND-1];
+ legend($('lg-cum'),[[C.acc,'累计已合入 PR','ln',N+' 个'],[C.wht,'累计已合入有效行','ln',nf(L)+' 行']]);
+ var ev=D.cum.ev;ev.forEach(function(e,i){if(e.d2!=null)S('rect',{x:X(e.d),y:mt,width:X(e.d2)-X(e.d),height:Hh-mt-mb,fill:'rgba(255,255,255,'+(i===1?.028:.05)+')',class:'fx'},s)});
+ [0,.25,.5,.75,1].forEach(function(p){S('line',{class:p?'g':'ax',x1:ml,x2:W-mr,y1:Y(p),y2:Y(p)},s);S('text',{x:ml-8,y:Y(p)+4,'text-anchor':'end'},s,Math.round(p*100)+'%')});
+ monthTicks(s,X,mt,Hh-mb,Hh-7);
+ function line(a,tot,col,sw){var d='';a.forEach(function(v,i){d+=(i?'L':'M')+f1(X(i))+','+f1(Y(v/tot))});var p=S('path',{d:d,fill:'none',stroke:col,'stroke-width':sw,'stroke-linejoin':'round','stroke-linecap':'round'},s);drawable(p)}
+ line(D.cum.ln,L,C.wht,1.5);line(D.cum.pr,N,C.acc,2);
+ ev.forEach(function(e,i){var x=e.d2!=null?X(e.d)+9:X(e.d);if(e.d2==null)S('line',{x1:x,x2:x,y1:mt-4,y2:Hh-mb,stroke:C.i2,'stroke-width':1,class:'fx'},s);var cx=e.d2!=null?x+1:x,g=S('g',{class:'fx'},s);S('circle',{cx:cx,cy:mt-14,r:8.5,fill:'#0c0c0e',stroke:C.i3},g);S('text',{x:cx,y:mt-10.2,'text-anchor':'middle',class:'t1 b s10'},g,i+1)});
+ var ol=$('ev-cum');ol.textContent='';ev.forEach(function(e,i){var li=H('li',null,ol);H('span','dz-no',li,i+1);var d=H('div',null,li);H('b',null,d,e.t);d.appendChild(document.createTextNode(e.s))});
+ var ch=S('g',{style:'display:none'},s),cl=S('line',{y1:mt,y2:Hh-mb,stroke:C.i2,'stroke-width':1},ch),c1=S('circle',{r:4,fill:C.wht,stroke:'#0c0c0e','stroke-width':2},ch),c2=S('circle',{r:4,fill:C.acc,stroke:'#0c0c0e','stroke-width':2},ch);
+ var hit=S('rect',{class:'hit',x:ml,y:mt,width:W-ml-mr,height:Hh-mt-mb,tabindex:0,'aria-label':'逐日读数，左右方向键移动'},s),cur=ND-1;hit.__sticky=true;
+ function at(i,cx,cy){cur=i=Math.max(0,Math.min(ND-1,i));ch.style.display='';cl.setAttribute('x1',X(i));cl.setAttribute('x2',X(i));c1.setAttribute('cx',X(i));c1.setAttribute('cy',Y(D.cum.ln[i]/L));c2.setAttribute('cx',X(i));c2.setAttribute('cy',Y(D.cum.pr[i]/N));
+  var r=s.getBoundingClientRect();tipOn=hit;tipShow({t:dl(i)+' 周'+wd(i),r:[['累计已合入 PR',D.cum.pr[i]+' 个 · '+pc(D.cum.pr[i],N),C.acc],['累计已合入有效行',nf(D.cum.ln[i])+' 行 · '+pc(D.cum.ln[i],L),C.wht],['当日新建 / 合入',D.day.c[i]+' / '+D.day.m[i]]]},cx!=null?cx:r.left+X(i),cy!=null?cy:r.top+mt+30)}
+ function mv(e){var r=s.getBoundingClientRect();at(Math.round((e.clientX-r.left-ml)/(W-ml-mr)*(ND-1)),e.clientX,e.clientY)}
+ hit.addEventListener('pointermove',mv);hit.addEventListener('pointerdown',mv);hit.addEventListener('pointerleave',function(){ch.style.display='none';tipHide()});
+ hit.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();at(cur+(e.key==='ArrowLeft'?-1:1))}});hit.addEventListener('blur',function(){ch.style.display='none';tipHide()})}
+/* ---------- 02 热力图 ---------- */
+var heatM=0,RAMP=['rgba(255,255,255,.05)','#12304f','#17569a','#2180e0','#6dbcff'];
+function levels(vals){var nz=vals.filter(function(v){return v>0}).sort(function(a,b){return a-b}),q=function(p){return nz[Math.min(nz.length-1,Math.floor(p*nz.length))]};var t=[q(.4),q(.7),q(.9)];return function(v){return v<=0?0:1+(v>t[0])+(v>t[1])+(v>t[2])}}
+function heat(){var el=$('c-heat'),W=el.clientWidth,m=W<720,lab=22,gap=3,unit=['个','个','行'][heatM],name=['新建 PR','合入 PR','有效行'][heatM];
+ var dv=[D.day.c,D.day.m,D.day.l][heatM],pv=D.punch[heatM],cs,ps,bx2,by2,top=34;
+ if(m){cs=Math.min(24,Math.floor((W-lab)/NW));ps=Math.floor((W-lab)/24);bx2=0;by2=top+7*cs+30}else{cs=Math.min(27,Math.floor((W-lab*2-56)/(NW+24)));ps=cs;bx2=lab+NW*cs+56;by2=0}
+ var Hh=m?by2+top+7*ps+52:top+7*cs+34,s=svg(el,W,Hh,'逐日与星期×小时的'+name+'热力图'),lv=levels(dv),lp=levels([].concat.apply([],pv));
+ function block(x0,y0,c,title){S('text',{x:x0+lab,y:y0+11,class:'t1 b s12'},s,title);[0,2,4,6].forEach(function(r){S('text',{x:x0,y:y0+top+r*c+c/2+3,class:'s10'},s,WD[r])});}
+ block(0,0,cs,'按日 · '+NW+' 周');
+ [[0,'8 月'],[2,'9 月'],[6,'10 月'],[10,'11 月']].forEach(function(mm){S('text',{x:lab+mm[0]*cs,y:top-7,class:'s10'},s,mm[1])});
+ dv.forEach(function(v,i){var w=Math.floor(i/7),r=i%7,c=S('rect',{class:'cell hc fx',style:'--i:'+(w*2+r),x:lab+w*cs,y:top+r*cs,width:cs-gap,height:cs-gap,rx:Math.max(2,cs/6),fill:RAMP[lv(v)]},s);
+  T(c,function(){return{t:dl(i)+' 周'+wd(i),r:[['新建 PR',D.day.c[i]+' 个'],['合入 PR',D.day.m[i]+' 个'],['新建 PR 的有效行',nf(D.day.l[i])+' 行']]}})});
+ var py=by2;block(bx2,py,ps,'按星期 × 小时');[0,6,12,18,23].forEach(function(h){S('text',{x:bx2+lab+h*ps+(ps-gap)/2,y:py+top-7,'text-anchor':'middle',class:'s10'},s,h+' 时')});
+ pv.forEach(function(row,r){row.forEach(function(v,h){var g2=m?2:gap,c=S('rect',{class:'cell hc fx',style:'--i:'+(h+r),x:bx2+lab+h*ps,y:py+top+r*ps,width:ps-g2,height:ps-g2,rx:Math.max(1.5,ps/6),fill:RAMP[lp(v)]},s);
+  T(c,function(){return{t:'周'+WD[r]+' '+p2(h)+':00–'+p2(h)+':59',r:[[name,nf(v)+' '+unit]]}})})});
+ var ly=Hh-(m?30:12),lx=lab,tot=dv.reduce(function(a,b){return a+b},0),act=dv.filter(function(v){return v>0}).length;
+ S('text',{x:lx,y:ly+1,class:'s10'},s,'少');RAMP.forEach(function(c,i){S('rect',{x:lx+16+i*14,y:ly-9,width:11,height:11,rx:2.5,fill:c},s)});S('text',{x:lx+16+5*14+2,y:ly+1,class:'s10'},s,'多');
+ S('text',{x:m?lx:lx+16+5*14+30,y:m?ly+20:ly+1,class:'t2'},s,name+'合计 '+nf(tot)+' '+unit+' · '+act+' 天有记录 · 单日最高 '+nf(Math.max.apply(0,dv))+' '+unit)}
+/* ---------- 03 结构 ---------- */
+function stream(){var el=$('c-stream'),W=el.clientWidth,Hh=mob()?240:300,ml=28,mr=8,mt=10,mb=26,s=svg(el,W,Hh,'每周新建 PR 数，按仓库层堆叠'),G=D.week.g;
+ legend($('lg-shift'),D.meta.grp.map(function(n,i){return[GC[i],n]}));
+ var X=function(w){return ml+w/(NW-1)*(W-ml-mr)},Y=function(v){return mt+(1-v/36)*(Hh-mt-mb)};
+ [0,12,24,36].forEach(function(v){S('line',{class:v?'g':'ax',x1:ml,x2:W-mr,y1:Y(v),y2:Y(v)},s);S('text',{x:ml-8,y:Y(v)+4,'text-anchor':'end'},s,v)});
+ var base=[];for(var w=0;w<NW;w++)base.push(0);var prev=mono(base.map(function(v,w){return[X(w),Y(0)]}));
+ G.forEach(function(row,gi){var top=row.map(function(v,w){base[w]+=v;return[X(w),Y(base[w])]}),sg=mono(top);
+  S('path',{d:'M'+pt(sg[0][0])+segF(sg)+'L'+pt(prev[prev.length-1][3])+segR(prev)+'Z',fill:GC[gi],stroke:C.bg,'stroke-width':1.5,class:'fx',style:'--i:'+gi*12},s);prev=sg});
+ for(var i=0;i<NW;i+=(W<420?3:2))S('text',{x:X(i),y:Hh-7,'text-anchor':i?'middle':'start'},s,dl(i*7));
+ var cl=S('line',{y1:mt,y2:Hh-mb,stroke:C.i1,'stroke-width':1,style:'display:none'},s);
+ for(w=0;w<NW;w++)(function(w){var bw=(W-ml-mr)/(NW-1),r=S('rect',{class:'hit',x:X(w)-bw/2,y:mt,width:bw,height:Hh-mt-mb,tabindex:0},s);
+  T(r,function(){return{t:dl(w*7)+' 起一周 · 新建 '+D.week.n[w]+' 个',r:G.map(function(row,gi){return[D.meta.grp[gi],row[w]+' 个',GC[gi]]}).reverse()}});
+  r.addEventListener('pointerenter',function(){cl.style.display='';cl.setAttribute('x1',X(w));cl.setAttribute('x2',X(w))});r.addEventListener('pointerleave',function(){cl.style.display='none'})})(w)}
+function month(){var el=$('c-month'),W=el.clientWidth,rh=62,Hh=D.months.length*rh+4,s=svg(el,W,Hh,'各月新建 PR 的仓库层构成');
+ D.months.forEach(function(mo,i){var y=i*rh;S('text',{x:0,y:y+13,class:'t1 b s12'},s,mo.m+' 月');S('text',{x:W,y:y+13,'text-anchor':'end',class:'t2'},s,'新建 '+mo.n+' 个');var x=0;
+  mo.g.forEach(function(v,gi){var w=v/mo.n*(W-6);var r=S('rect',{class:'hb hc fx',style:'--i:'+(i*6+gi*3),x:f1(x),y:y+22,width:f1(Math.max(1,w)),height:20,rx:3,fill:GC[gi],tabindex:0},s);
+   T(r,function(){return{t:mo.m+' 月 · '+D.meta.grp[gi],r:[['新建 PR',v+' 个'],['占当月',pc(v,mo.n,1)]]}});
+   if(w>34)S('text',{x:x+6,y:y+36,class:'b s10',style:'fill:'+(gi===0?'#000':'#fff')+';pointer-events:none'},s,pc(v,mo.n));x+=w+2})})}
+/* ---------- 04 Sankey ---------- */
+function sankey(){var el=$('c-sankey'),W=el.clientWidth,m=mob(),Hh=m?400:380,nw=m?8:10,pad=m?16:20,s=svg(el,W,Hh,'来源到仓库层到状态的 PR 流向');
+ var A=D.sankey.a,B=D.sankey.b,cols=[A.map(function(r){return r.reduce(function(a,b){return a+b},0)}),B.map(function(r){return r.reduce(function(a,b){return a+b},0)}),[0,1,2].map(function(j){return B.reduce(function(a,r){return a+r[j]},0)})];
+ var names=[D.meta.src,D.meta.grp,D.meta.sta],colr=[[C.i3,C.i3,C.i3],GC,[C.i1,C.org,C.oth]],k=(Hh-24-3*pad)/172,xs=[0,(W-nw)/2,W-nw],pos=[];
+ if(m)names=[['Bug 群','Paseo','AI 助手对话'],['App','Agent 服务','后端','其他仓库'],D.meta.sta];
+ cols.forEach(function(c,ci){var tot=c.reduce(function(a,b){return a+b},0)*k+(c.length-1)*pad,y=24+(Hh-24-tot)/2;pos[ci]=c.map(function(v){var o={y:y,h:v*k,o:0,i:0};y+=v*k+pad;return o})});
+ ['来源','仓库层','状态'].forEach(function(t,i){S('text',{x:i===0?0:i===1?xs[1]+nw/2:W,y:11,'text-anchor':i===0?'start':i===1?'middle':'end',class:'s10',style:'letter-spacing:.08em'},s,t)});
+ var links=S('g',null,s);
+ function link(ci,si,ti,v,col,tipf){if(!v)return;var a=pos[ci][si],b=pos[ci+1][ti],x0=xs[ci]+nw,x1=xs[ci+1],y0=a.y+a.o,y1=b.y+b.i,h=v*k,mx=(x0+x1)/2;a.o+=h;b.i+=h;
+  var p=S('path',{class:'lk fx',style:'--i:'+(ci*10+si*4+ti),d:'M'+f1(x0)+','+f1(y0)+'C'+f1(mx)+','+f1(y0)+' '+f1(mx)+','+f1(y1)+' '+f1(x1)+','+f1(y1)+'L'+f1(x1)+','+f1(y1+h)+'C'+f1(mx)+','+f1(y1+h)+' '+f1(mx)+','+f1(y0+h)+' '+f1(x0)+','+f1(y0+h)+'Z',fill:col,opacity:col===C.app?.26:col===C.oth?.55:.38,tabindex:0},links);T(p,tipf)}
+ A.forEach(function(r,si){r.forEach(function(v,gi){link(0,si,gi,v,GC[gi],function(){return{t:D.meta.src[si]+' → '+D.meta.grp[gi],r:[['PR',v+' 个'],['占该来源',pc(v,cols[0][si])],['占该仓库层',pc(v,cols[1][gi])]]}})})});
+ B.forEach(function(r,gi){r.forEach(function(v,ti){link(1,gi,ti,v,GC[gi],function(){return{t:D.meta.grp[gi]+' → '+D.meta.sta[ti],r:[['PR',v+' 个'],['占该仓库层',pc(v,cols[1][gi])],['占该状态',pc(v,cols[2][ti])]]}})})});
+ pos.forEach(function(col,ci){col.forEach(function(n,i){S('rect',{x:xs[ci],y:f1(n.y),width:nw,height:f1(Math.max(1.5,n.h)),rx:2,fill:colr[ci][i],class:'fx'},s);
+  var tx=ci===2?xs[2]-8:xs[ci]+nw+8,an=ci===2?'end':'start',cy=n.y+n.h/2,one=n.h<26;
+  var t=S('text',{x:tx,y:one?cy+4:cy-2,'text-anchor':an,class:'t1 b s12',style:'paint-order:stroke;stroke:#0c0c0e;stroke-width:3px;stroke-linejoin:round'},s,names[ci][i]+(one?'  '+cols[ci][i]:''));
+  if(!one)S('text',{x:tx,y:cy+13,'text-anchor':an,class:'t2',style:'paint-order:stroke;stroke:#0c0c0e;stroke-width:3px'},s,cols[ci][i]+' 个 · '+pc(cols[ci][i],172))})})}
+/* ---------- 05 泳道 ---------- */
+function lanes(){var el=$('c-lanes'),W=el.clientWidth,m=W<720,ll=m?0:214,lr=m?0:104,sub=11,top=24,y=top,L=D.lanes,NOW=93.75,rows=[];
+ legend($('lg-lanes'),D.meta.grp.map(function(n,i){return[GC[i],n]}).concat(['|',[C.i2,'合入',null],[C.i2,'未合入','rg'],[C.i2,'关闭 ×','x']]));
+ var lg=$('lg-lanes').children;lg[5].firstChild.style.borderRadius='50%';lg[7].firstChild.style.display='none';
+ L.forEach(function(l){var h=(m?22:0)+l.prs.length*sub+(m?14:16);rows.push({y:y,h:h});y+=h});
+ var Hh=y+6,s=svg(el,W,Hh,'17 条跨仓需求线的时间泳道'),X=function(d){return ll+6+d/94*(W-ll-lr-14)};
+ monthTicks(s,X,top-6,Hh-4,12);
+ L.forEach(function(l,li){var r=rows[li],g=S('g',{class:'fx',style:'--i:'+li*5},s),y0=r.y+(m?24:8),meta=l.repos+' 仓 · '+l.merged+'/'+l.n+' 合入';
+  if(li)S('line',{class:'g',x1:0,x2:W,y1:r.y-.5,y2:r.y-.5},g);
+  var mid=y0+(l.prs.length-1)*sub/2;
+  if(m){S('text',{x:0,y:r.y+15,class:'t1 s12'},g,l.name);S('text',{x:W,y:r.y+15,'text-anchor':'end',class:l.merged===l.n?'t2':''},g,meta)}
+  else{S('text',{x:0,y:mid+4,class:'t1 s12'},g,l.name);S('text',{x:W,y:mid+4,'text-anchor':'end',class:l.merged===l.n?'t2':''},g,meta)}
+  var c0=Math.min.apply(0,l.prs.map(function(p){return p.c}));
+  S('line',{x1:X(c0),x2:X(c0),y1:y0-3,y2:y0+(l.prs.length-1)*sub+3,stroke:C.i3,'stroke-width':1},g);
+  l.prs.forEach(function(p,pi){var yy=y0+pi*sub,x0=X(p.c),x1=X(p.e==null?NOW:p.e),col=GC[p.g]===C.oth?'#7c7c84':GC[p.g];
+   S('line',{x1:X(c0),x2:x0,y1:yy,y2:yy,stroke:C.i3,'stroke-width':1},g);
+   S('line',{x1:x0,x2:Math.max(x1,x0+.5),y1:yy,y2:yy,stroke:col,'stroke-width':2,'stroke-linecap':'round',opacity:p.s===1?.55:1},g);
+   if(p.s===0)S('circle',{cx:x1,cy:yy,r:4,fill:col,stroke:C.bg,'stroke-width':1},g);
+   else if(p.s===1)S('circle',{cx:x1,cy:yy,r:3.6,fill:C.bg,stroke:col,'stroke-width':1.5},g);
+   else S('path',{d:'M'+(x1-3)+','+(yy-3)+'l6,6m0,-6l-6,6',stroke:col,'stroke-width':1.5,fill:'none'},g);
+   var h=S('line',{class:'hit',x1:Math.min(x0,x1)-8,x2:Math.max(x0,x1)+8,y1:yy,y2:yy,style:'stroke-width:'+sub+'px;stroke:transparent',tabindex:0},g);
+   T(h,function(){return{t:p.id,s:p.t,r:[['需求线',l.name],['创建',dt(p.c)],[p.s===0?'合入':p.s===2?'关闭':'状态',p.e==null?'未合入，已 '+Math.max(0,Math.round(NOW-p.c))+' 天':dt(p.e)],p.e!=null?['历时',dur((p.e-p.c)*24)]:null].filter(Boolean)}})})})}
+/* ---------- 06 分布 ---------- */
+function hist(id,h,label,unit){var el=$(id),W=el.clientWidth,Hh=190,mt=22,mb=24,s=svg(el,W,Hh,label),B=h.b,n=B.length,mx=Math.max.apply(0,B.map(function(b){return b.n})),bw=W/n,Y=function(v){return mt+(1-v/mx)*(Hh-mt-mb)};
+ S('line',{class:'ax',x1:0,x2:W,y1:Hh-mb+.5,y2:Hh-mb+.5},s);
+ B.forEach(function(b,i){var x=i*bw+3,w=bw-6,y=Y(b.n),hh=Hh-mb-y;
+  if(b.n){var r=S('path',{class:'hb hc fx',style:'--i:'+i*6,d:topR(f1(x),f1(y),f1(w),f1(hh),4),fill:C.acc,opacity:i===h.mi?1:.42,tabindex:0},s);T(r,function(){return{t:b.l+(unit||''),r:[['PR',b.n+' 个'],['占比',pc(b.n,h.n,1)]],n:i===h.mi?'中位数落在这一档':null}})}
+  S('text',{x:x+w/2,y:(b.n?y:Hh-mb)-6,'text-anchor':'middle',class:i===h.mi?'t1 b':'t2'},s,b.n);
+  S('text',{x:x+w/2,y:Hh-7,'text-anchor':'middle',class:'s10',style:bw<50?'font-size:9px':null},s,b.l)})}
+/* ---------- 07 评审 ---------- */
+function rev(){var el=$('c-rev'),W=el.clientWidth,Hh=mob()?220:260,ml=28,mt=12,mb=26,s=svg(el,W,Hh,'每周合入的 PR，按合并方与评审痕迹堆叠'),R=D.rev.w,cols=[C.org,C.acc,C.app],nm=['bot 合并 · 无评审痕迹','bot 合并 · 有评审或评论','人工合并'];
+ legend($('lg-rev'),nm.map(function(n,i){return[cols[i],n]}));
+ var mx=36,bw=(W-ml)/NW,Y=function(v){return mt+(1-v/mx)*(Hh-mt-mb)};
+ [0,12,24,36].forEach(function(v){S('line',{class:v?'g':'ax',x1:ml,x2:W,y1:Y(v),y2:Y(v)},s);S('text',{x:ml-8,y:Y(v)+4,'text-anchor':'end'},s,v)});
+ R.forEach(function(r,w){var x=ml+w*bw+Math.max(2,bw*.18),bwd=bw-2*Math.max(2,bw*.18),acc=0,tot=r[0]+r[1]+r[2],g=S('g',{class:'hc fx',style:'--i:'+w*4,tabindex:0},s);
+  r.forEach(function(v,i){if(!v)return;var y1=Y(acc),y2=Y(acc+v),hh=Math.max(1,y1-y2-(acc?2:0));S('rect',{x:f1(x),y:f1(y2),width:f1(bwd),height:f1(hh),rx:Math.min(3,hh/2),fill:cols[i]},g);acc+=v});
+  S('rect',{class:'hit',x:ml+w*bw,y:mt,width:bw,height:Hh-mt-mb},g);
+  T(g,function(){return{t:dl(w*7)+' 起一周 · 合入 '+tot+' 个',r:r.map(function(v,i){return[nm[i],v+' 个',cols[i]]}),n:tot?'无评审痕迹占 '+pc(r[0],tot):null}});
+  if(w%2===0||W>600)S('text',{x:ml+w*bw+bw/2,y:Hh-7,'text-anchor':'middle',class:'s10'},s,W>600?dl(w*7):dl(w*7).slice(0,5))});
+ var st=$('st-rev');st.textContent='';D.rev.m.forEach(function(x){var d=H('div',null,st),n=H('div','n',d,pc(x.k,x.n));H('small',null,n,x.k+'/'+x.n);H('div','l',d,x.m+' 月合入中，bot 自合并且无评审痕迹')})}
+/* ---------- 08 门禁 ---------- */
+function gate(){var el=$('c-gate'),W=el.clientWidth,G=D.gate,r=W<520?3.2:4.4,step=2*r+2,ml=6,mr=6,dayW=(W-ml-mr)/94,k=Math.max(1,Math.ceil(step/dayW)),bins={},mxs=0;
+ legend($('lg-gate'),[[C.org,'人工认定的返工 PR'],[C.i3,'其他 PR'],[C.i1,'门禁 PR（#232、#247）','rg']]);var lg=$('lg-gate').children;lg[0].firstChild.style.borderRadius='50%';lg[1].firstChild.style.borderRadius='50%';
+ G.prs.forEach(function(p){var b=Math.floor((p.c-G.m)/k);(bins[b]=bins[b]||[]).push(p);mxs=Math.max(mxs,bins[b].length)});
+ var mt=46,mb=26,Hh=mt+Math.max(8,mxs)*step+10+mb,s=svg(el,W,Hh,'Agent 服务仓 44 个 PR 的时间分布，标出返工与门禁合入时刻'),X=function(d){return ml+d/94*(W-ml-mr)},base=Hh-mb;
+ S('rect',{x:X(G.m),y:mt-8,width:W-mr-X(G.m)+mr,height:base-mt+8,fill:'rgba(255,255,255,.05)',class:'fx'},s);
+ monthTicks(s,X,mt-8,base,Hh-7);S('line',{class:'ax',x1:0,x2:W,y1:base+.5,y2:base+.5},s);
+ S('line',{x1:X(G.m),x2:X(G.m),y1:10,y2:base,stroke:C.i1,'stroke-width':1},s);S('text',{x:X(G.m)-7,y:14,'text-anchor':'end',class:'t1 b'},s,'门禁合入 11-17');S('text',{x:X(G.m)-7,y:28,'text-anchor':'end',class:'s10'},s,'之前 '+G.before.n+' 个 · 之后 '+G.after.n+' 个');
+ Object.keys(bins).forEach(function(b){bins[b].sort(function(a,c){return a.c-c.c}).forEach(function(p,i){var cx=X(G.m+(+b+.5)*k),cy=base-r-2-i*step;
+  var c=S('circle',{class:'dot hc fx',style:'--i:'+Math.round(p.c/2+i),cx:f1(cx),cy:f1(cy),r:r,fill:p.gate?C.bg:p.rew?C.org:C.i3,opacity:p.gate||p.rew?1:.62,stroke:p.gate?C.i1:'none','stroke-width':p.gate?1.5:0,tabindex:0},s);
+  T(c,function(){return{t:p.id,s:p.t,r:[['创建',dt(p.c)],['状态',D.meta.sta[p.s]],['返工',p.rew?'是（报告认定）':'否']]}})})})
+ var st=$('st-gate');st.textContent='';[['门禁合入前',G.before],['门禁合入后 '+G.days_after+' 天',G.after]].forEach(function(x){var d=H('div',null,st),n=H('div','n',d,x[1].rew+' / '+x[1].n);H('small',null,n,pc(x[1].rew,x[1].n));H('div','l',d,x[0]+' · 返工 / 新建')})}
+/* ---------- 09 关联 ---------- */
+function assoc(){var el=$('c-assoc');el.textContent='';D.assoc.forEach(function(a,i){var r=H('div','r'+(a.p>=.05?' ns':''),el),nm=H('div','nm',r,a.name);H('span','nt',nm,a.note);var pl=H('div',null,r),W=Math.max(80,pl.clientWidth),s=S('svg',{width:W,height:26,viewBox:'0 0 '+W+' 26',role:'img','aria-label':a.name+'：'+a.a+'/'+a.b+' 对 '+a.c+'/'+a.d},pl);
+  var X=function(v){return 7+v/.45*(W-14)},p1=a.a/a.b,p0=a.c/a.d;S('line',{class:'ax',x1:7,x2:W-7,y1:13.5,y2:13.5},s);[0,.15,.3,.45].forEach(function(v){S('line',{class:'ax',x1:X(v),x2:X(v),y1:10,y2:17},s);if(i===D.assoc.length-1)S('text',{x:X(v),y:26,'text-anchor':'middle',class:'s10',style:'font-size:9px'},s,Math.round(v*100)+'%')});
+  S('line',{x1:X(p0),x2:X(p1),y1:13.5,y2:13.5,stroke:a.p<.05?C.acc:C.i3,'stroke-width':2,class:'fx'},s);S('circle',{cx:X(p0),cy:13.5,r:4.5,fill:C.bg,stroke:C.i2,'stroke-width':1.5,class:'fx'},s);S('circle',{cx:X(p1),cy:13.5,r:5,fill:a.p<.05?C.acc:C.i3,stroke:C.bg,'stroke-width':1.5,class:'fx'},s);
+  var h=S('rect',{class:'hit',x:0,y:0,width:W,height:26,tabindex:0},s);T(h,function(){return{t:a.name,r:[['该组返工',a.a+'/'+a.b+' = '+pc(a.a,a.b,1)],['其余返工',a.c+'/'+a.d+' = '+pc(a.c,a.d,1)],['Fisher p',a.p<.001?'< 0.001':String(a.p)]],n:a.note}});
+  var st=H('div','stt',r);H('b',null,st,pc(a.a,a.b)+' 对 '+pc(a.c,a.d));st.appendChild(document.createElement('br'));st.appendChild(document.createTextNode(a.a+'/'+a.b+' 对 '+a.c+'/'+a.d+' · p '+(a.p<.001?'< 0.001':'= '+a.p)+(a.p>=.05?'（不显著）':'')))});
+ var tb=$('tb-cmp');tb.textContent='';var tr=H('tr',null,H('thead',null,tb));['分组（是 对 否）','合入率','合入中位时长'].forEach(function(x){H('th',null,tr,x)});var bd=H('tbody',null,tb);
+ D.cmp.forEach(function(c){var r=H('tr',null,bd);H('td',null,r,c.name);var d=H('td',null,r,pc(c.am,c.an)+' 对 '+pc(c.bm,c.bn));H('span','nt',d,c.am+'/'+c.an+' · '+c.bm+'/'+c.bn);H('td',null,r,c.at+' 对 '+c.bt+' 小时')})}
+/* ---------- 10 散点 ---------- */
+function scat(){var el=$('c-scat'),W=el.clientWidth,Hh=mob()?300:360,ml=44,mr=10,mt=12,mb=40,s=svg(el,W,Hh,'已合入 PR 的规模与合入时长散点图');
+ legend($('lg-scat'),[[C.acc,'bot 账号合并','',D.rev.bot+' 个'],[C.app,'人工合并','',(D.rho.n-D.rev.bot)+' 个']]);var lg=$('lg-scat').children;lg[0].firstChild.style.borderRadius='50%';lg[1].firstChild.style.borderRadius='50%';
+ var lx=function(v){return Math.log(Math.max(1,v))/Math.LN10},ly=function(v){return Math.log(Math.max(1/60,v))/Math.LN10},x0=0,x1=4,y0=ly(1/60),y1=ly(1500);
+ var X=function(v){return ml+(lx(v)-x0)/(x1-x0)*(W-ml-mr)},Y=function(v){return mt+(1-(ly(v)-y0)/(y1-y0))*(Hh-mt-mb)};
+ [[1/60,'1 分'],[1/6,'10 分'],[1,'1 时'],[24,'1 天'],[240,'10 天']].forEach(function(t){S('line',{class:'g',x1:ml,x2:W-mr,y1:Y(t[0]),y2:Y(t[0])},s);S('text',{x:ml-8,y:Y(t[0])+4,'text-anchor':'end'},s,t[1])});
+ [1,10,100,1000,10000].forEach(function(v){S('line',{class:'g',x1:X(v),x2:X(v),y1:mt,y2:Hh-mb},s);S('text',{x:X(v),y:Hh-mb+16,'text-anchor':v===10000?'end':'middle'},s,nf(v))});
+ S('text',{x:W-mr,y:Hh-6,'text-anchor':'end',class:'s10'},s,'有效行（对数）→');S('text',{x:0,y:mt+2,class:'s10',style:'display:none'},s,'时长');
+ [[D.rev.botmed,C.acc,'bot 合并中位 '+D.rev.botmed+' 时'],[D.rev.hummed,C.app,'人工合并中位 '+D.rev.hummed+' 时']].forEach(function(mm){S('line',{x1:ml,x2:W-mr,y1:Y(mm[0]),y2:Y(mm[0]),stroke:mm[1],'stroke-width':1,opacity:.7,class:'fx'},s);S('text',{x:W-mr-4,y:Y(mm[0])-6,'text-anchor':'end',class:'t1',style:'paint-order:stroke;stroke:#0c0c0e;stroke-width:3px'},s,mm[2])});
+ D.scatter.slice().sort(function(a,b){return a.b-b.b}).forEach(function(p,i){var c=S('circle',{class:'dot fx',style:'--i:'+(i>>1),cx:f1(X(p.x)),cy:f1(Y(p.y)),r:3.6,fill:p.b?C.acc:C.app,opacity:p.b?.85:.9,stroke:C.bg,'stroke-width':1},s);
+  T(c,function(){return{t:p.id,r:[['有效行',nf(p.x)+' 行'],['建 → 合',dur(p.y)],['合并方',p.b?'bot 账号':'人工']]}})})}
+/* ---------- 调度 ---------- */
+var charts=[kpi,cum,heat,stream,month,sankey,lanes,function(){hist('c-h1',D.hist.ttm,'建 PR 到合入的时长分布')},function(){hist('c-h2',D.hist.lat,'Bug 群指令到建出 PR 的时长分布')},function(){hist('c-h3',D.hist.net,'单个 PR 有效行数分布',' 行')},rev,gate,assoc,scat];
+var lastW=0,io=null;
+function render(){var w=view.clientWidth;if(!w||w===lastW)return;lastW=w;charts.forEach(function(f){try{f()}catch(e){console.error('dash chart failed',f.name,e)}});observe()}
+function observe(){var ps=view.querySelectorAll('.an');if(!('IntersectionObserver' in window)){[].forEach.call(ps,function(p){p.classList.add('in')});return}
+ if(!io)io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});[].forEach.call(ps,function(p){if(!p.classList.contains('in'))io.observe(p)})}
+[].forEach.call($('tg-heat').children,function(b){b.addEventListener('click',function(){heatM=+b.getAttribute('data-m');[].forEach.call($('tg-heat').children,function(x){x.setAttribute('aria-pressed',x===b)});heat()})});
+var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(root.classList.contains('dash'))render()},160)});
+/* ---------- tab 路由 ---------- */
+var tr=$('tab-report'),td=$('tab-dash'),was=null;
+function route(){var h=location.hash||'',dash=h.indexOf('#dashboard')===0;root.classList.toggle('dash',dash);tr.setAttribute('aria-selected',!dash);td.setAttribute('aria-selected',dash);tipHide();
+ if(dash){render();if(was!==true)window.scrollTo({top:0,behavior:'instant'})}
+ else if(was===true){var t=h.length>1&&h!=='#report'?document.getElementById(h.slice(1)):null;if(t)t.scrollIntoView({behavior:'instant'});else window.scrollTo({top:0,behavior:'instant'})}
+ was=dash}
+window.addEventListener('hashchange',route);route();
+[].forEach.call(document.querySelectorAll('.dnav a'),function(a){a.setAttribute('tabindex','0');a.setAttribute('role','button');function go(e){e.preventDefault();var t=$(a.getAttribute('data-go'));if(t)t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth',block:'start'})}a.addEventListener('click',go);a.addEventListener('keydown',function(e){if(e.key==='Enter')go(e)})});
+})();
+</script></body></html>
