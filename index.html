@@ -106,7 +106,7 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 
 /* ---- 色阶：5 层灰底、3 级线、4 级字 ---- */
 #view-dash{--k:#000;--s1:#0c0c0e;--s2:#151518;--s3:#1e1e22;--ln:rgba(255,255,255,.16);--hr:rgba(255,255,255,.09);--gr:rgba(255,255,255,.055);
- --i1:#f5f5f7;--i2:#aeaeb4;--i3:#86868b;--i4:#6e6e73;--acc:#2997ff;--org:#e8642c;--aqu:#1fad7b;--app:#b9b9c0;--oth:#63636b;
+ --i1:#f5f5f7;--i2:#aeaeb4;--i3:#8e8e93;--i4:#8a8a90;--cy:#7ad9ff;--acc:#2997ff;--org:#e8642c;--aqu:#1fad7b;--app:#b9b9c0;--oth:#63636b;
  --sp:cubic-bezier(.16,1,.3,1);--spb:cubic-bezier(.34,1.4,.64,1);--spd:.9s;--spbd:.8s;
  position:relative;background:var(--k);color:var(--i1);padding:0 24px 48px;font-size:15px;line-height:1.5;font-variant-numeric:tabular-nums;overflow-x:clip}
 #dz-aura{position:absolute;left:0;right:0;top:0;height:1180px;pointer-events:none;will-change:transform;
@@ -174,7 +174,7 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 .cum-rd .l{font-size:12px;color:var(--i2);margin-top:6px;white-space:nowrap}.cum-rd .l i{display:inline-block;width:14px;height:2px;border-radius:1px;margin-right:7px;vertical-align:3.5px}
 .cum-rd .rd-d{flex:0 0 100%;font-size:11px;color:var(--i4);margin-top:6px;letter-spacing:.02em}
 .dz-ev{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 32px;margin:24px 0 0;padding:0;list-style:none}
-.dz-ev li{display:grid;grid-template-columns:20px 1fr;gap:12px;font-size:12px;color:var(--i3);line-height:1.55}
+.dz-ev li{display:grid;grid-template-columns:20px 1fr;gap:12px;font-size:12px;color:var(--i2);line-height:1.55}
 .dz-ev b{display:block;color:var(--i1);font-size:13px;font-weight:600;margin-bottom:2px}
 .dz-no{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);background:var(--s2);color:var(--i1);font-size:10px;font-weight:600;display:grid;place-items:center;margin-top:1px}
 
@@ -296,6 +296,50 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 .dz2>.pn{margin-top:24px}
 .dz-foot{max-width:1200px;margin:72px auto 0;padding:24px 0 32px;border-top:1px solid var(--gr);font-size:12px;line-height:1.6;color:var(--i4)}.dz-foot p{margin:0 0 8px;max-width:860px}
 @media print{html.dash nav{display:none}.an *{opacity:1!important;animation:none!important}#view-dash .pn.an{opacity:1!important;transform:none!important}}
+
+/* ================= v4 · 材质与光 ================= */
+/* 舞台：点阵底 + 曲线基线下的透视网格地面 + 卡片背后的光池（给玻璃可透的内容） */
+#view-dash::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(150,195,255,.15) 0 .8px,transparent 1.4px);background-size:28px 28px;background-position:50% 0;
+ -webkit-mask-image:linear-gradient(transparent var(--ds,1100px),#000 calc(var(--ds,1100px) + 360px),#000 calc(100% - 260px),transparent);mask-image:linear-gradient(transparent var(--ds,1100px),#000 calc(var(--ds,1100px) + 360px),#000 calc(100% - 260px),transparent)}
+#dz-floor{position:absolute;left:0;right:0;top:var(--hz,0);height:240px;pointer-events:none;overflow:hidden;perspective:420px;perspective-origin:50% 0;opacity:0;transition:opacity 1.6s ease .6s;
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent)}
+#dz-floor.on{opacity:1}
+#dz-floor i{position:absolute;left:-40%;right:-40%;top:0;height:640px;transform-origin:50% 0;transform:rotateX(70deg);overflow:hidden;
+ -webkit-mask-image:linear-gradient(transparent 0,#000 16%,transparent 60%);mask-image:linear-gradient(transparent 0,#000 16%,transparent 60%)}
+#dz-floor i::before{content:"";position:absolute;left:0;right:0;top:-80px;bottom:0;background-image:linear-gradient(rgba(96,176,255,.24) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(96,176,255,.24) 1.5px,transparent 1.5px);background-size:80px 80px;background-position:50% 0;animation:dz-floor 9s linear infinite paused;will-change:transform}
+#dz-floor.run i::before{animation-play-state:running}
+@keyframes dz-floor{to{transform:translate3d(0,80px,0)}}
+#dz-floor::after{content:"";position:absolute;left:6%;right:6%;top:0;height:110px;background:radial-gradient(50% 100% at 56% 0,rgba(56,150,255,.2),transparent 72%)}
+#dz-orbs{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+#dz-orbs i{position:absolute;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,var(--c),transparent)}
+/* 玻璃卡片：半透明 + 背景模糊，左上受光的 1px 描边；手机上关掉模糊，退回实底 */
+#view-dash .pn{box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 32px 64px -40px #000}
+.pn::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:linear-gradient(140deg,rgba(170,215,255,.42),rgba(255,255,255,.1) 22%,rgba(255,255,255,.045) 58%,rgba(120,190,255,.2));
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+@media (min-resolution:2dppx){#view-dash .pn{box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 32px 64px -40px #000}.pn::after{padding:.5px;background:linear-gradient(140deg,rgba(170,215,255,.62),rgba(255,255,255,.2) 22%,rgba(255,255,255,.1) 58%,rgba(120,190,255,.32))}}
+@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){@media (min-width:761px){
+ #view-dash .pn{background:linear-gradient(180deg,rgba(30,31,38,.62) 0,rgba(17,17,21,.62) 240px,rgba(12,12,15,.64) 100%);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}}}
+/* 2D / 3D 切换与天际线 */
+.dz-tgs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-end;flex:none}#d-heat .pn-h>div:first-child{max-width:660px}
+.dz-tg.tg2 i{width:calc((100% - 4px)/2)}.dz-tg[hidden]{display:none}
+#c-sky{position:relative;margin:-12px 0 28px}#c-sky[hidden]{display:none}
+#sk-cv{display:block;width:100%;touch-action:pan-y;cursor:grab;outline:none;-webkit-user-select:none;user-select:none;
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+#sk-cv:active{cursor:grabbing}#sk-cv:focus-visible{outline:1.5px solid var(--acc);outline-offset:-2px;border-radius:14px}
+.sk-lb{position:absolute;inset:0;pointer-events:none}
+.sk-lb span{position:absolute;left:0;top:0;font-size:10px;line-height:1;color:var(--i3);white-space:nowrap;will-change:transform}
+.sk-lb span.mo{color:var(--i2);font-size:11px}
+.sk-lb span.pk{font-size:11px;font-weight:600;color:var(--i1);padding:5px 9px;border-radius:99px;background:rgba(18,24,34,.62);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);box-shadow:inset 0 0 0 .5px rgba(170,215,255,.5),0 6px 18px rgba(0,0,0,.4)}
+.sk-lb span.pk::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:7px;background:rgba(170,215,255,.6)}
+.sk-t{position:absolute;left:0;top:12px;font-size:12px;font-weight:600;color:var(--i2);pointer-events:none}
+.sk-h{position:absolute;right:0;bottom:-6px;font-size:11px;color:var(--i3);pointer-events:none;text-align:right}
+/* 叠在图上的光效层：流光、粒子 */
+#c-cum,#c-sankey{position:relative}
+.fx-ov{position:absolute;left:0;top:0;pointer-events:none;will-change:transform}
+canvas.fx-ov{mix-blend-mode:plus-lighter}
+@media (max-width:760px){#dz-floor{height:200px;perspective:300px}#c-sky{margin:-4px 0 22px}.sk-t{top:4px}.dz-tgs{justify-content:flex-start;flex:1 1 100%;min-width:0}}
+@media (prefers-reduced-motion:reduce){#dz-floor{transition:none}#dz-floor i::before{animation:none}}
+@media print{#dz-floor,#dz-orbs,.fx-ov{display:none}}
 </style></head><body>
 <nav><div><b>代码工作复盘</b><span class="seg" role="tablist" aria-label="视图切换" data-al-en="View"><i aria-hidden="true"></i><a href="#report" role="tab" id="tab-report" aria-selected="true"><span class="l-zh">报告</span><span class="l-en">Report</span></a><a href="#dashboard" role="tab" id="tab-dash" aria-selected="false"><span class="l-zh">仪表盘</span><span class="l-en">Dashboard</span></a></span><script>(function(){var d=document.documentElement,q=/[?&]lang=(en|zh)\b/.exec(location.search),l=q?q[1]:null;try{l=l||localStorage.getItem('jr-lang')}catch(e){}if(l!=='en'&&l!=='zh'){var n=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];l=[].some.call(n,function(x){return/^zh/i.test(x)})?'zh':/^en/i.test(n[0])?'en':'zh'}if(l==='en'){d.classList.add('en','i18n-wait');d.lang='en'}if(location.hash.indexOf('#dashboard')===0)d.classList.add('dash')})()</script><span class="seg lang" role="group" aria-label="语言 Language"><i aria-hidden="true"></i><a href="?lang=zh" data-lang="zh" lang="zh-CN" aria-pressed="true" title="中文">中</a><a href="?lang=en" data-lang="en" lang="en" aria-pressed="false" title="English">EN</a></span><span class="dnav"><a data-go="top"><span class="l-zh">概览</span><span class="l-en">Overview</span></a><a data-go="d-cum"><span class="l-zh">节奏</span><span class="l-en">Cadence</span></a><a data-go="d-shift"><span class="l-zh">结构</span><span class="l-en">Structure</span></a><a data-go="d-lanes"><span class="l-zh">需求线</span><span class="l-en">Requirements</span></a><a data-go="d-speed"><span class="l-zh">速度</span><span class="l-en">Speed</span></a><a data-go="d-gate"><span class="l-zh">相关</span><span class="l-en">Correlation</span></a></span><a href="#numbers">概览</a><a href="#rhythm">节奏</a><a href="#lines">需求线</a><a href="#arch">架构</a><a href="#value">价值</a><a href="#limits">局限</a><a href="#method">方法</a></div></nav><div id="view-report">
 
@@ -443,7 +487,7 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 <footer><p>数据截止 2026-11-25。来源：GitHub PR 元数据、Paseo 会话记录、AI 聊天记录、Bug 反馈群话题。PR 链接指向私有仓库，无权限时无法打开。</p><p>局限：PR 作者为共享 bot 账号，归属靠时间窗口和话题推断，存在误差；时间覆盖实际为 8 月 24 日之后；合入不等于已发版；未包含任何线上效果数据。</p></footer>
 </div>
 <main id="view-dash" role="tabpanel" aria-labelledby="tab-dash">
-<div id="dz-aura" aria-hidden="true"></div>
+<div id="dz-aura" aria-hidden="true"></div><div id="dz-floor" aria-hidden="true"><i></i></div><div id="dz-orbs" aria-hidden="true"></div>
 <div class="dz-w">
 <header class="dz-hero an"><p class="dz-eb rise"><span class="l-zh">仪表盘 · 2026-08-24 至 11-25 · 核心集 172 个 PR</span><span class="l-en">Dashboard · Aug 24 – Nov 25, 2026 · Core set of 172 PRs</span></p>
 <h1 class="rise" style="--i:1"><span class="l-zh"><span class="hg">从修 App，</span>到建 Agent 的基建。</span><span class="l-en"><span class="hg">From fixing the App</span> <span class="hw">to building the Agent’s foundation.</span></span></h1>
@@ -457,9 +501,10 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 <section id="d-kpi" class="dz-kpi an" aria-label="关键数字" data-al-en="Key numbers"></section>
 
 <section class="pn an mt-l" id="d-heat"><div class="pn-h"><div><p class="dz-eb"><span class="l-zh">02 · 节奏</span><span class="l-en">02 · Cadence</span></p><h2><span class="l-zh">94 天里有 49 天新建了 PR；最密的一天是 11-16，15 个。<em>周末新建 26 个，占 15%。</em></span><span class="l-en">PRs were opened on 49 of 94 days. The busiest was Nov 16, with 15. <em>Weekends account for 26, or 15%.</em></span></h2></div>
-<div class="dz-tg" id="tg-heat" role="group" aria-label="热力图指标" data-al-en="Heatmap metric"><i aria-hidden="true"></i><button data-m="0" aria-pressed="true"><span class="l-zh">新建 PR</span><span class="l-en">New PRs</span></button><button data-m="1" aria-pressed="false"><span class="l-zh">合入 PR</span><span class="l-en">Merged PRs</span></button><button data-m="2" aria-pressed="false"><span class="l-zh">有效行</span><span class="l-en">Lines</span></button></div></div>
+<div class="dz-tgs"><div class="dz-tg tg2" id="tg-dim" role="group" aria-label="图表维度" data-al-en="Chart dimension" hidden><i aria-hidden="true"></i><button data-d="2" aria-pressed="true">2D</button><button data-d="3" aria-pressed="false">3D</button></div><div class="dz-tg" id="tg-heat" role="group" aria-label="热力图指标" data-al-en="Heatmap metric"><i aria-hidden="true"></i><button data-m="0" aria-pressed="true"><span class="l-zh">新建 PR</span><span class="l-en">New PRs</span></button><button data-m="1" aria-pressed="false"><span class="l-zh">合入 PR</span><span class="l-en">Merged PRs</span></button><button data-m="2" aria-pressed="false"><span class="l-zh">有效行</span><span class="l-en">Lines</span></button></div></div></div>
+<div id="c-sky" hidden><canvas id="sk-cv" tabindex="0" role="img"></canvas><div class="sk-lb" id="sk-lb" aria-hidden="true"></div><div class="sk-t" id="sk-t"></div><div class="sk-h" id="sk-h"></div></div>
 <div id="c-heat"></div>
-<p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">左侧一格一天，列为周（周一起），行为星期；右侧一格是“星期 × 小时”的合计，北京时间。新建 PR 与有效行按创建时间计，合入 PR 按合入时间计。颜色分四档，档位按非零格的 40 / 70 / 90 分位切分。</span><span class="l-en">Left: one cell per day; columns are weeks (starting Monday), rows are weekdays. Right: one cell per weekday × hour, Beijing time. New PRs and lines are counted by creation time, merged PRs by merge time. Four color steps, cut at the 40th, 70th, and 90th percentiles of non-zero cells.</span></p></section>
+<p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">左侧一格一天，列为周（周一起），行为星期；右侧一格是“星期 × 小时”的合计，北京时间。新建 PR 与有效行按创建时间计，合入 PR 按合入时间计。颜色分四档，档位按非零格的 40 / 70 / 90 分位切分。3D 视图把左侧换成立体柱：一根柱一天，柱高与数值成正比（线性，最高日为满高），颜色档位与 2D 相同；右侧“星期 × 小时”仍是平面格。</span><span class="l-en">Left: one cell per day; columns are weeks (starting Monday), rows are weekdays. Right: one cell per weekday × hour, Beijing time. New PRs and lines are counted by creation time, merged PRs by merge time. Four color steps, cut at the 40th, 70th, and 90th percentiles of non-zero cells. The 3D view replaces the left block with columns: one per day, height proportional to the value (linear; the peak day is full height), with the same color steps as 2D. The weekday × hour block stays flat.</span></p></section>
 
 <section class="stg" id="d-shift"><div class="pn-h an"><div><p class="dz-eb rise"><span class="l-zh">03 · 结构</span><span class="l-en">03 · Structure</span></p><h2 class="rise" style="--i:1"><span class="l-zh">App 仓占新建 PR 的比例从 9 月的 65% 降到 11 月的 12%；Agent 服务仓从 13% 升到 51%。</span><span class="l-en">The App repo’s share of new PRs fell from 65% in September to 12% in November; the Agent service repo’s rose from 13% to 51%.</span></h2></div></div>
 <div class="an"><div class="dz-lg rise" id="lg-shift"></div><div id="c-stream"></div></div><div class="mo-w an" id="c-month" data-foc></div>
@@ -512,7 +557,7 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 'use strict';
 var D=JSON.parse(document.getElementById('dash-data').textContent),root=document.documentElement,view=document.getElementById('view-dash');
 var NS='http://www.w3.org/2000/svg',ND=D.meta.nday,NW=D.meta.nweek,D0=new Date(D.meta.d0+'T00:00:00Z');
-var C={acc:'#2997ff',org:'#e8642c',aqu:'#1fad7b',app:'#b9b9c0',oth:'#63636b',wht:'#e8e8ed',i1:'#f5f5f7',i2:'#aeaeb4',i3:'#86868b',i4:'#6e6e73',s1:'#0c0c0e',k:'#000'};
+var C={acc:'#2997ff',org:'#e8642c',aqu:'#1fad7b',app:'#b9b9c0',oth:'#63636b',wht:'#e8e8ed',i1:'#f5f5f7',i2:'#aeaeb4',i3:'#8e8e93',i4:'#8a8a90',cy:'#7ad9ff',s1:'#0c0c0e',k:'#000'};
 var GC=[C.app,C.acc,C.aqu,C.oth],WD=['一','二','三','四','五','六','日'],WDE=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],MOE=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],MOF=['January','February','March','April','May','June','July','August','September','October','November','December'];
 /* ---------- 语言：EN 为真时所有图表文案、日期、单位走英文 ---------- */
 var EN=root.classList.contains('en'),I18N=JSON.parse(document.getElementById('i18n-en').textContent);
@@ -574,6 +619,18 @@ document.addEventListener('pointerdown',function(e){if(!owner(e.target))tipHide(
 window.addEventListener('scroll',function(){if(tipOn)tipHide()},{passive:true});
 function T(el,fn,focus){el.__tip=fn;if(focus)el.setAttribute('tabindex','0');return el}
 
+/* ---------- 光效调度：一个 rAF，按元素可见性启停；页面隐藏或切到报告 tab 时整体停 ---------- */
+var FX=[],fxOn=false,fxIO=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){FX.forEach(function(o){if(o.el===e.target){o.vis=e.isIntersecting;o.last=0}})});fxKick()},{threshold:.02}):null;
+function fxAdd(el,fn){var o={el:el,fn:fn,vis:!fxIO,t:0,last:0};FX.push(o);if(fxIO)fxIO.observe(el);fxKick();return o}
+function fxDel(o){var i=FX.indexOf(o);if(i>=0)FX.splice(i,1);if(fxIO&&!FX.some(function(x){return x.el===o.el}))fxIO.unobserve(o.el)}
+/* 降级：某个光效连续 60 帧的平均帧间隔超过 40ms（低于 25fps）就调它自己的 low()：3D 退回 2D，粒子收掉 */
+var fxPrev=0;
+function fxLoop(now){fxOn=false;if(document.hidden||!root.classList.contains('dash')){FX.forEach(function(o){o.last=0});fxPrev=0;return}var any=false,gap=fxPrev?now-fxPrev:0;fxPrev=now;
+ FX.slice().forEach(function(o){if(!o.vis){o.last=0;return}var dt=o.last?Math.min(.05,(now-o.last)/1000):0;o.last=now;o.t+=dt;if(o.fn(o.t,dt)===false){o.last=0;return}any=true;
+  if(o.low&&o.t>1&&gap>0&&gap<500){o.gn=(o.gn||0)+1;o.gs=(o.gs||0)+gap;if(o.gn>=60){var slow=o.gs/o.gn>40;o.gn=o.gs=0;if(slow)o.low()}}});if(any)fxKick();else fxPrev=0}
+function fxKick(){if(!fxOn){fxOn=true;requestAnimationFrame(fxLoop)}}
+document.addEventListener('visibilitychange',fxKick);
+
 /* ---------- paths ---------- */
 function mono(P){var n=P.length,i,dx=[],m=[],t=[],o=[];for(i=0;i<n-1;i++){dx[i]=P[i+1][0]-P[i][0];m[i]=(P[i+1][1]-P[i][1])/dx[i]}t[0]=m[0];t[n-1]=m[n-2];for(i=1;i<n-1;i++)t[i]=m[i-1]*m[i]<=0?0:(m[i-1]+m[i])/2;
  for(i=0;i<n-1;i++){if(m[i]===0){t[i]=0;t[i+1]=0}else{var a=t[i]/m[i],b=t[i+1]/m[i],s=a*a+b*b;if(s>9){var k=3/Math.sqrt(s);t[i]=k*a*m[i];t[i+1]=k*b*m[i]}}}
@@ -608,6 +665,7 @@ function kpi(){var el=$('d-kpi');el.textContent='';D.kpi.forEach(function(k0,ki)
   r.addEventListener('pointerenter',function(){if(v==null)return;hv.style.display='';hv.setAttribute('cx',X(i));hv.setAttribute('cy',Y(v))});r.addEventListener('pointerleave',function(){hv.style.display='none'})})})}
 
 /* ---------- 01 累计（英雄画面） ---------- */
+var cumFx=null,cumY0=0;
 function cum(){var el=$('c-cum'),W=el.clientWidth,m=W<720,ov=window.matchMedia('(min-width:1200px)').matches,N=D.cum.pr[ND-1],LT=D.cum.ln[ND-1];
  /* 读数：平时是期末值，划过曲线时跟随当日 */
  var rd=$('rd-cum');rd.textContent='';function item(col,label,unit){var d=H('div',null,rd),n=H('div','n',d),num=H('span',null,n);H('small',null,n,unit);var l=H('div','l',d),sw=H('i',null,l);sw.style.background=col;l.appendChild(document.createTextNode(label));return num}
@@ -616,19 +674,29 @@ function cum(){var el=$('c-cum'),W=el.clientWidth,m=W<720,ov=window.matchMedia('
  var hd=rd.parentNode,ovW=ov?hd.offsetWidth+28:0,ovH=ov?hd.offsetHeight+14:0;
  var Hh=m?310:Math.max(430,Math.min(500,Math.round(W*.41))),ml=0,mr=m?34:44,mt=m?56:64,mb=32,s=svg(el,W,Hh,L('累计已合入 PR 与累计已合入有效行，各自占期末值的百分比','Cumulative merged PRs and cumulative lines merged, each as a share of its final value')),df=S('defs',null,s);
  var X=function(d){return ml+d/(ND-1)*(W-ml-mr)},Y=function(p){return mt+(1-p)*(Hh-mt-mb)},y0=Y(0),xe=X(ND-1);
- var gA=lg(df,'cg-a',0,mt,0,y0,[[0,C.acc,.3],[.55,C.acc,.08],[1,C.acc,0]]),gS=lg(df,'cg-s',ml,0,xe,0,[[0,'#1c6fd8',1],[.5,C.acc,1],[1,'#9bd0ff',1]]),gB=lg(df,'cg-b',0,mt,0,y0,[[0,'#fff',.085],[1,'#fff',.012]]),gX=lg(df,'cg-x',0,mt-12,0,y0,[[0,'#fff',0],[.14,'#fff',.55],[1,'#fff',.18]]);
- S('feGaussianBlur',{stdDeviation:7},S('filter',{id:'cg-f',x:'-5%',y:'-30%',width:'110%',height:'160%'},df));
+ var gA=lg(df,'cg-a',0,mt,0,y0,[[0,C.acc,.3],[.55,C.acc,.08],[1,C.acc,0]]),gS=lg(df,'cg-s',ml,0,xe,0,[[0,'#1f72e6',1],[.5,'#2f9bff',1],[1,'#8fe2ff',1]]),gB=lg(df,'cg-b',0,mt,0,y0,[[0,'#fff',.085],[1,'#fff',.012]]),gX=lg(df,'cg-x',0,mt-12,0,y0,[[0,'#fff',0],[.14,'#fff',.55],[1,'#fff',.18]]);
+ function blur(id,sd,py){S('feGaussianBlur',{stdDeviation:sd},S('filter',{id:id,x:'-6%',y:'-'+py+'%',width:'112%',height:(100+2*py)+'%','color-interpolation-filters':'sRGB'},df))}
+ blur('cg-f1',m?11:19,70);blur('cg-f2',m?4.5:6.5,30);blur('cg-f3',1.5,12);cumY0=y0;
  var ev=D.cum.ev.map(function(e,i){return{d:e.d,d2:e.d2,t:EN?D.en.ev[i].t:e.t,s:EN?D.en.ev[i].s:e.s}});
  ev.forEach(function(e,i){if(e.d2==null)return;var x=X(e.d),x2=X(e.d2),g=S('g',{class:'fx',style:'--i:'+(20+i*14)},s);S('rect',{x:x,y:mt,width:x2-x,height:y0-mt,fill:gB},g);S('line',{x1:x,x2:x2,y1:mt+.5,y2:mt+.5,stroke:'rgba(255,255,255,.3)','stroke-width':1,'shape-rendering':'crispEdges'},g)});
- [0,.25,.5,.75,1].forEach(function(p){S('line',{class:p?'g':'ax',x1:ovW&&Y(p)<ovH?ovW:ml,x2:xe,y1:Y(p),y2:Y(p)},s);S('text',{x:W,y:Y(p)+4,'text-anchor':'end',class:'s10'},s,Math.round(p*100)+'%')});
+ [0,.25,.5,.75,1].forEach(function(p){S('line',{class:p?'g':'ax',x1:ovW&&Y(p)<ovH?ovW:ml,x2:xe,y1:Y(p),y2:Y(p)},s);S('text',{x:W,y:Y(p)+4,'text-anchor':'end',class:'s10 t2'},s,Math.round(p*100)+'%')});
  months(s,X,mt,y0,Hh-9,false);
  function P(a,tot){return a.map(function(v,i){return[X(i),Y(v/tot)]})}
  var dP=curve(P(D.cum.pr,N)),dL=curve(P(D.cum.ln,LT));
  S('path',{d:dP+'L'+f1(xe)+','+y0+'L'+f1(X(0))+','+y0+'Z',fill:gA,class:'fx',style:'--i:70','pointer-events':'none'},s);
- S('path',{d:dP,fill:'none',stroke:C.acc,'stroke-width':8,opacity:.5,filter:'url(#cg-f)',class:'fx',style:'--i:110','pointer-events':'none'},s);
+ /* bloom：宽、中、紧三层模糊描线叠在一起，再压一根白热芯线 */
+ var bl=S('g',{class:'fx',style:'--i:110','pointer-events':'none'},s);
+ S('path',{d:dP,fill:'none',stroke:C.acc,'stroke-width':m?12:18,opacity:.3,filter:'url(#cg-f1)'},bl);
+ S('path',{d:dP,fill:'none',stroke:'#3aa0ff','stroke-width':7,opacity:.5,filter:'url(#cg-f2)'},bl);
+ S('path',{d:dP,fill:'none',stroke:'#8fd8ff','stroke-width':3,opacity:.5,filter:'url(#cg-f3)'},bl);
  drawable(S('path',{d:dL,fill:'none',stroke:C.wht,'stroke-width':1.25,opacity:.72,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.45s'},s));
- drawable(S('path',{d:dP,fill:'none',stroke:gS,'stroke-width':2.25,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.2s'},s));
- var eg=S('g',{class:'fx',style:'--i:140','pointer-events':'none'},s);S('circle',{cx:xe,cy:Y(1),r:17,fill:C.acc,class:'pulse'},eg);S('circle',{cx:xe,cy:Y(1),r:5,fill:'#b6dcff',stroke:C.k,'stroke-width':2},eg);
+ var core=drawable(S('path',{d:dP,fill:'none',stroke:gS,'stroke-width':2.25,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.2s'},s));
+ drawable(S('path',{d:dP,fill:'none',stroke:'#f2f9ff','stroke-width':.75,opacity:.62,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.2s','pointer-events':'none'},s));
+ var eg=S('g',{class:'fx',style:'--i:140','pointer-events':'none'},s),ey=Y(1);S('circle',{cx:xe,cy:ey,r:m?12:17,fill:C.acc,class:'pulse'},eg);
+ S('circle',{cx:xe,cy:ey,r:m?6:10,fill:'#7cc8ff',opacity:.6,filter:'url(#cg-f'+(m?3:2)+')'},eg);
+ if(!m)S('line',{x1:xe-15,x2:xe+15,y1:ey,y2:ey,stroke:lg(df,'cg-fh',xe-15,0,xe+15,0,[[0,'#cfeaff',0],[.5,'#fff',.95],[1,'#cfeaff',0]]),'stroke-width':1},eg);
+ S('line',{x1:xe,x2:xe,y1:ey-22,y2:ey+22,stroke:lg(df,'cg-fv',0,ey-22,0,ey+22,[[0,'#cfeaff',0],[.5,'#fff',.95],[1,'#cfeaff',0]]),'stroke-width':1},eg);
+ S('circle',{cx:xe,cy:ey,r:5,fill:'#d9efff',stroke:C.k,'stroke-width':2},eg);
  /* 事件：编号直接标在图上，说明在图下 */
  ev.forEach(function(e,i){var band=e.d2!=null,cx=band?X(e.d)+10:X(e.d),cy=band?mt-18:mt-(m?40:42),g=S('g',{class:'fx',style:'--i:'+(30+i*14)},s);
   if(!band)S('line',{x1:cx,x2:cx,y1:cy+9,y2:y0,stroke:'rgba(255,255,255,.34)','stroke-width':1,'shape-rendering':'crispEdges'},g);
@@ -636,39 +704,201 @@ function cum(){var el=$('c-cum'),W=el.clientWidth,m=W<720,ov=window.matchMedia('
   if(!m)S('text',{x:band?cx+16:cx-16,y:cy+4,'text-anchor':band?'start':'end',class:'t1 b s12'},g,e.t)});
  var ol=$('ev-cum');ol.textContent='';ev.forEach(function(e,i){var li=H('li','rise',ol);li.style.setProperty('--i',6+i);H('span','dz-no',li,i+1);var d=H('div',null,li);H('b',null,d,e.t);d.appendChild(document.createTextNode(e.s))});
  /* 十字准星 */
- var ch=S('g',{style:'display:none','pointer-events':'none'},s),cl=S('line',{y1:mt-12,y2:y0,stroke:gX,'stroke-width':1},ch),c1=S('circle',{r:4.25,fill:C.wht,stroke:C.k,'stroke-width':2},ch),c2h=S('circle',{r:11,fill:C.acc,opacity:.22},ch),c2=S('circle',{r:5,fill:C.acc,stroke:C.k,'stroke-width':2},ch);
+ /* 悬停局部点亮：一团跟手的光 + 曲线上被照亮的一小段 */
+ var ch=S('g',{style:'display:none','pointer-events':'none'},s),spR=m?90:150,spG=S('radialGradient',{id:'cg-sp',gradientUnits:'userSpaceOnUse',r:spR},df),hlG=S('linearGradient',{id:'cg-hl',gradientUnits:'userSpaceOnUse',y1:0,y2:0},df);
+ S('stop',{offset:0,'stop-color':'#3aa0ff','stop-opacity':.24},spG);S('stop',{offset:1,'stop-color':'#3aa0ff','stop-opacity':0},spG);[[0,0],[.5,1],[1,0]].forEach(function(q){S('stop',{offset:q[0],'stop-color':'#e6f5ff','stop-opacity':q[1]},hlG)});
+ S('rect',{x:ml,y:mt-12,width:xe-ml,height:y0-mt+12},S('clipPath',{id:'cg-cl'},df));
+ var sp=S('circle',{r:spR,fill:'url(#cg-sp)'},S('g',{'clip-path':'url(#cg-cl)'},ch));S('path',{d:dP,fill:'none',stroke:'url(#cg-hl)','stroke-width':7,opacity:.75,filter:'url(#cg-f2)'},ch);S('path',{d:dP,fill:'none',stroke:'url(#cg-hl)','stroke-width':2.5,'stroke-linecap':'round'},ch);
+ var cl=S('line',{y1:mt-12,y2:y0,stroke:gX,'stroke-width':1},ch),c1=S('circle',{r:4.25,fill:C.wht,stroke:C.k,'stroke-width':2},ch),c2h=S('circle',{r:11,fill:C.acc,opacity:.22},ch),c2=S('circle',{r:5,fill:C.acc,stroke:C.k,'stroke-width':2},ch);
  var cpW=EN?96:84,cpR=S('rect',{y:y0+7,width:cpW,height:20,rx:10,fill:'#1e1e22',stroke:'rgba(255,255,255,.16)'},ch),cpT=S('text',{y:y0+21,'text-anchor':'middle',class:'t1 b s10'},ch);
  var hit=S('rect',{class:'hit',x:ml,y:mt-12,width:xe-ml+12,height:y0-mt+12,tabindex:0,'aria-label':L('逐日读数，左右方向键移动','Daily readout; use the left and right arrow keys')},s),cur=ND-1;hit.__sticky=true;
  function row(i){return{t:dw(i),r:[[L('累计已合入 PR','Merged PRs'),cnt(D.cum.pr[i])+' · '+pc(D.cum.pr[i],N),C.acc],[L('累计已合入有效行','Lines merged'),lns(D.cum.ln[i])+' · '+pc(D.cum.ln[i],LT),C.wht],[L('当日新建 / 合入','Opened / merged that day'),D.day.c[i]+' / '+D.day.m[i]]]}}
- function at(i,cx,cy){cur=i=Math.max(0,Math.min(ND-1,i));var x=X(i),yl=Y(D.cum.ln[i]/LT),yp=Y(D.cum.pr[i]/N);ch.style.display='';cl.setAttribute('x1',x);cl.setAttribute('x2',x);c1.setAttribute('cx',x);c1.setAttribute('cy',yl);[c2h,c2].forEach(function(c){c.setAttribute('cx',x);c.setAttribute('cy',yp)});
+ function at(i,cx,cy){cur=i=Math.max(0,Math.min(ND-1,i));var x=X(i),yl=Y(D.cum.ln[i]/LT),yp=Y(D.cum.pr[i]/N);ch.style.display='';cl.setAttribute('x1',x);cl.setAttribute('x2',x);c1.setAttribute('cx',x);c1.setAttribute('cy',yl);[c2h,c2,sp].forEach(function(c){c.setAttribute('cx',x);c.setAttribute('cy',yp)});spG.setAttribute('cx',x);spG.setAttribute('cy',yp);hlG.setAttribute('x1',x-(m?46:78));hlG.setAttribute('x2',x+(m?46:78));
   var px=Math.max(ml+cpW/2,Math.min(xe-cpW/2,x));cpR.setAttribute('x',px-cpW/2);cpT.setAttribute('x',px);cpT.textContent=dw(i);
   rN.textContent=D.cum.pr[i];rL.textContent=nf(D.cum.ln[i]);rD.textContent=dw(i)+(EN?' · '+D.day.c[i]+' opened / '+D.day.m[i]+' merged':' · 当日新建 '+D.day.c[i]+' / 合入 '+D.day.m[i]);
   var r=s.getBoundingClientRect();tipOn=hit;tipShow(row(i),cx!=null?cx:r.left+x,cy!=null?cy:r.top+Math.min(yl,yp)-6)}
  function off(){ch.style.display='none';rdEnd();tipHide()}
  function mv(e){var r=s.getBoundingClientRect();at(Math.round((e.clientX-r.left-ml)/(xe-ml)*(ND-1)),e.clientX,e.clientY)}
  hit.addEventListener('pointermove',mv);hit.addEventListener('pointerdown',mv);hit.addEventListener('pointerleave',off);
- hit.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();at(cur+(e.key==='ArrowLeft'?-1:1))}});hit.addEventListener('focus',function(){if(hit.matches(':focus-visible'))at(cur)});hit.addEventListener('blur',off)}
+ hit.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();at(cur+(e.key==='ArrowLeft'?-1:1))}});hit.addEventListener('focus',function(){if(hit.matches(':focus-visible'))at(cur)});hit.addEventListener('blur',off);
+ /* 流光：一颗光点带三段渐短的尾迹沿 PR 曲线走一遍，每 9 秒一次；画在独立的合成层上，不让底图的模糊滤镜重绘 */
+ if(cumFx){fxDel(cumFx);cumFx=null}
+ if(!RM){var so=S('svg',{class:'fx-ov',width:W,height:Hh,viewBox:'0 0 '+W+' '+Hh,'aria-hidden':'true',style:'opacity:0'},el),rg=S('radialGradient',{id:'cm-g'},S('defs',null,so)),tot=core.getTotalLength(),shown=false;
+  [[0,'#fff',.95],[.16,'#c8ecff',.7],[.5,'#3aa0ff',.2],[1,'#2997ff',0]].forEach(function(q){S('stop',{offset:q[0],'stop-color':q[1],'stop-opacity':q[2]},rg)});
+  var tr=[[.2,'#2f9bff',.3,3.5],[.09,'#7fd4ff',.55,2.75],[.03,'#f2fbff',.95,2]].map(function(q){var T=tot*q[0];return{T:T,p:S('path',{d:dP,fill:'none',stroke:q[1],'stroke-width':q[3],'stroke-linecap':'round',opacity:q[2],'stroke-dasharray':f1(T)+' '+f1(tot+T+9)},so)}}),hd=S('circle',{r:m?12:17,fill:'url(#cm-g)'},so);
+  cumFx=fxAdd(el,function(t){var ph=(t-2.8)%9,u=ph/3.2;if(t<2.8||u>1){if(shown){so.style.opacity=0;shown=false}return}
+   var e=u<.5?2*u*u:1-2*(1-u)*(1-u),sl=e*tot,pt0=core.getPointAtLength(sl);shown=true;so.style.opacity=Math.min(1,u*9,(1-u)*5).toFixed(3);
+   tr.forEach(function(q){q.p.setAttribute('stroke-dashoffset',f1(q.T-sl))});hd.setAttribute('cx',f1(pt0.x));hd.setAttribute('cy',f1(pt0.y))})}}
 
 /* ---------- 02 热力图 ---------- */
 var heatM=0,RAMP=['rgba(255,255,255,.05)','#11345c','#1a5fae','#2a8ff5','#8accff'];
 function levels(vals){var nz=vals.filter(function(v){return v>0}).sort(function(a,b){return a-b}),q=function(p){return nz[Math.min(nz.length-1,Math.floor(p*nz.length))]};var t=[q(.4),q(.7),q(.9)];return function(v){return v<=0?0:1+(v>t[0])+(v>t[1])+(v>t[2])}}
-function heat(q){q=q===true?.3:1;var el=$('c-heat'),W=el.clientWidth,m=W<720,lab=24,gap=3,unit=EN?['','',' lines'][heatM]:[' 个',' 个',' 行'][heatM],name=(EN?['New PRs','Merged PRs','Lines']:['新建 PR','合入 PR','有效行'])[heatM],WL=EN?['M','T','W','T','F','S','S']:WD;
+function heat(q){q=q===true?.3:1;var el=$('c-heat'),W=el.clientWidth,m=W<720,sk=SK.on,lab=24,gap=3,unit=EN?['','',' lines'][heatM]:[' 个',' 个',' 行'][heatM],name=(EN?['New PRs','Merged PRs','Lines']:['新建 PR','合入 PR','有效行'])[heatM],WL=EN?['M','T','W','T','F','S','S']:WD;
  var dv=[D.day.c,D.day.m,D.day.l][heatM],pv=D.punch[heatM],cs,ps,bx2,by2,top=36;
- if(m){cs=Math.min(24,Math.floor((W-lab)/NW));ps=Math.floor((W-lab)/24);bx2=0;by2=top+7*cs+34}else{cs=Math.min(28,Math.floor((W-lab*2-64)/(NW+24)));ps=cs;bx2=lab+NW*cs+64;by2=0}
- var Hh=m?by2+top+7*ps+58:top+7*cs+40,s=svg(el,W,Hh,EN?name+' by day and by weekday × hour, heatmap':'逐日与星期×小时的'+name+'热力图'),lv=levels(dv),lp=levels([].concat.apply([],pv)),mxv=Math.max.apply(0,dv),mxi=dv.indexOf(mxv);
+ if(sk){cs=0;ps=Math.min(28,Math.floor((W-lab)/24));bx2=0;by2=0}else if(m){cs=Math.min(24,Math.floor((W-lab)/NW));ps=Math.floor((W-lab)/24);bx2=0;by2=top+7*cs+34}else{cs=Math.min(28,Math.floor((W-lab*2-64)/(NW+24)));ps=cs;bx2=lab+NW*cs+64;by2=0}
+ var Hh=sk?top+7*ps+(m?58:40):m?by2+top+7*ps+58:top+7*cs+40,s=svg(el,W,Hh,EN?name+' by day and by weekday × hour, heatmap':'逐日与星期×小时的'+name+'热力图'),lv=levels(dv),lp=levels([].concat.apply([],pv)),mxv=Math.max.apply(0,dv),mxi=dv.indexOf(mxv);
  function block(x0,y0,c,title){S('text',{x:x0+lab,y:y0+11,class:'t2 b s12'},s,title);[0,2,4,6].forEach(function(r){S('text',{x:x0,y:y0+top+r*c+(c-gap)/2+4,class:'s10'},s,WL[r])})}
- block(0,0,cs,EN?'By day · '+NW+' weeks':'按日 · '+NW+' 周');
- [[0,8],[2,9],[6,10],[10,11]].forEach(function(mm){S('text',{x:lab+mm[0]*cs,y:top-8,class:'s10'},s,mon(mm[1]))});
- dv.forEach(function(v,i){var w=Math.floor(i/7),r=i%7,c=S('rect',{class:'cell hc pop',style:'--i:'+f1((w*3+r)*q),x:lab+w*cs,y:top+r*cs,width:cs-gap,height:cs-gap,rx:Math.max(2,cs/4.5),fill:RAMP[lv(v)]},s);
+ if(!sk){block(0,0,cs,EN?'By day · '+NW+' weeks':'按日 · '+NW+' 周');
+ [[0,8],[2,9],[6,10],[10,11]].forEach(function(mm){S('text',{x:lab+mm[0]*cs,y:top-8,class:'s10'},s,mon(mm[1]))})}
+ if(!sk)dv.forEach(function(v,i){var w=Math.floor(i/7),r=i%7,c=S('rect',{class:'cell hc pop',style:'--i:'+f1((w*3+r)*q),x:lab+w*cs,y:top+r*cs,width:cs-gap,height:cs-gap,rx:Math.max(2,cs/4.5),fill:RAMP[lv(v)]},s);
   T(c,function(){return{t:dw(i),r:[[L('新建 PR','New PRs'),cnt(D.day.c[i])],[L('合入 PR','Merged PRs'),cnt(D.day.m[i])],[L('新建 PR 的有效行','Lines in new PRs'),lns(D.day.l[i])]]}})});
- var rw=Math.floor(mxi/7),rr=mxi%7;S('rect',{class:'fx',style:'--i:'+Math.round(70*q),x:lab+rw*cs-2.5,y:top+rr*cs-2.5,width:cs-gap+5,height:cs-gap+5,rx:Math.max(2,cs/4.5)+2.5,fill:'none',stroke:C.i1,'stroke-width':1.25,'pointer-events':'none'},s);
+ var rw=Math.floor(mxi/7),rr=mxi%7;if(!sk)S('rect',{class:'fx',style:'--i:'+Math.round(70*q),x:lab+rw*cs-2.5,y:top+rr*cs-2.5,width:cs-gap+5,height:cs-gap+5,rx:Math.max(2,cs/4.5)+2.5,fill:'none',stroke:C.i1,'stroke-width':1.25,'pointer-events':'none'},s);
  var py=by2;block(bx2,py,ps,L('按星期 × 小时','By weekday × hour'));[0,6,12,18,23].forEach(function(h){S('text',{x:bx2+lab+h*ps+(ps-gap)/2,y:py+top-8,'text-anchor':'middle',class:'s10'},s,EN?p2(h)+':00':h+' 时')});
  pv.forEach(function(row,r){row.forEach(function(v,h){var g2=m?2:gap,c=S('rect',{class:'cell hc pop',style:'--i:'+f1((12+h*2+r)*q),x:bx2+lab+h*ps,y:py+top+r*ps,width:ps-g2,height:ps-g2,rx:Math.max(1.5,ps/4.5),fill:RAMP[lp(v)]},s);
   T(c,function(){return{t:(EN?WDE[r]:'周'+WD[r])+' '+p2(h)+':00–'+p2(h)+':59',r:[[name,nf(v)+unit]]}})})});
  var ly=Hh-(m?32:10),lx=lab,tot=dv.reduce(function(a,b){return a+b},0),act=dv.filter(function(v){return v>0}).length;
  var lw=EN?26:17;S('text',{x:lx,y:ly+1,class:'s10'},s,L('少','Less'));RAMP.forEach(function(c,i){S('rect',{x:lx+lw+i*14,y:ly-9,width:11,height:11,rx:3,fill:c},s)});S('text',{x:lx+lw+5*14+3,y:ly+1,class:'s10'},s,L('多','More'));
- var sx=m?lx:lx+lw+5*14+(EN?44:34),sy=m?ly+22:ly+1;S('rect',{x:sx,y:sy-9.5,width:10,height:10,rx:3,fill:'none',stroke:C.i1,'stroke-width':1.25},s);
+ var sx=m?lx:lx+lw+5*14+(EN?44:34),sy=m?ly+22:ly+1;if(!sk)S('rect',{x:sx,y:sy-9.5,width:10,height:10,rx:3,fill:'none',stroke:C.i1,'stroke-width':1.25},s);else sx-=17;
  S('text',{x:sx+17,y:sy,class:'t2'},s,EN?'Peak day '+dl(mxi)+' · '+nf(mxv)+unit+'\u2003Total '+nf(tot)+unit+' · '+act+' active days':'单日最高 '+dl(mxi)+' · '+nf(mxv)+unit+'　合计 '+nf(tot)+unit+' · '+act+' 天有记录')}
+
+/* ---------- 02 · 3D 天际线：原生 WebGL2，自写着色器；拿不到上下文、软件渲染、减弱动效、低配设备时退回 2D ---------- */
+var SK={ok:null,on:false,user:null,fx:null,hover:-1,shown:-1,mx:null,my:0,yaw:-.5,pitch:.5,c:-.5,ph:0,idle:9,grow:1,mix:1,scan:99,drag:false,kb:false},HMAX=4.6,
+ SOFT=/[?&]gl=soft\b/.test(location.search),LOW=(navigator.hardwareConcurrency||8)<4||(navigator.deviceMemory||8)<4;
+function hex3(h){return[parseInt(h.slice(1,3),16)/255,parseInt(h.slice(3,5),16)/255,parseInt(h.slice(5,7),16)/255]}
+var RAMP3=[[.085,.09,.108]].concat(RAMP.slice(1).map(hex3));
+function skyGL(){if(SK.ok!=null)return SK.ok;SK.ok=false;var cv=$('sk-cv'),gl=null;
+ try{gl=cv.getContext('webgl2',{alpha:true,antialias:true,premultipliedAlpha:true,failIfMajorPerformanceCaveat:!SOFT})}catch(e){}
+ if(!gl)return false;
+ /* 软件渲染（SwiftShader、llvmpipe 等）当作不可用：能出图但只有十来帧 */
+ var rn=String(gl.getParameter(gl.RENDERER)||'');if(!rn||/^webkit webgl$/i.test(rn)){var di=gl.getExtension('WEBGL_debug_renderer_info');if(di)rn=String(gl.getParameter(di.UNMASKED_RENDERER_WEBGL)||'')}
+ if(!SOFT&&/swiftshader|llvmpipe|softpipe|software|basic render/i.test(rn))return false;
+ try{
+  var HD='#version 300 es\nprecision highp float;\n';
+  var prog=function(vs,fs){var sh=function(ty,src){var o=gl.createShader(ty);gl.shaderSource(o,HD+src);gl.compileShader(o);if(!gl.getShaderParameter(o,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(o));return o};
+   var p=gl.createProgram();gl.attachShader(p,sh(gl.VERTEX_SHADER,vs));gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));
+   var u={},n=gl.getProgramParameter(p,gl.ACTIVE_UNIFORMS);for(var i=0;i<n;i++){var a=gl.getActiveUniform(p,i);u[a.name]=gl.getUniformLocation(p,a.name)}return{p:p,u:u}};
+  /* 柱：侧面自下而上由暗到亮，顶面自发光，竖棱与顶沿各有一道亮线；扫描光、悬停点亮、距离雾都在片元里算 */
+  SK.pb=prog('layout(location=0) in vec3 aP;layout(location=1) in vec3 aN;layout(location=2) in vec2 aUV;layout(location=3) in vec4 aI;layout(location=4) in vec2 aH;layout(location=5) in vec3 aC0;layout(location=6) in vec3 aC1;'
+   +'uniform mat4 uVP;uniform float uMix,uGrow,uFlip,uHover;out vec3 vN,vW,vC;out vec2 vUV,vSz;out float vH,vSel,vLit;'
+   +'void main(){float g=clamp(uGrow*2.3-aI.w,0.,1.)-1.;g=1.+2.1*g*g*g+1.1*g*g;float hv=mix(aH.x,aH.y,uMix),h=max(hv*g,.035);'
+   +'vec3 w=vec3(aI.x+aP.x*.8,aP.y*h*uFlip,aI.y+aP.z*.8);vSz=aN.y>.5?vec2(.8):vec2(.8,h);vUV=aUV*vSz;vN=aN;vW=w;vH=h;vC=mix(aC0,aC1,uMix);vLit=step(.001,hv);vSel=1.-step(.5,abs(aI.z-uHover));gl_Position=uVP*vec4(w,1.);}',
+   'in vec3 vN,vW,vC;in vec2 vUV,vSz;in float vH,vSel,vLit;uniform vec3 uEye;uniform float uFlip,uGlow,uScan,uHas;out vec4 o;'
+   +'void main(){float top=step(.5,vN.y),y=abs(vW.y),t=clamp(y/max(vH,.001),0.,1.);'
+   +'float d=.45+.55*max(dot(vN,normalize(vec3(-.5,.75,.45))),0.);'
+   +'vec2 e=min(vUV,vSz-vUV);float ex=1.-smoothstep(0.,.05,e.x),et=1.-smoothstep(0.,.05,min(e.x,e.y)),rim=(1.-top)*smoothstep(vH-.1,vH-.015,y);'
+   +'vec3 side=vC*(.08+.6*t*t)*d+vC*ex*(.15+.35*t),cap=vC*1.02+vec3(.05,.08,.12)+vec3(.25,.3,.35)*et*.5;'
+   +'vec3 c=mix(side,cap,top)+(vC*.6+.08)*rim;float sc=exp(-pow((vW.x-uScan)/.8,2.));c+=vC*sc*(.15+.5*t);'
+   +'c=mix(vC*(.55+.6*top)*d,c,vLit);c=mix(c,c*.4,uHas*(1.-vSel));c+=vSel*((vC*.45+.14)*vLit+.1*(1.-vLit));'
+   +'float f=smoothstep(14.,48.,length(vW-uEye))*.5;c=mix(c,vec3(.015,.03,.055),f);'
+   +'if(uGlow>.5){float gm=(top*.5+rim*.8+ex*.3*t+sc*.5*t+vSel*.7)*vLit*mix(1.,.3,uHas*(1.-vSel));o=vec4(vC*gm*(.35+.65*dot(vC,vec3(.3,.5,.2))),1.);return;}'
+   +'if(uFlip<0.){float a=.36*exp(-y*.8)*(1.-f);o=vec4(c*a,a);return;}o=vec4(c,1.);}');
+  /* 地面：按日历格画的网格（远处淡出防摩尔纹）、台面边线、柱子洒在地上的光 */
+  SK.pg=prog('uniform mat4 uVP;out vec2 vP;void main(){vec2 q=vec2(float(gl_VertexID&1),float(gl_VertexID>>1))*2.-1.;vP=q*60.;gl_Position=uVP*vec4(vP.x,0.,vP.y,1.);}',
+   'in vec2 vP;uniform sampler2D uT;uniform float uScan;out vec4 o;'
+   +'void main(){vec2 q=vec2(vP.x,vP.y+.5),fw=fwidth(q),g=abs(fract(q+.5)-.5)/max(fw,vec2(1e-4));float ln=1.-min(min(g.x,g.y),1.),aa=1.-smoothstep(.2,.55,max(fw.x,fw.y));'
+   +'vec2 b=abs(vP)-vec2(7.3,3.8);float sd=length(max(b,0.))+min(max(b.x,b.y),0.),inb=1.-smoothstep(-.04,.04,sd),far=1.-smoothstep(.5,11.,sd),edge=1.-smoothstep(0.,max(fw.x,fw.y)*1.6,abs(sd));'
+   +'vec4 hp=texture(uT,(vP+vec2(7.,3.5))/vec2(14.,7.));'
+   +'vec3 c=vec3(.3,.56,1.)*ln*aa*(.085*far+.07*inb)+vec3(.45,.76,1.)*edge*.55*aa+hp.rgb*.32*inb+vec3(.25,.55,1.)*exp(-pow((vP.x-uScan)/.6,2.))*.1*inb;'
+   +'o=vec4(c,.42*inb);}');
+  var FS='out vec2 vUV;void main(){vec2 p=vec2(float((gl_VertexID<<1)&2),float(gl_VertexID&2));vUV=p;gl_Position=vec4(p*2.-1.,0.,1.);}';
+  SK.pl=prog(FS,'in vec2 vUV;uniform sampler2D uT;uniform vec2 uD;out vec4 o;void main(){vec3 c=texture(uT,vUV).rgb*.227;c+=(texture(uT,vUV+uD*1.385).rgb+texture(uT,vUV-uD*1.385).rgb)*.316;c+=(texture(uT,vUV+uD*3.231).rgb+texture(uT,vUV-uD*3.231).rgb)*.07;o=vec4(c,1.);}');
+  SK.pc=prog(FS,'in vec2 vUV;uniform sampler2D uT,uT2;uniform vec2 uK;out vec4 o;void main(){o=vec4(texture(uT,vUV).rgb*uK.x+texture(uT2,vUV).rgb*uK.y,0.);}');
+  /* 单位柱：四个侧面 + 顶面，30 个顶点；每天一个实例 */
+  var V=[],face=function(n,tx,by){[[0,0],[1,0],[1,1],[0,0],[1,1],[0,1]].forEach(function(q){var u=q[0],v=q[1];
+   if(n[1])V.push(u-.5,1,.5-v);else V.push(n[0]*.5+tx[0]*(u-.5),v,n[2]*.5+tx[2]*(u-.5));V.push(n[0],n[1],n[2],u,v)})};
+  [[0,0,1],[1,0,0],[0,0,-1],[-1,0,0]].forEach(function(n){face(n,[n[2],0,-n[0]])});face([0,1,0]);
+  SK.vao=gl.createVertexArray();gl.bindVertexArray(SK.vao);var vb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,vb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(V),gl.STATIC_DRAW);
+  [[0,3,0],[1,3,12],[2,2,24]].forEach(function(a){gl.enableVertexAttribArray(a[0]);gl.vertexAttribPointer(a[0],a[1],gl.FLOAT,false,32,a[2])});
+  SK.ib=gl.createBuffer();SK.inst=new Float32Array(ND*12);gl.bindBuffer(gl.ARRAY_BUFFER,SK.ib);gl.bufferData(gl.ARRAY_BUFFER,SK.inst,gl.DYNAMIC_DRAW);
+  [[3,4,0],[4,2,16],[5,3,24],[6,3,36]].forEach(function(a){gl.enableVertexAttribArray(a[0]);gl.vertexAttribPointer(a[0],a[1],gl.FLOAT,false,48,a[2]);gl.vertexAttribDivisor(a[0],1)});
+  SK.vao0=gl.createVertexArray();gl.bindVertexArray(null);
+  SK.ht=gl.createTexture();SK.hpx=new Uint8Array(14*7*4);gl.bindTexture(gl.TEXTURE_2D,SK.ht);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,14,7,0,gl.RGBA,gl.UNSIGNED_BYTE,SK.hpx);
+  [[gl.TEXTURE_MIN_FILTER,gl.LINEAR],[gl.TEXTURE_MAG_FILTER,gl.LINEAR],[gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE],[gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE]].forEach(function(a){gl.texParameteri(gl.TEXTURE_2D,a[0],a[1])});
+  SK.h0=new Float32Array(ND);SK.h1=new Float32Array(ND);SK.c0=new Float32Array(ND*3);SK.c1=new Float32Array(ND*3);SK.tg=[];
+  SK.gl=gl;SK.cv=cv;SK.ok=true;skyBind()}catch(e){SK.ok=false}
+ return SK.ok}
+function skyTarget(w,h,depth){var gl=SK.gl,o={w:w,h:h,t:gl.createTexture(),f:gl.createFramebuffer()};gl.bindTexture(gl.TEXTURE_2D,o.t);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,w,h,0,gl.RGBA,gl.UNSIGNED_BYTE,null);
+ [[gl.TEXTURE_MIN_FILTER,gl.LINEAR],[gl.TEXTURE_MAG_FILTER,gl.LINEAR],[gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE],[gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE]].forEach(function(a){gl.texParameteri(gl.TEXTURE_2D,a[0],a[1])});
+ gl.bindFramebuffer(gl.FRAMEBUFFER,o.f);gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,o.t,0);
+ if(depth){o.d=gl.createRenderbuffer();gl.bindRenderbuffer(gl.RENDERBUFFER,o.d);gl.renderbufferStorage(gl.RENDERBUFFER,gl.DEPTH_COMPONENT16,w,h);gl.framebufferRenderbuffer(gl.FRAMEBUFFER,gl.DEPTH_ATTACHMENT,gl.RENDERBUFFER,o.d)}
+ gl.bindFramebuffer(gl.FRAMEBUFFER,null);return o}
+function skyH(i){return SK.h0[i]+(SK.h1[i]-SK.h0[i])*SK.mixE}
+/* 数据 → 实例：柱高 = 当日数值 / 最高日 × 满高（线性），颜色用 2D 的同一套分档 */
+function skyData(tween){var gl=SK.gl,dv=[D.day.c,D.day.m,D.day.l][heatM],lv=levels(dv),mxv=Math.max.apply(0,dv),a=SK.inst,i,k,e=SK.mixE==null?1:SK.mixE;
+ for(i=0;i<ND;i++){var hc=tween?skyH(i):0;for(k=0;k<3;k++)SK.c0[i*3+k]=tween?SK.c0[i*3+k]+(SK.c1[i*3+k]-SK.c0[i*3+k])*e:0;SK.h0[i]=hc}
+ for(i=0;i<ND;i++){var c=RAMP3[lv(dv[i])],o=i*12,w=Math.floor(i/7),r=i%7;SK.h1[i]=dv[i]/mxv*HMAX;for(k=0;k<3;k++)SK.c1[i*3+k]=c[k];if(!tween){SK.h0[i]=SK.h1[i];for(k=0;k<3;k++)SK.c0[i*3+k]=c[k]}
+  a[o]=w-6.5;a[o+1]=r-3;a[o+2]=i;a[o+3]=w*.085+r*.02;a[o+4]=SK.h0[i];a[o+5]=SK.h1[i];for(k=0;k<3;k++){a[o+6+k]=SK.c0[i*3+k];a[o+9+k]=SK.c1[i*3+k]}}
+ gl.bindBuffer(gl.ARRAY_BUFFER,SK.ib);gl.bufferSubData(gl.ARRAY_BUFFER,0,a);SK.mix=tween&&!RM?0:1;SK.mixE=SK.mix;SK.peak=dv.indexOf(mxv);
+ if(SK.pkL)SK.pkL.textContent=dl(SK.peak)+' · '+nf(mxv)+(EN?['','',' lines'][heatM]:[' 个',' 个',' 行'][heatM]);SK.dirty=true;fxKick()}
+function skyTip(i){return{t:dw(i),r:[[L('新建 PR','New PRs'),cnt(D.day.c[i])],[L('合入 PR','Merged PRs'),cnt(D.day.m[i])],[L('新建 PR 的有效行','Lines in new PRs'),lns(D.day.l[i])]]}}
+function skyWant(){return SK.user!=null?SK.user:(!RM&&!LOW&&view.clientWidth>=760)}
+function skyLayout(){var box=$('c-sky'),tg=$('tg-dim'),bs=tg.querySelectorAll('button'),can=!!window.WebGL2RenderingContext&&SK.ok!==false,on=can&&skyWant()&&skyGL();
+ tg.hidden=!can||SK.ok===false;SK.on=on;box.hidden=!on;tg.style.setProperty('--n',on?1:0);[].forEach.call(bs,function(b){b.setAttribute('aria-pressed',(b.getAttribute('data-d')==='3')===on)});
+ if(!tg.__b){tg.__b=true;[].forEach.call(bs,function(b){b.addEventListener('click',function(){var w=b.getAttribute('data-d')==='3';if(w===SK.on)return;SK.user=w;tipHide();if(w&&!RM)SK.grow=0;skyLayout();var cd=$('d-heat');cd.classList.remove('done');heat(true);setTimeout(function(){cd.classList.add('done')},1300)})})}
+ if(!on){if(SK.fx){fxDel(SK.fx);SK.fx=null}return}
+ var gl=SK.gl,cv=SK.cv,W=box.clientWidth,m=W<720,Hc=m?Math.round(Math.min(300,W*.74)):Math.max(380,Math.min(470,Math.round(W*.4))),dpr=Math.min(2,window.devicePixelRatio||1),pw=Math.round(W*dpr),ph=Math.round(Hc*dpr);
+ cv.style.height=Hc+'px';SK.W=W;SK.H=Hc;
+ if(cv.width!==pw||cv.height!==ph){cv.width=pw;cv.height=ph;SK.tg.forEach(function(o){gl.deleteTexture(o.t);gl.deleteFramebuffer(o.f);if(o.d)gl.deleteRenderbuffer(o.d)});
+  var gw=Math.max(8,pw>>2),gh=Math.max(8,ph>>2);SK.tg=[skyTarget(gw,gh,true),skyTarget(gw,gh),skyTarget(gw,gh),skyTarget(gw>>1,gh>>1),skyTarget(gw>>1,gh>>1)]}
+ cv.setAttribute('aria-label',L('三维柱状图：每天一根柱，柱高为当日数值。方向键逐日读数，拖拽旋转。','3D column chart: one column per day, height is that day’s value. Use the arrow keys to read each day; drag to rotate.'));
+ $('sk-t').textContent=EN?'By day · '+NW+' weeks':'按日 · '+NW+' 周';
+ $('sk-h').textContent=m?L('拖拽旋转 · 柱高 = 数值','Drag to rotate · height = value'):L('拖拽旋转 · 柱高 = 当日数值（线性）· 颜色档位同 2D','Drag to rotate · height = that day’s value (linear) · color steps as in 2D');
+ var lb=$('sk-lb'),WL=EN?['Mon','','Wed','','Fri','','Sun']:['周一','','周三','','周五','','周日'];lb.textContent='';SK.lab=[];
+ [[0,8],[2,9],[6,10],[10,11]].forEach(function(mm){SK.lab.push({e:H('span','mo',lb,mon(mm[1])),f:function(s){return[mm[0]-6.5,0,s*4.5]}})});
+ WL.forEach(function(x,r){if(x&&(!m||r%6===0))SK.lab.push({e:H('span',null,lb,x),f:function(s,sx){return[-sx*7.95,0,r-3]}})});
+ SK.pkL=H('span','pk',lb);SK.lab.push({e:SK.pkL,pk:true,f:function(){var i=SK.peak;return[Math.floor(i/7)-6.5,skyH(i)*SK.gE,i%7-3]}});
+ if(!SK.grown){SK.grown=true;if(!RM)SK.grow=0}
+ skyData(false);if(!SK.fx){SK.fx=fxAdd(box,skyFrame);SK.fx.low=function(){if(SK.user==null&&!SOFT){SK.user=false;tipHide();skyLayout();heat(true)}}}SK.dirty=true;fxKick()}
+function skyHover(i){SK.hover=i;SK.dirty=true;fxKick()}
+function skyBind(){var cv=SK.cv;cv.__sticky=true;
+ cv.addEventListener('pointerdown',function(e){e.stopPropagation();try{cv.setPointerCapture(e.pointerId)}catch(x){}SK.drag=true;SK.px=e.clientX;SK.py=e.clientY;SK.kb=false;SK.mx=e.clientX;SK.my=e.clientY;SK.tap=true;SK.dirty=true;fxKick()});
+ cv.addEventListener('pointermove',function(e){if(SK.drag){var dx=e.clientX-SK.px,dy=e.clientY-SK.py;SK.px=e.clientX;SK.py=e.clientY;if(dx||dy){SK.tap=false;SK.yaw-=dx*.007;if(e.pointerType==='mouse')SK.pitch=Math.max(.16,Math.min(1.2,SK.pitch+dy*.005));SK.idle=0;SK.mx=null;if(SK.hover>=0)SK.hover=-1;SK.dirty=true;fxKick()}return}
+  if(e.pointerType==='mouse'){SK.mx=e.clientX;SK.my=e.clientY;SK.kb=false;SK.mv=true;SK.dirty=true;fxKick()}});
+ function up(e){if(!SK.drag)return;SK.drag=false;SK.idle=0;if(e.pointerType==='mouse'||SK.tap){SK.mx=e.clientX;SK.my=e.clientY}SK.dirty=true;fxKick()}
+ cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',function(){SK.drag=false;SK.mx=null;skyHover(-1)});
+ cv.addEventListener('pointerleave',function(e){if(SK.drag||e.pointerType!=='mouse')return;SK.mx=null;skyHover(-1)});
+ cv.addEventListener('keydown',function(e){var k={ArrowLeft:-7,ArrowRight:7,ArrowUp:-1,ArrowDown:1}[e.key];if(k==null){if(e.key==='Escape'){SK.kb=false;skyHover(-1)}return}e.preventDefault();SK.kb=true;SK.mx=null;SK.shown=-2;skyHover(SK.hover<0?SK.peak:Math.max(0,Math.min(ND-1,SK.hover+k)))});
+ cv.addEventListener('blur',function(){if(SK.kb){SK.kb=false;skyHover(-1)}});
+ cv.addEventListener('webglcontextlost',function(e){e.preventDefault();SK.ok=false;SK.user=null;if(SK.fx){fxDel(SK.fx);SK.fx=null}skyLayout();heat(true)})}
+function skyPick(px,py){var r=SK.cv.getBoundingClientRect(),B=SK.cam,nx=(px-r.left)/r.width*2-1,ny=1-(py-r.top)/r.height*2,d=[0,1,2].map(function(k){return B.f[k]+B.r[k]*nx*B.tx+B.u[k]*ny*B.ty}),best=-1,bt=1e9;
+ if(nx<-1||nx>1||ny<-1||ny>1)return-1;
+ for(var i=0;i<ND;i++){var lo=[Math.floor(i/7)-6.92,0,i%7-3.42],hi=[lo[0]+.84,Math.max(.3,skyH(i)*SK.gE),lo[2]+.84],t0=0,t1=1e9;
+  for(var k=0;k<3;k++){var a=(lo[k]-B.e[k])/d[k],b=(hi[k]-B.e[k])/d[k];if(a>b){var q=a;a=b;b=q}if(a>t0)t0=a;if(b<t1)t1=b}
+  if(t0<=t1&&t0<bt){bt=t0;best=i}}return best}
+function skyFrame(t,dt){var gl=SK.gl,cv=SK.cv,i,k;if(!SK.on||gl.isContextLost())return false;
+ var busy=SK.dirty;SK.dirty=false;
+ if(SK.grow<1){SK.grow=Math.min(1,SK.grow+dt/1.9);busy=true}if(SK.mix<1){SK.mix=Math.min(1,SK.mix+dt/.75);busy=true}
+ var mx=SK.mix,ge=SK.grow;SK.mixE=mx<.5?4*mx*mx*mx:1-Math.pow(-2*mx+2,3)/2;SK.gE=ge>=1?1:1-Math.pow(1-Math.min(1,ge*1.15),3);
+ SK.idle+=dt;var auto=!RM&&!SK.drag&&SK.hover<0&&SK.idle>2.2;
+ if(auto){if(!SK.auto)SK.c=SK.yaw-.36*Math.sin(SK.ph);SK.ph+=dt*.2;SK.yaw=SK.c+.36*Math.sin(SK.ph)}SK.auto=auto;
+ if(!RM){SK.st=(SK.st||0)+dt;var sp=(SK.st-2.4)%10;SK.scan=SK.st>2.4&&sp<2.8?-9+sp/2.8*18:99}
+ /* 相机：绕台面中心的轨道相机，距离按画布宽高比取能装下整块台面的值 */
+ var asp=SK.W/SK.H,th=Math.tan(.25),dist=Math.max(10.2/(th*asp),5.65/th),cp=Math.cos(SK.pitch),tg=[0,1.5,0],e=[tg[0]+dist*Math.sin(SK.yaw)*cp,tg[1]+dist*Math.sin(SK.pitch),tg[2]+dist*Math.cos(SK.yaw)*cp];
+ var f=[tg[0]-e[0],tg[1]-e[1],tg[2]-e[2]],fl=Math.hypot(f[0],f[1],f[2]);f=[f[0]/fl,f[1]/fl,f[2]/fl];var r=[-f[2],0,f[0]],rl=Math.hypot(r[0],r[2]);r=[r[0]/rl,0,r[2]/rl];var u=[r[1]*f[2]-r[2]*f[1],r[2]*f[0]-r[0]*f[2],r[0]*f[1]-r[1]*f[0]];
+ var n=.5,fa=120,py=1/th,pxs=py/asp,A=(fa+n)/(n-fa),Bz=2*fa*n/(n-fa),de=function(v){return v[0]*e[0]+v[1]*e[1]+v[2]*e[2]},rx=-de(r),uy=-de(u),fz=de(f);
+ /* VP = P · V，列主序 */
+ var VP=new Float32Array([pxs*r[0],py*u[0],-A*f[0],f[0], pxs*r[1],py*u[1],-A*f[1],f[1], pxs*r[2],py*u[2],-A*f[2],f[2], pxs*rx,py*uy,A*fz+Bz,-fz]);
+ SK.cam={e:e,f:f,r:r,u:u,tx:th*asp,ty:th};
+ function proj(p){var w=VP[3]*p[0]+VP[7]*p[1]+VP[11]*p[2]+VP[15];return[((VP[0]*p[0]+VP[4]*p[1]+VP[8]*p[2]+VP[12])/w*.5+.5)*SK.W,(.5-(VP[1]*p[0]+VP[5]*p[1]+VP[9]*p[2]+VP[13])/w*.5)*SK.H,w]}
+ /* 悬停：射线与每根柱的包围盒求交；指针不动而场景在转时也每帧重算 */
+ if(SK.mx!=null&&!SK.drag&&!SK.kb){var h=skyPick(SK.mx,SK.my);if(h!==SK.hover)SK.hover=h}
+ if(SK.hover>=0&&SK.shown===SK.hover&&tipOn!==cv){SK.hover=-1;SK.mx=null;SK.kb=false}
+ if(SK.hover!==SK.shown){SK.shown=SK.hover;if(SK.hover<0){if(tipOn===cv)tipHide()}else{var q;if(SK.mx!=null)q=[SK.mx,SK.my];else{var cr=cv.getBoundingClientRect(),pp=proj([Math.floor(SK.hover/7)-6.5,skyH(SK.hover),SK.hover%7-3]);q=[cr.left+pp[0],cr.top+pp[1]-4]}tipOn=cv;tipShow(skyTip(SK.hover),q[0],q[1])}}
+ else if(SK.hover>=0&&SK.mx!=null&&SK.mv&&tipOn===cv)tipAt(SK.mx,SK.my);SK.mv=false;
+ /* 地面光照贴图：14×7，一格一天，随高度过渡更新 */
+ if(busy||SK.hdirty!==false){var px=SK.hpx;px.fill(0);for(i=0;i<ND;i++){var hh=Math.pow(skyH(i)/HMAX,.6)*SK.gE,o=((i%7)*14+Math.floor(i/7))*4;for(k=0;k<3;k++)px[o+k]=Math.round(255*hh*(SK.c0[i*3+k]+(SK.c1[i*3+k]-SK.c0[i*3+k])*SK.mixE));px[o+3]=255}
+  gl.bindTexture(gl.TEXTURE_2D,SK.ht);gl.texSubImage2D(gl.TEXTURE_2D,0,0,0,14,7,gl.RGBA,gl.UNSIGNED_BYTE,px);SK.hdirty=busy}
+ var pb=SK.pb,T=SK.tg,bars=function(){gl.drawArraysInstanced(gl.TRIANGLES,0,30,ND)},tri=function(){gl.drawArrays(gl.TRIANGLES,0,3)};
+ gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,cv.width,cv.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);gl.depthMask(true);
+ gl.useProgram(pb.p);gl.uniformMatrix4fv(pb.u.uVP,false,VP);gl.uniform1f(pb.u.uMix,SK.mixE);gl.uniform1f(pb.u.uGrow,RM?1:SK.grow);gl.uniform1f(pb.u.uHover,SK.hover);gl.uniform1f(pb.u.uHas,SK.hover>=0?1:0);gl.uniform1f(pb.u.uScan,SK.scan);gl.uniform3fv(pb.u.uEye,e);
+ /* ① 倒影（上下翻转、越深越淡）② 地面 ③ 柱 */
+ gl.bindVertexArray(SK.vao);gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);gl.disable(gl.CULL_FACE);gl.uniform1f(pb.u.uFlip,-1);gl.uniform1f(pb.u.uGlow,0);bars();
+ gl.depthMask(false);gl.useProgram(SK.pg.p);gl.uniformMatrix4fv(SK.pg.u.uVP,false,VP);gl.uniform1f(SK.pg.u.uScan,SK.scan);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,SK.ht);gl.uniform1i(SK.pg.u.uT,0);gl.bindVertexArray(SK.vao0);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);gl.depthMask(true);
+ gl.disable(gl.BLEND);gl.enable(gl.CULL_FACE);gl.useProgram(pb.p);gl.bindVertexArray(SK.vao);gl.uniform1f(pb.u.uFlip,1);bars();
+ /* ④ bloom：把发光部分单独画进 1/4 分辨率的缓冲，做两级可分离高斯模糊（紧 + 宽），再加法叠回画面 */
+ gl.bindFramebuffer(gl.FRAMEBUFFER,T[0].f);gl.viewport(0,0,T[0].w,T[0].h);gl.clearColor(0,0,0,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.uniform1f(pb.u.uGlow,1);bars();
+ gl.disable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.useProgram(SK.pl.p);gl.bindVertexArray(SK.vao0);gl.uniform1i(SK.pl.u.uT,0);
+ [[0,1,1,0],[1,2,0,1],[2,3,2,0],[3,4,0,2]].forEach(function(a){var s=T[a[0]],d=T[a[1]];gl.bindFramebuffer(gl.FRAMEBUFFER,d.f);gl.viewport(0,0,d.w,d.h);gl.bindTexture(gl.TEXTURE_2D,s.t);gl.uniform2f(SK.pl.u.uD,a[2]/s.w,a[3]/s.h);tri()});
+ gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,cv.width,cv.height);gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE);gl.useProgram(SK.pc.p);gl.bindTexture(gl.TEXTURE_2D,T[2].t);gl.uniform1i(SK.pc.u.uT,0);
+ gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,T[4].t);gl.uniform1i(SK.pc.u.uT2,1);gl.activeTexture(gl.TEXTURE0);gl.uniform2f(SK.pc.u.uK,.55,.85);tri();gl.disable(gl.BLEND);gl.bindVertexArray(null);
+ /* 标注：月份、星期、最高日，投影到屏幕后只改 transform */
+ if(Math.abs(e[0])>1.2)SK.sx=e[0]<0?1:-1;if(Math.abs(e[2])>1.2)SK.sz=e[2]<0?-1:1;SK.lab.forEach(function(l){var p=proj(l.f(SK.sz||1,SK.sx||1));l.e.style.transform='translate3d('+p[0].toFixed(1)+'px,'+p[1].toFixed(1)+'px,0) translate(-50%,'+(l.pk?'-100%) translateY(-9px)':'-50%)');l.e.style.opacity=p[2]>0&&p[0]>-8&&p[0]<SK.W+8&&p[1]>-8&&p[1]<SK.H+14?(l.pk?SK.gE:1):0});
+ return !RM||busy}
+function stage(){var vr=view.getBoundingClientRect(),fl=$('dz-floor'),ob=$('dz-orbs'),cr=$('c-cum').getBoundingClientRect();fl.style.setProperty('--hz',Math.round(cr.top-vr.top+cumY0)+'px');fl.classList.add('on');view.style.setProperty('--ds',Math.round($('d-kpi').getBoundingClientRect().bottom-vr.top-60)+'px');
+ if(!stage.io&&'IntersectionObserver' in window){stage.io=new IntersectionObserver(function(es){fl.classList.toggle('run',es[0].isIntersecting)});stage.io.observe(fl)}
+ var O=[['d-heat',.9,.34,'rgba(41,151,255,.17)',900],['d-shift',.16,.5,'rgba(41,151,255,.09)',1100],['d-flow',.06,.84,'rgba(70,190,255,.15)',820],['d-lanes',.92,.3,'rgba(41,151,255,.12)',900],['d-rev',.86,.16,'rgba(232,100,44,.15)',820],['d-gate',.1,.75,'rgba(232,100,44,.1)',760],['d-assoc',.3,.08,'rgba(41,151,255,.13)',860],['d-scat',.9,.92,'rgba(70,190,255,.1)',760]];
+ if(!ob.firstChild)O.forEach(function(){H('i',null,ob)});
+ O.forEach(function(o,i){var r=$(o[0]).getBoundingClientRect(),e=ob.children[i],sz=Math.min(o[4],vr.width*1.1);e.style.cssText='left:'+Math.round(r.left-vr.left+r.width*o[1])+'px;top:'+Math.round(r.top-vr.top+r.height*o[2])+'px;width:'+sz+'px;height:'+Math.round(sz*.78)+'px;--c:'+o[3]})}
 
 /* ---------- 03 结构 ---------- */
 function stream(){var el=$('c-stream'),W=el.clientWidth,m=W<720,Hh=m?260:Math.max(320,Math.min(400,Math.round(W*.32))),ml=0,mr=m?26:36,mt=18,mb=30,s=svg(el,W,Hh,L('每周新建 PR 数，按仓库层堆叠','New PRs per week, stacked by repository layer')),df=S('defs',null,s),G=D.week.g,MX=36;
@@ -679,7 +909,7 @@ function stream(){var el=$('c-stream'),W=el.clientWidth,m=W<720,Hh=m?260:Math.ma
  G.forEach(function(row,gi){var lo=base.slice(),top=row.map(function(v,w){base[w]+=v;return[X(w),Y(base[w])]}),sg=mono(top),a=gi===0?[.62,.2]:gi===3?[.9,.42]:[.92,.34];
   S('path',{d:'M'+pt(sg[0][0])+segF(sg)+'L'+pt(prev[prev.length-1][3])+segR(prev)+'Z',fill:lg(df,'sg'+gi,0,mt,0,y0,[[0,GC[gi],a[0]],[1,GC[gi],a[1]]]),stroke:C.k,'stroke-width':2,'stroke-linejoin':'round'},lay);prev=sg;tops.push(base.slice());
   var bw=0;row.forEach(function(v,w){if(v>row[bw])bw=w});labs.push({gi:gi,w:bw,yt:Y(lo[bw]+row[bw]),yb:Y(lo[bw])})});
- labs.forEach(function(l){if(l.yb-l.yt<20)return;S('text',{x:X(l.w),y:(l.yt+l.yb)/2+4,'text-anchor':l.w===0?'start':l.w>=NW-2&&m?'end':'middle',class:'t1 b fx'+(m?'':' s12'),style:'--i:'+(46+l.gi*8)+';pointer-events:none;paint-order:stroke;stroke:rgba(0,0,0,.35);stroke-width:3px;stroke-linejoin:round'},s,m||EN?GSH()[l.gi]:D.meta.grp[l.gi])});
+ labs.forEach(function(l){if(l.yb-l.yt<20)return;S('text',{x:X(l.w),y:(l.yt+l.yb)/2+4,'text-anchor':l.w===0?'start':l.w>=NW-2&&m?'end':'middle',class:'t1 b fx'+(m?'':' s12'),style:'--i:'+(46+l.gi*8)+';pointer-events:none;paint-order:stroke;stroke:rgba(0,0,0,.55);stroke-width:3px;stroke-linejoin:round'},s,m||EN?GSH()[l.gi]:D.meta.grp[l.gi])});
  for(var i=0;i<NW;i+=(W<420?3:2)){S('line',{x1:X(i),x2:X(i),y1:y0,y2:y0+5,stroke:'rgba(255,255,255,.26)','stroke-width':1,'shape-rendering':'crispEdges'},s);S('text',{x:X(i),y:Hh-8,'text-anchor':i?'middle':'start'},s,dl(i*7))}
  var ch=S('g',{style:'display:none','pointer-events':'none'},s),cl=S('line',{y1:mt-6,y2:y0,stroke:'rgba(255,255,255,.5)','stroke-width':1},ch),dots=G.map(function(r,gi){return S('circle',{r:3.5,fill:gi===3?'#a0a0a8':GC[gi],stroke:C.k,'stroke-width':1.5},ch)});
  for(w=0;w<NW;w++)(function(w){var bw=(W-ml-mr)/(NW-1),hx=Math.max(ml,X(w)-bw/2),r=S('rect',{class:'hit',x:hx,y:mt,width:Math.min(xe,X(w)+bw/2)-hx,height:y0-mt,tabindex:0},s);
@@ -694,7 +924,8 @@ function month(){var el=$('c-month');el.textContent='';var gl=EN&&el.clientWidth
   T(d,function(){return{t:mn+' · '+GRP()[gi],r:[[L('新建 PR','New PRs'),cnt(v)],[L('占当月','Share of month'),pc(v,mo.n,1)]]}})})})}
 
 /* ---------- 04 流向 ---------- */
-function sankey(){var el=$('c-sankey'),W=el.clientWidth,m=W<720,Hh=m?420:400,nw=6,pad=m?16:22,ML=m?0:EN?140:132,MR=m?0:112,top=30,s=svg(el,W,Hh,L('来源到仓库层到状态的 PR 流向','PR flow from source to repository layer to status')),df=S('defs',null,s);s.setAttribute('data-foc','');
+var skFx=null;
+function sankey(){var LK=[],el=$('c-sankey'),W=el.clientWidth,m=W<720,Hh=m?420:400,nw=6,pad=m?16:22,ML=m?0:EN?140:132,MR=m?0:112,top=30,s=svg(el,W,Hh,L('来源到仓库层到状态的 PR 流向','PR flow from source to repository layer to status')),df=S('defs',null,s);s.setAttribute('data-foc','');
  var A=D.sankey.a,B=D.sankey.b,sum=function(r){return r.reduce(function(a,b){return a+b},0)},cols=[A.map(sum),B.map(sum),[0,1,2].map(function(j){return B.reduce(function(a,r){return a+r[j]},0)})];
  var names=[SRC(),GRP(),STA()],colr=[['#8e8e93','#8e8e93','#8e8e93'],GC,[C.i1,C.org,C.oth]],k=(Hh-top-3*pad)/172,xs=[ML,(ML+W-MR-nw)/2,W-MR-nw],pos=[];
  if(m)names=[EN?D.en.srcs:['Bug 群','Paseo','AI 助手对话'],GSH(),STA()];
@@ -703,16 +934,25 @@ function sankey(){var el=$('c-sankey'),W=el.clientWidth,m=W<720,Hh=m?420:400,nw=
  var links=S('g',null,s);
  GC.forEach(function(col,gi){var a=gi===0?.3:gi===3?.5:.46;lg(df,'sk0'+gi,xs[0]+nw,0,xs[1],0,[[0,col,a*.3],[1,col,a]]);lg(df,'sk1'+gi,xs[1]+nw,0,xs[2],0,[[0,col,a],[1,col,a*.4]])});
  function link(ci,si,ti,gi,v,tipf){if(!v)return;var a=pos[ci][si],b=pos[ci+1][ti],x0=xs[ci]+nw+1,x1=xs[ci+1]-1,y0=a.y+a.o,y1=b.y+b.i,h=v*k,mx=(x0+x1)/2;a.o+=h;b.i+=h;
-  var p=S('path',{class:'lk dm fx',style:'--i:'+(ci*14+si*5+ti*2),d:'M'+f1(x0)+','+f1(y0)+'C'+f1(mx)+','+f1(y0)+' '+f1(mx)+','+f1(y1)+' '+f1(x1)+','+f1(y1)+'L'+f1(x1)+','+f1(y1+h)+'C'+f1(mx)+','+f1(y1+h)+' '+f1(mx)+','+f1(y0+h)+' '+f1(x0)+','+f1(y0+h)+'Z',fill:'url(#sk'+ci+gi+')','data-a':ci+'-'+si,'data-b':(ci+1)+'-'+ti,tabindex:0},links);T(p,tipf)}
+  var p=S('path',{class:'lk dm fx',style:'--i:'+(ci*14+si*5+ti*2),d:'M'+f1(x0)+','+f1(y0)+'C'+f1(mx)+','+f1(y0)+' '+f1(mx)+','+f1(y1)+' '+f1(x1)+','+f1(y1)+'L'+f1(x1)+','+f1(y1+h)+'C'+f1(mx)+','+f1(y1+h)+' '+f1(mx)+','+f1(y0+h)+' '+f1(x0)+','+f1(y0+h)+'Z',fill:'url(#sk'+ci+gi+')','data-a':ci+'-'+si,'data-b':(ci+1)+'-'+ti,tabindex:0},links);T(p,tipf);LK.push({x0:x0,x1:x1,y0:y0,y1:y1,h:h,gi:gi,v:v,el:p,ci:ci})}
  A.forEach(function(r,si){r.forEach(function(v,gi){link(0,si,gi,gi,v,function(){return{t:SRC()[si]+' → '+GRP()[gi],r:[[L('PR','PRs'),cnt(v)],[L('占该来源','Share of source'),pc(v,cols[0][si])],[L('占该仓库层','Share of layer'),pc(v,cols[1][gi])]]}})})});
  B.forEach(function(r,gi){r.forEach(function(v,ti){link(1,gi,ti,gi,v,function(){return{t:GRP()[gi]+' → '+STA()[ti],r:[[L('PR','PRs'),cnt(v)],[L('占该仓库层','Share of layer'),pc(v,cols[1][gi])],[L('占该状态','Share of status'),pc(v,cols[2][ti])]]}})})});
  var halo='paint-order:stroke;stroke:rgba(8,8,10,.6);stroke-width:3px;stroke-linejoin:round;pointer-events:none';
  pos.forEach(function(col,ci){col.forEach(function(n,i){var g=S('g',{class:'fx',style:'--i:'+(ci*14+i*3)},s);S('rect',{x:xs[ci],y:f1(n.y),width:nw,height:f1(Math.max(2,n.h)),rx:Math.min(3,Math.max(1,n.h/2)),fill:colr[ci][i]},g);
   var out=!m&&ci!==1,tx=m?(ci===2?xs[2]-8:xs[ci]+nw+8):(ci===0?xs[0]-12:xs[ci]+nw+12),an=(m?ci===2:ci===0)?'end':'start',cy=n.y+n.h/2,one=n.h<28,st=out?'pointer-events:none':halo;
   var nmT=S('text',{x:tx,y:one?cy+4:cy-2,'text-anchor':an,class:'t1 b s12',style:st},g,names[ci][i]),val=cnt(cols[ci][i])+' · '+pc(cols[ci][i],172);
-  if(!one)S('text',{x:tx,y:cy+14,'text-anchor':an,class:'t2',style:st},g,val);else if(m)nmT.textContent=names[ci][i]+'  '+cols[ci][i];else S('tspan',{dx:8,style:'font-weight:400;fill:var(--i2)'},nmT,val);
+  if(!one)S('text',{x:tx,y:cy+14,'text-anchor':an,class:'t2',style:st+(out?'':';fill:#d8d8de')},g,val);else if(m)nmT.textContent=names[ci][i]+'  '+cols[ci][i];else S('tspan',{dx:8,style:'font-weight:400;fill:'+(out?'var(--i2)':'#d8d8de')},nmT,val);
   var hr=S('rect',{class:'hit',x:xs[ci]-8,y:f1(n.y-3),width:nw+16,height:f1(Math.max(2,n.h)+6),'data-node':ci+'-'+i,tabindex:0},g);
-  T(hr,function(){return{t:[SRC(),GRP(),STA()][ci][i],r:[[L('PR','PRs'),cnt(cols[ci][i])],[L('占全部','Share of all'),pc(cols[ci][i],172,1)]]}})})})}
+  T(hr,function(){return{t:[SRC(),GRP(),STA()][ci][i],r:[[L('PR','PRs'),cnt(cols[ci][i])],[L('占全部','Share of all'),pc(cols[ci][i],172,1)]]}})})});
+ /* 流动粒子：每条带上的粒子数与 PR 数成正比（约 4 个 PR 一粒，全图不到 100 粒），沿带的走向流动；第二段从仓库层标签之后才出现，不压字；悬停时只留被点亮的带；手机上不放 */
+ if(skFx){fxDel(skFx);skFx=null}
+ if(!RM&&!m){var dpr=Math.min(2,window.devicePixelRatio||1),cv=H('canvas','fx-ov',el),cx=cv.getContext('2d'),PT=[];cv.width=Math.round(W*dpr);cv.height=Math.round(Hh*dpr);cv.style.width=W+'px';cv.style.height=Hh+'px';cv.setAttribute('aria-hidden','true');
+  var spr=['#d9d9e0','#58b0ff','#3fd69f','#9a9aa4'].map(function(c){var o=document.createElement('canvas');o.width=o.height=32;var g=o.getContext('2d'),r=g.createRadialGradient(16,16,0,16,16,16);r.addColorStop(0,'#fff');r.addColorStop(.2,c);r.addColorStop(.5,c+'55');r.addColorStop(1,c+'00');g.fillStyle=r;g.fillRect(0,0,32,32);return o});
+  LK.forEach(function(l){var n=Math.max(1,Math.round(l.v/4));for(var i=0;i<n;i++)PT.push({l:l,t:(i+Math.random())/n,o:.14+.72*Math.random(),sp:.15+.07*Math.random()})});
+  skFx=fxAdd(el,function(t,dt){cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,Hh);cx.globalCompositeOperation='lighter';var foc=s.classList.contains('foc');
+   PT.forEach(function(p){p.t+=dt*p.sp;if(p.t>1){p.t-=1;p.o=.14+.72*Math.random()}var l=p.l,a=Math.max(0,Math.min(1,l.ci?(p.t-.2)*6:p.t*7,(1-p.t)*7))*(foc?(l.el.classList.contains('on')?1:.06):.62);if(a<.02)return;
+    for(var k=0;k<3;k++){var u=p.t-k*.013;if(u<0)break;var x=l.x0+(l.x1-l.x0)*(1.5*u-1.5*u*u+u*u*u),y=l.y0+p.o*l.h+(l.y1-l.y0)*(3*u*u-2*u*u*u),sz=k?6.5:9;cx.globalAlpha=a*(k?.45/k:1);cx.drawImage(spr[l.gi],x-sz/2,y-sz/2,sz,sz)}})});
+  skFx.low=function(){if(skFx){fxDel(skFx);skFx=null}cv.remove()}}}
 
 /* ---------- 05 泳道 ---------- */
 function lanes(){var el=$('c-lanes'),W=el.clientWidth,m=W<720,ll=m?0:220,lr=m?0:EN?140:112,sub=12,top=26,y=top,LS=D.lanes,NOW=93.75,rows=[];
@@ -744,6 +984,7 @@ function hist(id,bv,ki,h,label,unit,ci,enl){var k=D.kpi[ki],b=$(bv);b.textConten
  var gM=lg(df,'hg'+ci,0,mt,0,yb,[[0,'#6cb8ff',1],[1,C.acc,1]]);
  S('line',{class:'ax',x1:0,x2:W,y1:yb+.5,y2:yb+.5},s);
  B.forEach(function(b,i){var x=i*sw+(sw-bw)/2,y=Y(b.n),hh=yb-y,md=i===h.mi,g=S('g',{class:'dm','data-k':i},s),bl=EN&&enl?enl[i]:b.l;
+  if(b.n&&md){S('feGaussianBlur',{stdDeviation:9},S('filter',{id:'hf'+ci,x:'-150%',y:'-40%',width:'400%',height:'180%'},df));S('path',{class:'fx',style:'--i:'+(ci*7+i*5+30)+';pointer-events:none',d:topR(f1(x),f1(y),bw,f1(hh),5),fill:C.acc,opacity:.5,filter:'url(#hf'+ci+')'},g)}
   if(b.n){var r=S('path',{class:'hb hc grow',style:'--i:'+(ci*7+i*5),d:topR(f1(x),f1(y),bw,f1(hh),5),fill:md?gM:'rgba(255,255,255,.2)','data-k':i,tabindex:0},g);T(r,function(){return{t:bl+(unit||''),r:[[L('PR','PRs'),cnt(b.n)],[L('占比','Share'),pc(b.n,h.n,1)]],n:md?L('中位数落在这一档','The median falls in this bin'):null}})}
   S('text',{x:x+bw/2,y:(b.n?y:yb)-7,'text-anchor':'middle',class:(md?'t1 b s12':'t2')+' fx',style:'--i:'+(ci*7+i*5+24)},g,b.n);
   if(md)S('text',{x:x+bw/2,y:y-23,'text-anchor':'middle',class:'t2 s10 b fx',style:'--i:'+(ci*7+i*5+30)+';letter-spacing:.06em'+(EN?';font-size:9px':'')},g,L('中位','MEDIAN'));
@@ -770,9 +1011,11 @@ function gate(){var el=$('c-gate'),W=el.clientWidth,G=D.gate,r=W<520?3.2:4.5,ste
  var mt=54,mb=28,Hh=mt+Math.max(8,mxs)*step+12+mb,s=svg(el,W,Hh,L('Agent 服务仓 44 个 PR 的时间分布，标出返工与门禁合入时刻','The Agent service repo’s 44 PRs over time, with rework and the gate merge marked')),df=S('defs',null,s),X=function(d){return ml+d/94*(W-ml-mr)},base=Hh-mb,gx=X(G.m);s.setAttribute('data-foc','');
  S('rect',{x:gx,y:mt-10,width:W-gx,height:base-mt+10,fill:lg(df,'gg-a',gx,0,W,0,[[0,'#fff',.1],[1,'#fff',.03]]),class:'fx'},s);
  months(s,X,mt-10,base,Hh-9,false);S('line',{class:'ax',x1:0,x2:W,y1:base+.5,y2:base+.5},s);
+ var gh=S('radialGradient',{id:'gg-h'},df);[[0,.6],[.45,.28],[1,0]].forEach(function(q){S('stop',{offset:q[0],'stop-color':'#ff7a3c','stop-opacity':q[1]},gh)});
+ S('rect',{x:gx-14,y:8,width:28,height:base-8,fill:lg(df,'gg-l',gx-14,0,gx+14,0,[[0,'#fff',0],[.5,'#dff0ff',.16],[1,'#fff',0]]),class:'fx','pointer-events':'none'},s);
  S('line',{x1:gx,x2:gx,y1:8,y2:base,stroke:C.i1,'stroke-width':1,opacity:.85,'shape-rendering':'crispEdges'},s);S('text',{x:gx-9,y:17,'text-anchor':'end',class:'t1 b s12'},s,L('门禁合入 11-17','Gate merged Nov 17'));S('text',{x:gx-9,y:32,'text-anchor':'end',class:''},s,EN?G.before.n+' before · '+G.after.n+' after':'之前 '+G.before.n+' 个 · 之后 '+G.after.n+' 个');
  Object.keys(bins).forEach(function(b){bins[b].sort(function(a,c){return a.c-c.c}).forEach(function(p,i){var cx=X(G.m+(+b+.5)*k),cy=base-r-3-i*step;
-  if(p.rew)S('circle',{cx:f1(cx),cy:f1(cy),r:r+3,fill:C.org,opacity:.2,class:'pop',style:'--i:'+Math.round(p.c/2+i+8)+';pointer-events:none'},s);
+  if(p.rew)S('circle',{cx:f1(cx),cy:f1(cy),r:r+7,fill:'url(#gg-h)',class:'pop',style:'--i:'+Math.round(p.c/2+i+8)+';pointer-events:none'},s);
   var c=S('circle',{class:'hc dm pop',style:'--i:'+Math.round(p.c/2+i),cx:f1(cx),cy:f1(cy),r:r,fill:p.gate?C.s1:p.rew?C.org:'rgba(255,255,255,.28)',stroke:p.gate?C.i1:'none','stroke-width':p.gate?1.5:0,'data-k':p.gate?'g':p.rew?'r':'o',tabindex:0},s);
   T(c,function(){return{t:p.id,s:p.t,r:[[L('创建','Opened'),dt(p.c)],[L('状态','Status'),STA()[p.s]],[L('返工','Rework'),p.rew?L('是（报告认定）','Yes (per the report)'):L('否','No')]]}})})});
  var st=$('st-gate');st.textContent='';[[L('门禁合入前','Before the gate'),G.before],[EN?G.days_after+' days after the gate':'门禁合入后 '+G.days_after+' 天',G.after]].forEach(function(x,i){var d=H('div','rise',st);d.style.setProperty('--i',i*1.5);odo(H('div','n',d),x[1].rew+' / '+x[1].n,i*3);
@@ -808,13 +1051,13 @@ function scat(){var el=$('c-scat');el.textContent='';var W=el.clientWidth,two=wi
 /* 结论句里“数字 + 量词”之间不折行（只把普通空格换成不换行空格） */
 [].forEach.call(view.querySelectorAll('h2'),function(h){var w=document.createTreeWalker(h,NodeFilter.SHOW_TEXT),n;while((n=w.nextNode()))n.nodeValue=n.nodeValue.replace(/([0-9%]) (?=[月个天条行小分周])/g,'$1\u00a0').replace(/\u00a0(小|分)(时|钟)/g,'\u00a0$1\u2060$2').replace(/(PR|Bug|Agent|App|Paseo|GitHub|bot) (?=[群仓服有没的在上自])/g,'$1\u00a0')});
 /* ---------- 调度 ---------- */
-var charts=[kpi,cum,heat,stream,month,sankey,lanes,function(){hist('c-h1','bv-h1',3,D.hist.ttm,L('建 PR 到合入的时长分布','Distribution of time from PR open to merge'),null,0,D.en.hist.ttm)},function(){hist('c-h2','bv-h2',4,D.hist.lat,L('Bug 群指令到建出 PR 的时长分布','Distribution of time from bug-group instruction to PR'),null,1,D.en.hist.lat)},function(){hist('c-h3','bv-h3',2,D.hist.net,L('单个 PR 有效行数分布','Distribution of PR size in lines changed'),L(' 行',' lines'),2,null)},rev,gate,assoc,scat];
+var charts=[kpi,cum,skyLayout,heat,stream,month,sankey,lanes,function(){hist('c-h1','bv-h1',3,D.hist.ttm,L('建 PR 到合入的时长分布','Distribution of time from PR open to merge'),null,0,D.en.hist.ttm)},function(){hist('c-h2','bv-h2',4,D.hist.lat,L('Bug 群指令到建出 PR 的时长分布','Distribution of time from bug-group instruction to PR'),null,1,D.en.hist.lat)},function(){hist('c-h3','bv-h3',2,D.hist.net,L('单个 PR 有效行数分布','Distribution of PR size in lines changed'),L(' 行',' lines'),2,null)},rev,gate,assoc,scat];
 var lastW=0,io=null;
-function render(){var w=view.clientWidth;if(!w||w===lastW)return;lastW=w;charts.forEach(function(f){try{f()}catch(e){console.error('dash chart failed',f.name,e)}});observe()}
+function render(){var w=view.clientWidth;if(!w||w===lastW)return;lastW=w;charts.forEach(function(f){try{f()}catch(e){console.error('dash chart failed',f.name,e)}});stage();observe();fxKick()}
 function observe(){var ps=view.querySelectorAll('.an');if(!('IntersectionObserver' in window)){[].forEach.call(ps,function(p){p.classList.add('in')});return}
  if(!io)io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.add('done')},3200)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});[].forEach.call(ps,function(p){if(!p.classList.contains('in'))io.observe(p)})}
 var tg=$('tg-heat'),tgB=tg.querySelectorAll('button');
-[].forEach.call(tgB,function(b){b.addEventListener('click',function(){heatM=+b.getAttribute('data-m');tg.style.setProperty('--n',heatM);[].forEach.call(tgB,function(x){x.setAttribute('aria-pressed',x===b)});var cd=$('d-heat');cd.classList.remove('done');heat(true);setTimeout(function(){cd.classList.add('done')},1300)})});
+[].forEach.call(tgB,function(b){b.addEventListener('click',function(){heatM=+b.getAttribute('data-m');tg.style.setProperty('--n',heatM);[].forEach.call(tgB,function(x){x.setAttribute('aria-pressed',x===b)});var cd=$('d-heat');cd.classList.remove('done');heat(true);if(SK.on)skyData(true);setTimeout(function(){cd.classList.add('done')},1300)})});
 var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(root.classList.contains('dash'))render()},160)});
 /* 克制的滚动视差：只有背景光晕随滚动慢移，transform-only */
 var aura=$('dz-aura'),tick=false;
@@ -840,10 +1083,10 @@ try{applyLang()}finally{root.classList.remove('i18n-wait')}
 /* ---------- tab 路由 ---------- */
 var tr=$('tab-report'),td=$('tab-dash'),was=null;
 function route(){var h=location.hash||'',dash=h.indexOf('#dashboard')===0;root.classList.toggle('dash',dash);tr.setAttribute('aria-selected',!dash);td.setAttribute('aria-selected',dash);tipHide();
- if(dash){render();if(was!==true)window.scrollTo({top:0,behavior:'instant'})}
+ if(dash){render();fxKick();if(was!==true)window.scrollTo({top:0,behavior:'instant'})}
  else if(was===true){var t=h.length>1&&h!=='#report'?document.getElementById(h.slice(1)):null;if(t)t.scrollIntoView({behavior:'instant'});else window.scrollTo({top:0,behavior:'instant'})}
  was=dash}
-window.addEventListener('hashchange',route);route();
+window.addEventListener('hashchange',route);route();fxKick();
 [].forEach.call(document.querySelectorAll('.dnav a'),function(a){a.setAttribute('tabindex','0');a.setAttribute('role','button');function go(e){e.preventDefault();var k=a.getAttribute('data-go'),sm=RM?'instant':'smooth';if(k==='top'){window.scrollTo({top:0,behavior:sm});return}var t=$(k);if(t)t.scrollIntoView({behavior:sm,block:'start'})}a.addEventListener('click',go);a.addEventListener('keydown',function(e){if(e.key==='Enter')go(e)})});
 })();
 </script></body></html>
