@@ -86,18 +86,18 @@ html.en nav div{gap:20px}
 @media (max-width:760px){.seg.lang{order:0}html.en nav div{gap:8px;padding:0 12px}html.en nav b{font-size:12.5px;letter-spacing:-.01em}html.en .seg:not(.lang) a{padding:4px 7px;font-size:11.5px}html.en .seg.lang a{padding:4px 6px;min-width:28px}html.en .dnav,html.en nav div>a{margin-left:10px}}
 /* ---- 英文排版：字号阶梯、字距、行高、断行单独调 ---- */
 html.en body,html.en #view-dash svg text{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","PingFang SC",sans-serif}
-html.en :is(h1,h2,.big,.dz-bv,.dz-kpi .v,.dz-st .n,.cum-rd .n,.mo-g .n),html.en #view-dash h2{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","PingFang SC",sans-serif}
+html.en :is(h1,h2,.big,.dz-bv,.dz-kpi .v,.dz-st .n,.cum-rd .n),html.en #view-dash h2{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","PingFang SC",sans-serif}
 html.en h1{font-size:clamp(34px,5.7vw,64px);letter-spacing:-.026em;line-height:1.06;text-wrap:balance}
 html.en h2{letter-spacing:-.022em;line-height:1.1;text-wrap:balance}html.en h3{letter-spacing:-.014em;line-height:1.25;text-wrap:balance}
 html.en .sub{line-height:1.42;letter-spacing:-.008em;text-wrap:pretty}html.en #view-report :is(p,li,.cap){text-wrap:pretty}html.en #view-report .cap{line-height:1.4}
 html.en .big small{font-size:.42em;margin-left:6px}
 html.en .dz-hero h1{font-size:clamp(33px,4.75vw,66px);letter-spacing:-.03em;line-height:1.05}html.en .dz-hero h1 :is(.hg,.hw){display:block}
 html.en .dz-hero p.s{max-width:47em;line-height:1.45;text-wrap:pretty}
-html.en #view-dash h2{letter-spacing:-.019em;line-height:1.2}html.en #view-dash .stg>.pn-h h2{letter-spacing:-.026em;line-height:1.1}
+html.en #view-dash h2{letter-spacing:-.019em;line-height:1.2}html.en #view-dash .stg .pn-h h2{letter-spacing:-.026em;line-height:1.1}
 html.en #view-dash .cum-hd h2{font-size:19px;letter-spacing:-.016em;line-height:1.3}
 html.en .pn-f{line-height:1.55;text-wrap:pretty}html.en .pn-f b{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase}
 html.en .dz-eb{letter-spacing:.02em}html.en :is(.dz-cap,.dz-sub p,.dz-ev li,.dz-as .nt){text-wrap:pretty}html.en .dz-sub p{min-height:54px}
-html.en .dz-kpi .k,html.en .mo-g .l{letter-spacing:-.005em}
+html.en .dz-kpi .k{letter-spacing:-.005em}
 .dnav{display:none;gap:inherit}.dnav a{cursor:pointer;transition:color .2s}.dnav a:hover{color:var(--ink);text-decoration:none}
 html.dash{--bg:#000;--bg2:#101012;--ink:#f5f5f7;--ink2:#a1a1a6;--ink3:#86868b;--line:#424245;--hair:rgba(255,255,255,.1);--accent:#2997ff;--card:#1c1c1e;color-scheme:dark}
 html.dash nav{background:rgba(0,0,0,.72)}
@@ -123,7 +123,7 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 @media (min-width:900px){.dz-hero p.s .hln{display:block}}
 #view-dash h2{font:600 clamp(21px,2.05vw,28px)/1.24 -apple-system,"SF Pro Display","PingFang SC",sans-serif;letter-spacing:-.016em;margin:0;text-wrap:balance}
 #view-dash h2 em{font-style:normal;color:var(--i3)}
-#view-dash .stg>.pn-h h2{font-size:clamp(25px,3.3vw,44px);line-height:1.14;letter-spacing:-.024em;font-weight:700}
+#view-dash .stg .pn-h h2{font-size:clamp(25px,3.3vw,44px);line-height:1.14;letter-spacing:-.024em;font-weight:700}
 #view-dash h3{font-size:13px;line-height:1.4;font-weight:600;color:var(--i2);margin:0}
 .pn-f{font-size:12px;line-height:1.62;color:var(--i3);margin:32px 0 0;padding:16px max(0px,calc(100% - 860px)) 0 0;border-top:1px solid var(--gr)}
 .pn-f b{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--i2);margin-right:10px}
@@ -140,7 +140,7 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 .pn>*{position:relative}
 .pn-h{display:flex;gap:16px 32px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;margin-bottom:32px}
 .pn-h>div:first-child{max-width:800px;min-width:0}
-.stg>.pn-h{margin-bottom:40px}.stg>.pn-h>div:first-child{max-width:980px}
+.stg .pn-h{margin-bottom:40px}.stg .pn-h>div:first-child{max-width:980px}
 #view-dash svg{display:block;overflow:visible;max-width:100%}
 .dz2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 #view-dash #d-scat{display:flex;flex-direction:column}#c-scat{flex:1 1 auto;min-height:380px}
@@ -155,7 +155,7 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 /* ---- 图例 / 分段控件 / 小件 ---- */
 .dz-lg{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12px;color:var(--i2);margin:0 0 20px;align-items:center}
 .dz-lg i{display:inline-block;width:8px;height:8px;border-radius:2.5px;margin-right:7px;vertical-align:0}
-.dz-lg i.ln{width:14px;height:2px;border-radius:1px;vertical-align:3px}.dz-lg i.rg{border-radius:50%;background:transparent!important;box-shadow:inset 0 0 0 1.5px currentColor}.dz-lg i.c{border-radius:50%}
+.dz-lg i.ln{width:14px;height:2px;border-radius:1px;vertical-align:3px}.dz-lg i.rg{border-radius:50%;background:transparent!important;box-shadow:inset 0 0 0 1.5px currentColor}.dz-lg i.c{border-radius:50%}.dz-lg i.vb{width:2px;height:11px;border-radius:1px;vertical-align:-1.5px;box-shadow:0 0 6px rgba(122,217,255,.95)}
 .dz-lg b{font-weight:600;color:var(--i1);margin-left:6px}.dz-lg .sep{width:1px;height:12px;background:var(--ln)}
 .dz-tg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;padding:2px;border-radius:10px;background:rgba(118,118,128,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);flex:none}
 .dz-tg i{position:absolute;left:2px;top:2px;bottom:2px;width:calc((100% - 4px)/3);border-radius:8px;background:#56565c;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 1px 3px rgba(0,0,0,.45);transform:translateX(calc(var(--n,0)*100%));transition:transform var(--spbd) var(--spb)}
@@ -188,14 +188,15 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 .dz-kpi .sp{height:44px;margin:16px 0 10px}.dz-kpi .sp svg{width:100%;height:44px}
 .dz-kpi .c{font-size:11px;color:var(--i4);line-height:1.45}
 
-/* ---- 03 月度构成 ---- */
-.mo-w{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 48px;margin-top:40px}
-.mo-h{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;color:var(--i3)}.mo-h b{font-size:15px;font-weight:600;color:var(--i1)}
-.mo-b{display:flex;gap:2px;height:8px;margin:12px 0 16px}.mo-b i{display:block;min-width:2px;border-radius:2px;cursor:default;outline-offset:3px}.mo-b i:first-child{border-radius:4px 2px 2px 4px}.mo-b i:last-child{border-radius:2px 4px 4px 2px}
-.mo-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.mo-g .n{font:600 22px/1.15 -apple-system,"SF Pro Display",sans-serif;letter-spacing:-.02em}
-.mo-g .l{font-size:11px;color:var(--i3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mo-g .l i{display:inline-block;width:6px;height:6px;border-radius:2px;margin-right:5px;vertical-align:1px}
-.mo-g>div:nth-child(n+3) .n{color:var(--i2);font-weight:500}
+/* ---- 03 份额迁移 ---- */
+#c-shift{position:relative}#c-month{margin-top:2px}
+/* 数据层单独一张 SVG，放在可平移的遮罩里：滚动揭示时外层与内层反向平移，只动 transform */
+.rv{position:absolute;left:0;right:0;top:-80px;bottom:-80px;overflow:hidden;pointer-events:none}.rv-i{position:absolute;inset:0}.rv-i>svg{position:absolute;left:0;top:80px}
+.sh-cap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;font-size:12px;line-height:1.5;color:var(--i3);margin:0 0 6px}
+.sh-cap .dz-lg{margin:0;gap:6px 16px}.sh-cap .dz-lg:empty{display:none}
+#view-dash svg text.sh-n{font-family:-apple-system,"SF Pro Display","PingFang SC",sans-serif;font-weight:600;letter-spacing:-.03em;font-variant-numeric:normal}
+#view-dash svg .sh-sd{opacity:0;transition:opacity .28s ease;pointer-events:none}#view-dash svg .sh-rg{opacity:0;transition:opacity .2s ease;pointer-events:none}
+.an:not(.in) .wipe{transform:scaleX(0)}.an.in .wipe{transition:transform 1.9s cubic-bezier(.45,.05,.2,1) .1s}.an.in.done .wipe{transition:none}
 
 /* ---- 数值块 ---- */
 .dz-st{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
@@ -209,8 +210,10 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 .dz-as{border-top:1px solid var(--hr)}
 .dz-as .r{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(90px,1fr) minmax(0,1.05fr);gap:6px 18px;align-items:center;padding:14px 0;border-bottom:1px solid var(--gr)}
 .dz-as .nm{font-size:13px;font-weight:600}.dz-as .nt{display:block;font-size:11px;color:var(--i3);font-weight:400;line-height:1.45;margin-top:3px}
-.dz-as .stt{font-size:11px;color:var(--i3);text-align:right;line-height:1.5}.dz-as .stt span{display:block;white-space:nowrap}.dz-as .stt b{display:block;font-size:15px;color:var(--i1);font-weight:600;letter-spacing:-.01em}
-.dz-as .r.ns .nm{color:var(--i2);font-weight:500}.dz-as .r.ns .stt b{color:var(--i2);font-weight:500}
+.dz-as .stt{font-size:11px;color:var(--i3);text-align:right;line-height:1.5}.dz-as .stt span{display:block;white-space:nowrap}.dz-as .stt b{display:block;font-size:17px;line-height:1.3;color:var(--i1);font-weight:600;letter-spacing:-.015em;white-space:nowrap}.dz-as .stt b i{font-style:normal;font-size:12px;font-weight:400;letter-spacing:0;color:var(--i2);margin-left:1px}
+.dz-as .stt .pv.sg{display:inline-block;margin-top:3px;padding:0 7px;border-radius:99px;color:#cfe8ff;background:rgba(41,151,255,.14);box-shadow:inset 0 0 0 .5px rgba(122,200,255,.5)}
+.dz-as .r{cursor:default;outline:none;border-radius:2px}.dz-as .r:focus-visible{outline:1.5px solid var(--acc);outline-offset:2px;border-radius:6px}
+.dz-as .r.ns .nm{color:var(--i2);font-weight:500}.dz-as .r.ns .stt b{color:var(--i2);font-weight:500;font-size:15px}
 .dz-tb{width:100%;border-collapse:collapse;font-size:12px;margin-top:24px}
 .dz-tb th,.dz-tb td{padding:10px 10px 10px 0;border-bottom:1px solid var(--gr);text-align:right;white-space:nowrap;color:var(--i2);font-weight:400}
 .dz-tb .nt{display:block;font-size:11px;color:var(--i4)}.dz-tb th{font-size:11px;color:var(--i3);font-weight:500;letter-spacing:.02em;border-bottom-color:var(--hr)}.dz-tb td:first-child,.dz-tb th:first-child{text-align:left;color:var(--i1);white-space:normal}.dz-tb th:last-child,.dz-tb td:last-child{padding-right:0}
@@ -227,7 +230,8 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 #view-dash svg .hb:hover,#view-dash svg .hb:focus{filter:brightness(1.18)}
 .dm{transition:opacity .28s ease}
 .foc .dm:not(.on){opacity:.2}.foc .lk.on{opacity:1}
-#view-dash svg .row-bg{fill:#fff;opacity:0;transition:opacity .2s}#view-dash svg .dm.on .row-bg{opacity:.04}
+#view-dash svg .row-bg{fill:#fff;opacity:0;transition:opacity .2s}#view-dash svg .dm.on .row-bg{opacity:.045}
+#view-dash svg .ln-g{opacity:.7;transition:opacity .25s}#view-dash svg .dm.on .ln-g{opacity:1}
 .pulse{transform-box:fill-box;transform-origin:50% 50%;animation:dz-pulse 2.8s ease-in-out 2.2s infinite backwards}.an.in.done .pulse{animation-delay:0s}
 @keyframes dz-pulse{0%,100%{transform:scale(.55);opacity:.5}50%{transform:scale(1);opacity:.12}}
 
@@ -269,7 +273,8 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
  #view-dash .pn.an{opacity:1!important;transform:none!important;transition:none!important}
  .od-s{transform:translateY(-66.6667%)!important;opacity:1!important;transition:none!important}
  .pulse{animation:none!important;transform:none;opacity:.2}
- .seg i,.dz-tg i,#dtip,#dtip>div,.dm{transition:none!important}}
+ .seg i,.dz-tg i,#dtip,#dtip>div,.dm,.sh-sd,.sh-rg,.ln-g{transition:none!important}
+ .an .wipe{transform:none!important;transition:none!important}}
 
 /* ---- 响应式 ---- */
 @media (min-width:1200px){
@@ -280,22 +285,22 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
  #dtip>div{box-shadow:inset 0 0 0 .5px rgba(255,255,255,.24),inset 0 1px 0 rgba(255,255,255,.12),0 20px 48px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.35)}
  #view-dash .dz-kpi{border-width:.5px;border-color:rgba(255,255,255,.2)}.pn-f{border-top-width:.5px;border-top-color:rgba(255,255,255,.14)}}
 @media (max-width:1000px){
- #c-scat{min-height:0}.mo-w{grid-template-columns:minmax(0,1fr);gap:28px}
+ #c-scat{min-height:0}
  #view-dash .dz-kpi{grid-template-columns:repeat(3,1fr)}.dz-kpi>div:nth-child(4){padding-left:0}.dz-kpi>div:nth-child(4)::before{display:none}.dz-kpi>div:nth-child(n+4){border-top:1px solid var(--gr)}
  .dz2{grid-template-columns:minmax(0,1fr)}.dz-split{grid-template-columns:minmax(0,1fr);gap:36px}.dz-3{grid-template-columns:minmax(0,1fr)}.dz-sub p{min-height:0}#view-dash .stg{padding:96px 0 56px}}
 @media (max-width:760px){
  #view-dash{padding:0 12px 28px}.dz-hero{padding:56px 8px 36px}#d-cum,.stg>*,#view-dash .dz-kpi{margin-left:8px;margin-right:8px}#d-cum>*{margin-left:0;margin-right:0}
  #view-dash .stg{padding:72px 0 40px}.stg>.dz-3{margin-left:0;margin-right:0}.mt-l{margin-top:56px!important}
  #view-dash .pn{padding:28px 20px 22px;border-radius:22px;margin-top:12px}#view-dash .dz-3>.pn{padding:26px 20px 20px}.dz2,.dz-3{gap:12px}.dz2>.pn{margin-top:0!important}.dz2{margin-top:12px}
- .pn-h{margin-bottom:24px}.stg>.pn-h{margin-bottom:28px}.pn-f{margin-top:24px}
+ .pn-h{margin-bottom:24px}.stg .pn-h{margin-bottom:28px}.pn-f{margin-top:24px}
  #view-dash .dz-kpi{grid-template-columns:1fr 1fr;margin-top:48px}.dz-kpi>div{padding:22px 14px 18px}.dz-kpi>div:nth-child(odd){padding-left:0}.dz-kpi>div:nth-child(odd)::before{display:none}.dz-kpi>div:nth-child(4)::before{display:block}.dz-kpi>div:nth-child(n+3){border-top:1px solid var(--gr)}
- .dz-ev{grid-template-columns:1fr;gap:14px}.mo-w{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:32px}
+ .dz-ev{grid-template-columns:1fr;gap:14px}
  .dz-as .r{grid-template-columns:1fr 1fr}.dz-as .nm{grid-column:1/-1}
  .dz-st>div{padding-right:10px}.dz-st>div+div{padding-left:12px}
  .dz-foot{padding-left:8px;padding-right:8px}}
 .dz2>.pn{margin-top:24px}
 .dz-foot{max-width:1200px;margin:72px auto 0;padding:24px 0 32px;border-top:1px solid var(--gr);font-size:12px;line-height:1.6;color:var(--i4)}.dz-foot p{margin:0 0 8px;max-width:860px}
-@media print{html.dash nav{display:none}.an *{opacity:1!important;animation:none!important}#view-dash .pn.an{opacity:1!important;transform:none!important}}
+@media print{html.dash nav{display:none}.an *{opacity:1!important;animation:none!important}.an .wipe{transform:none!important}#view-dash .pn.an{opacity:1!important;transform:none!important}}
 
 /* ================= v4 · 材质与光 ================= */
 /* 舞台：点阵底 + 曲线基线下的透视网格地面 + 卡片背后的光池（给玻璃可透的内容） */
@@ -334,12 +339,101 @@ html.dash #view-report{display:none}html:not(.dash) #view-dash{display:none}
 .sk-t{position:absolute;left:0;top:12px;font-size:12px;font-weight:600;color:var(--i2);pointer-events:none}
 .sk-h{position:absolute;right:0;bottom:-6px;font-size:11px;color:var(--i3);pointer-events:none;text-align:right}
 /* 叠在图上的光效层：流光、粒子 */
-#c-cum,#c-sankey{position:relative}
+#c-cum,#c-sankey,#c-shift{position:relative}
 .fx-ov{position:absolute;left:0;top:0;pointer-events:none;will-change:transform}
 canvas.fx-ov{mix-blend-mode:plus-lighter}
 @media (max-width:760px){#dz-floor{height:200px;perspective:300px}#c-sky{margin:-4px 0 22px}.sk-t{top:4px}.dz-tgs{justify-content:flex-start;flex:1 1 100%;min-width:0}}
 @media (prefers-reduced-motion:reduce){#dz-floor{transition:none}#dz-floor i::before{animation:none}}
 @media print{#dz-floor,#dz-orbs,.fx-ov{display:none}}
+/* ================= v5 · 滚动分镜 =================
+   .scn = 分镜开启（宽 ≥ 900、高 ≥ 620、未减弱动效）；.sct = 用 CSS scroll-driven animations；.scj = 不支持时由 rAF 按滚动进度写 --p。
+   同一套 @keyframes 两条路径共用：.sd 元素的关键帧名、时间线、区间都由自定义属性给出（--tl / --rg 由脚本按 data-sd 写入，脚本回退时用同一份 data-sd 算进度）。 */
+@property --p{syntax:'<number>';inherits:false;initial-value:1}
+.scn .sd{animation-name:var(--kf);animation-timing-function:linear;animation-fill-mode:both}
+.sct .sd{animation-timeline:var(--tl,view());animation-range:var(--rg,cover 0% cover 100%)}
+.scj .sd{animation-duration:1s;animation-play-state:paused;animation-delay:calc(var(--p,1)*-1s)}
+/* pin：外壳 = 舞台 + 一段占位；舞台 sticky，占位的高度就是额外的滚动距离 */
+.pin-sp{display:block;height:0}
+.scn .pin-on>.pin{position:sticky;top:var(--pt,56px)}
+.pinw{view-timeline-name:--pin;view-timeline-axis:block;view-timeline-inset:var(--vi0,0px) var(--vi1,0px)}
+.scn #pw-shift .pn-h{margin-bottom:28px}
+/* 卡片从景深里立起 */
+.scn #view-dash .pn{transform-origin:50% 0}
+@keyframes sc-in{from{transform:perspective(1400px) translate3d(0,72px,0) rotateX(9deg) scale(.93)}to{transform:perspective(1400px) translate3d(0,0,0) rotateX(0deg) scale(1)}}
+@keyframes sc-inl{from{transform:perspective(1400px) translate3d(-36px,72px,0) rotateX(9deg) scale(.93)}to{transform:perspective(1400px) translate3d(0,0,0) rotateX(0deg) scale(1)}}
+@keyframes sc-inr{from{transform:perspective(1400px) translate3d(36px,72px,0) rotateX(9deg) scale(.93)}to{transform:perspective(1400px) translate3d(0,0,0) rotateX(0deg) scale(1)}}
+/* 首屏标题：比页面滚得慢 */
+.scn .dz-hero{transform-origin:0 0}
+@keyframes sc-hero{to{transform:translate3d(0,64px,0) scale(.95)}}
+/* 03：数据层的遮罩，外层与内层反向平移 */
+@keyframes sc-rvo{from{transform:translate3d(-100%,0,0)}to{transform:translate3d(0,0,0)}}
+@keyframes sc-rvi{from{transform:translate3d(100%,0,0)}to{transform:translate3d(0,0,0)}}
+/* 揭示的前沿：一条亮线带一段拖尾，只在揭的过程中出现（淡入淡出是时间动画） */
+.rv-h{position:absolute;right:0;width:140px;pointer-events:none;opacity:0;transition:opacity .35s ease;background:linear-gradient(90deg,rgba(41,151,255,0),rgba(64,160,255,.05) 45%,rgba(130,200,255,.2));border-right:1.5px solid rgba(200,232,255,.92)}
+.scn .pin-on .rv.scan .rv-h{opacity:1}
+.scn .pin-on :is(.wipe){transform:none!important;transition:none!important}
+.scn .pin-on .rv :is(.fx,.draw){animation:none!important;opacity:1;stroke-dashoffset:0!important;transition:none!important}
+.scn .pin-on g.bt{transition:opacity .5s ease,transform .7s var(--sp)}
+.scn .pin-on g.bt.fx{animation:none!important;opacity:1}
+.scn .pin-on g.bt.mh{opacity:0!important;transform:translate3d(0,14px,0)}
+.scn .pin-on #c-month :is(.fx,.grow){animation:none!important;opacity:1}
+/* 关键数字：pin 住时逐格聚焦；上方的大读数是被选中那一格的放大，换格时旧数字缩回自己那一格、新数字从它那一格放大飞出（时间动画，不跟手）。
+   不压暗其余五格：停在任何位置六个数字都是完整可读的。 */
+.kbig{display:none;position:relative;--kbf:clamp(96px,min(13.5vw,24vh),200px);height:calc(var(--kbf)*.9 + 34px);margin-top:64px;pointer-events:none}
+.scn .pin-on .kbig{display:block}
+#view-dash .pin-on .kbig+.dz-kpi{margin-top:22px}
+.kb-i{position:absolute;left:0;bottom:0;transform-origin:0 100%;white-space:nowrap;will-change:transform,opacity}
+.kb-k{font-size:15px;font-weight:600;line-height:1.4;color:var(--i2);letter-spacing:-.008em;margin:0 0 4px}
+.kb-v{font:700 var(--kbf)/.9 -apple-system,"SF Pro Display","PingFang SC",sans-serif;letter-spacing:-.055em;color:var(--i1);font-variant-numeric:normal;margin-left:-.045em}
+.kb-v small{font-size:.15em;font-weight:500;letter-spacing:0;color:var(--i3);margin-left:.5em}
+.dz-kpi>div::after{content:"";position:absolute;left:0;right:20px;top:-1px;height:1px;background:linear-gradient(90deg,#9fdcff,rgba(41,151,255,.5) 40%,transparent);box-shadow:0 0 12px rgba(41,151,255,.8);opacity:0;transform:scaleX(.3);transform-origin:0 50%;transition:opacity .4s ease,transform .7s var(--sp)}
+.dz-kpi>div+div::after{left:20px}
+.scn .dz-kpi>div{transform-origin:0 62%;transition:transform .7s var(--sp)}.scn .dz-kpi>div+div{transform-origin:20px 62%}
+.dz-kpi::before{content:"";position:absolute;left:0;top:-70px;bottom:-70px;width:16.6667%;pointer-events:none;opacity:0;background:radial-gradient(60% 50% at 50% 50%,rgba(41,151,255,.2),rgba(41,151,255,.06) 55%,transparent 75%);transform:translate3d(calc(var(--k,0)*100%),0,0) scale(1.9,1);transition:opacity .5s ease,transform .8s var(--sp)}
+.scn .dz-kpi.kf::before{opacity:1}
+.scn .dz-kpi.kf>div.on{transform:scale(1.045)}.scn .dz-kpi.kf>div.on::after{opacity:1;transform:none}
+/* 过场卡 */
+.chp{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:42vh;min-height:310px;max-height:480px;margin:48px 0 0;pointer-events:none;view-timeline-name:--ch;view-timeline-axis:block}
+.chp-nw{overflow:hidden;padding:0 .2em}
+.chp-n{font:700 clamp(104px,18vw,236px)/.92 -apple-system,"SF Pro Display","PingFang SC",sans-serif;letter-spacing:-.055em;font-variant-numeric:normal;white-space:nowrap;color:transparent;
+ background:linear-gradient(180deg,#fff 8%,#cfe8ff 34%,rgba(84,164,255,.62) 62%,rgba(41,151,255,.1) 94%);-webkit-background-clip:text;background-clip:text;padding:.04em .04em 0}
+.chp-n i{font-style:normal;font-weight:300;margin:0 .02em}
+.chp-l{display:block;width:min(84%,880px);height:1px;flex:none;background:linear-gradient(90deg,transparent,rgba(150,210,255,.9) 28%,#fff 50%,rgba(150,210,255,.9) 72%,transparent);box-shadow:0 0 22px 1px rgba(41,151,255,.75),0 0 60px 6px rgba(41,151,255,.25)}
+.chp-m{overflow:hidden}
+.chp-t{font:700 clamp(25px,3.3vw,44px)/1.14 -apple-system,"SF Pro Display","PingFang SC",sans-serif;letter-spacing:-.024em;color:var(--i1);padding:22px 0 0}
+.chp-s{font-size:clamp(15px,1.5vw,19px);line-height:1.5;color:var(--i2);margin:0;padding:8px 16px 4px}
+html.en .chp-t{letter-spacing:-.026em}
+.chp+.stg{padding-top:8px!important}#view-dash .chp+.pn{margin-top:8px}
+@keyframes ch-l{0%,3%{transform:scaleX(0)}22%{transform:scaleX(.72)}38%,100%{transform:scaleX(1)}}
+@keyframes ch-n{0%,6%{transform:translate3d(0,104%,0)}24%{transform:translate3d(0,34%,0)}44%,100%{transform:translate3d(0,0,0)}}
+@keyframes ch-t{0%,22%{transform:translate3d(0,-112%,0)}48%,100%{transform:translate3d(0,0,0)}}
+@keyframes ch-s{0%,28%{transform:translate3d(0,-112%,0)}52%,100%{transform:translate3d(0,0,0)}}
+.scn .chp .rise{opacity:1!important;animation:none!important}
+/* 首屏：一条光线展开成曲线（进入视口后播一次） */
+.beam{position:absolute;left:0;height:2px;border-radius:1px;pointer-events:none;opacity:0;background:linear-gradient(90deg,rgba(41,151,255,0),#8fd8ff 14%,#fff 50%,#8fd8ff 86%,rgba(41,151,255,0));box-shadow:0 0 14px 2px rgba(64,160,255,.9),0 0 46px 8px rgba(41,151,255,.45)}
+.scn .an.in .beam{animation:dz-beam 1.9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes dz-beam{0%{opacity:1;transform:scaleX(0)}30%{opacity:1;transform:scaleX(1)}55%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
+.scn #c-cum .unf{transform-box:view-box;transform-origin:0 var(--y0,400px)}
+.scn .an:not(.in) #c-cum .unf{transform:scaleY(.004)}
+.scn .an.in #c-cum .unf{animation:dz-unf 1.45s var(--sp) .55s backwards}
+@keyframes dz-unf{from{transform:scaleY(.004)}}
+.scn #c-cum .unf .draw{stroke-dasharray:none;stroke-dashoffset:0!important;transition:none!important}
+.scn .an.in #c-cum .unf>.fx{animation-delay:.2s}
+/* 04：流带逐条点亮 */
+.scn .an.in .lk{animation:dz-fib .95s cubic-bezier(.3,.7,.2,1) calc(var(--f,0)*60ms + .15s) backwards}
+@keyframes dz-fib{from{clip-path:inset(0 100% 0 0);filter:brightness(2.6) saturate(1.25)}55%{clip-path:inset(0 0 0 0);filter:brightness(2.2) saturate(1.2)}to{clip-path:inset(0 0 0 0);filter:brightness(1) saturate(1)}}
+/* 05：滚到哪一行，哪一行分叉 */
+.scn #c-lanes g.lr:not(.go) :is(.lf,.lfk,.lgx,.lpop){opacity:0}
+.scn #c-lanes g.lr.go .lfk{transform-box:fill-box;transform-origin:50% 50%;animation:dz-fk .5s var(--sp) calc(var(--q,0)*80ms) backwards}
+.scn #c-lanes g.lr.go .lf{animation:dz-fade .5s ease calc(var(--q,0)*80ms + .12s) backwards}
+.scn #c-lanes g.lr.go .lgx{transform-box:fill-box;transform-origin:0 50%;animation:dz-growx .75s var(--sp) calc(var(--q,0)*80ms + .14s) backwards}
+.scn #c-lanes g.lr.go .lpop{transform-box:fill-box;transform-origin:50% 50%;animation:dz-pop var(--spbd) var(--spb) calc(var(--q,0)*80ms + .48s) backwards}
+@keyframes dz-fk{from{opacity:0;transform:scaleY(.001)}}
+.scn #c-lanes g.lr.go.dn :is(.lf,.lfk,.lgx,.lpop){animation:none}
+.an.in.done .beam,.an.in.done #c-cum .unf,.an.in.done .lk{animation:none}
+@media (max-width:899px){.chp{height:auto;min-height:0;max-height:none;padding:72px 0 8px;margin:24px 0 0}.chp-n{font-size:clamp(84px,24vw,140px)}}
+@media (prefers-reduced-motion:reduce){.sd,.beam{animation:none!important}}
+@media print{.sd,.beam{animation:none!important}.pin{position:static!important}.pin-sp{height:0!important}.chp{height:auto;min-height:0;padding:40px 0}}
 </style></head><body>
 <nav><div><b>代码工作复盘</b><span class="seg" role="tablist" aria-label="视图切换" data-al-en="View"><i aria-hidden="true"></i><a href="#report" role="tab" id="tab-report" aria-selected="true"><span class="l-zh">报告</span><span class="l-en">Report</span></a><a href="#dashboard" role="tab" id="tab-dash" aria-selected="false"><span class="l-zh">仪表盘</span><span class="l-en">Dashboard</span></a></span><script>(function(){var d=document.documentElement,q=/[?&]lang=(en|zh)\b/.exec(location.search),l=q?q[1]:null;try{l=l||localStorage.getItem('jr-lang')}catch(e){}if(l!=='en'&&l!=='zh'){var n=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];l=[].some.call(n,function(x){return/^zh/i.test(x)})?'zh':/^en/i.test(n[0])?'en':'zh'}if(l==='en'){d.classList.add('en','i18n-wait');d.lang='en'}if(location.hash.indexOf('#dashboard')===0)d.classList.add('dash')})()</script><span class="seg lang" role="group" aria-label="语言 Language"><i aria-hidden="true"></i><a href="?lang=zh" data-lang="zh" lang="zh-CN" aria-pressed="true" title="中文">中</a><a href="?lang=en" data-lang="en" lang="en" aria-pressed="false" title="English">EN</a></span><span class="dnav"><a data-go="top"><span class="l-zh">概览</span><span class="l-en">Overview</span></a><a data-go="d-cum"><span class="l-zh">节奏</span><span class="l-en">Cadence</span></a><a data-go="d-shift"><span class="l-zh">结构</span><span class="l-en">Structure</span></a><a data-go="d-lanes"><span class="l-zh">需求线</span><span class="l-en">Requirements</span></a><a data-go="d-speed"><span class="l-zh">速度</span><span class="l-en">Speed</span></a><a data-go="d-gate"><span class="l-zh">相关</span><span class="l-en">Correlation</span></a></span><a href="#numbers">概览</a><a href="#rhythm">节奏</a><a href="#lines">需求线</a><a href="#arch">架构</a><a href="#value">价值</a><a href="#limits">局限</a><a href="#method">方法</a></div></nav><div id="view-report">
 
@@ -498,7 +592,7 @@ canvas.fx-ov{mix-blend-mode:plus-lighter}
 <div id="c-cum"></div><ol class="dz-ev" id="ev-cum"></ol>
 <p class="pn-f rise" style="--i:9"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">两条线各自除以期末值后画在同一根 0–100% 轴上（合入 PR 140 个；已合入有效行 37,178 行），按合入日累计，北京时间。有效行 = 增加 + 删除，去掉评测 JSON、锁文件等生成文件，同报告。</span><span class="l-en">Each line is divided by its final value and drawn on one 0–100% axis (140 merged PRs; 37,178 lines merged), accumulated by merge date, Beijing time. Lines = additions + deletions, excluding generated files such as eval JSON and lock files, as in the report.</span></p></section>
 
-<section id="d-kpi" class="dz-kpi an" aria-label="关键数字" data-al-en="Key numbers"></section>
+<div class="pinw" id="pw-kpi"><div class="pin kpin an"><div class="kbig rise" id="kbig" aria-hidden="true"></div><section id="d-kpi" class="dz-kpi" aria-label="关键数字" data-al-en="Key numbers"></section></div><i class="pin-sp" aria-hidden="true"></i></div>
 
 <section class="pn an mt-l" id="d-heat"><div class="pn-h"><div><p class="dz-eb"><span class="l-zh">02 · 节奏</span><span class="l-en">02 · Cadence</span></p><h2><span class="l-zh">94 天里有 49 天新建了 PR；最密的一天是 11-16，15 个。<em>周末新建 26 个，占 15%。</em></span><span class="l-en">PRs were opened on 49 of 94 days. The busiest was Nov 16, with 15. <em>Weekends account for 26, or 15%.</em></span></h2></div>
 <div class="dz-tgs"><div class="dz-tg tg2" id="tg-dim" role="group" aria-label="图表维度" data-al-en="Chart dimension" hidden><i aria-hidden="true"></i><button data-d="2" aria-pressed="true">2D</button><button data-d="3" aria-pressed="false">3D</button></div><div class="dz-tg" id="tg-heat" role="group" aria-label="热力图指标" data-al-en="Heatmap metric"><i aria-hidden="true"></i><button data-m="0" aria-pressed="true"><span class="l-zh">新建 PR</span><span class="l-en">New PRs</span></button><button data-m="1" aria-pressed="false"><span class="l-zh">合入 PR</span><span class="l-en">Merged PRs</span></button><button data-m="2" aria-pressed="false"><span class="l-zh">有效行</span><span class="l-en">Lines</span></button></div></div></div>
@@ -506,18 +600,21 @@ canvas.fx-ov{mix-blend-mode:plus-lighter}
 <div id="c-heat"></div>
 <p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">左侧一格一天，列为周（周一起），行为星期；右侧一格是“星期 × 小时”的合计，北京时间。新建 PR 与有效行按创建时间计，合入 PR 按合入时间计。颜色分四档，档位按非零格的 40 / 70 / 90 分位切分。3D 视图把左侧换成立体柱：一根柱一天，柱高与数值成正比（线性，最高日为满高），颜色档位与 2D 相同；右侧“星期 × 小时”仍是平面格。</span><span class="l-en">Left: one cell per day; columns are weeks (starting Monday), rows are weekdays. Right: one cell per weekday × hour, Beijing time. New PRs and lines are counted by creation time, merged PRs by merge time. Four color steps, cut at the 40th, 70th, and 90th percentiles of non-zero cells. The 3D view replaces the left block with columns: one per day, height proportional to the value (linear; the peak day is full height), with the same color steps as 2D. The weekday × hour block stays flat.</span></p></section>
 
-<section class="stg" id="d-shift"><div class="pn-h an"><div><p class="dz-eb rise"><span class="l-zh">03 · 结构</span><span class="l-en">03 · Structure</span></p><h2 class="rise" style="--i:1"><span class="l-zh">App 仓占新建 PR 的比例从 9 月的 65% 降到 11 月的 12%；Agent 服务仓从 13% 升到 51%。</span><span class="l-en">The App repo’s share of new PRs fell from 65% in September to 12% in November; the Agent service repo’s rose from 13% to 51%.</span></h2></div></div>
-<div class="an"><div class="dz-lg rise" id="lg-shift"></div><div id="c-stream"></div></div><div class="mo-w an" id="c-month" data-foc></div>
-<p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">上图按创建周（周一起）堆叠各仓库层的新建 PR 数；下方按创建月归一到 100%，8 月只有 3 个未单列。按仓库归层，与报告“按月”表的 App 仓、Agent 服务仓两列一致。报告里的“Agent 层占比”是另一口径（按需求线主题归层，含后端与中台里的 Agent 相关改动）：9 月 22.1%、10 月 24.4%、11 月 82.4%。</span><span class="l-en">Top: new PRs per creation week (starting Monday), stacked by repository layer. Bottom: each creation month normalized to 100%; August has only 3 PRs and is not shown. Layers follow the repository, matching the App repo and Agent service repo columns in the report’s monthly table. The report’s “Agent layer share” uses a different definition (by workstream theme, including Agent-related changes in the backend and content platform): 22.1% in September, 24.4% in October, 82.4% in November.</span></p></section>
+<div class="chp an"><div class="chp-nw rise" aria-hidden="true"><div class="chp-n sd" data-sd="cover" style="--kf:ch-n">03<i>–</i>04</div></div><i class="chp-l sd" data-sd="cover" style="--kf:ch-l" aria-hidden="true"></i><div class="chp-m rise" style="--i:1"><div class="chp-t sd" data-sd="cover" style="--kf:ch-t"><span class="l-zh">结构</span><span class="l-en">Structure</span></div></div><div class="chp-m rise" style="--i:2"><p class="chp-s sd" data-sd="cover" style="--kf:ch-s"><span class="l-zh">工作落在哪些仓库，从哪里来。</span><span class="l-en">Where the work landed, and where it came from.</span></p></div></div>
+<section class="stg" id="d-shift"><div class="pinw" id="pw-shift"><div class="pin"><div class="pn-h an"><div><p class="dz-eb rise"><span class="l-zh">03 · 结构</span><span class="l-en">03 · Structure</span></p><h2 class="rise" style="--i:1"><span class="l-zh">App 仓占新建 PR 的比例从 9 月的 65% 降到 11 月的 12%；Agent 服务仓从 13% 升到 51%。</span><span class="l-en">The App repo’s share of new PRs fell from 65% in September to 12% in November; the Agent service repo’s rose from 13% to 51%.</span></h2></div></div>
+<div class="an"><div class="sh-cap rise" style="--i:2"><span><span class="l-zh">一列一周：列高是各层占当周新建 PR 的比例，列宽是当周新建了多少个（列顶的数字），所以色块面积就是 PR 个数。</span><span class="l-en">One column per week: height is each layer’s share of that week’s new PRs; width is how many were opened (the number on top), so area is the number of PRs.</span></span><span class="dz-lg" id="lg-shift"></span></div><div id="c-shift"></div></div><div class="an" id="c-month"></div></div><i class="pin-sp" aria-hidden="true"></i></div>
+<p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">上图一列一周（周一起，按创建时间）：列高归一到 100%，自下而上是 Agent 服务、App、后端、其他仓库各占当周新建 PR 的比例；列宽与当周新建数成正比，各列首尾相接，所以色块面积就是 PR 个数，横向不是等距的时间轴。列与列之间的窄连带只表示前后两周怎么接上，不是数据。有三周只新建了 2 到 3 个，占比跳动大，但列也窄。图上标出的是 Agent 服务仓当周新建数第一次多于 App 仓的那一周。下方按创建月汇总到 100%，位置与上图的月份对齐（09-28 起那一周跨 9、10 两个月，分界按个数画在该列中间）；8 月只有 3 个未单列。按仓库归层，与报告“按月”表的 App 仓、Agent 服务仓两列一致。报告里的“Agent 层占比”是另一口径（按需求线主题归层，含后端与中台里的 Agent 相关改动）：9 月 22.1%、10 月 24.4%、11 月 82.4%。</span><span class="l-en">Top: one column per creation week (starting Monday). Each column is normalized to 100% and stacked, bottom to top, as Agent service, App, backend, and other repositories; column width is proportional to the number of PRs opened that week and the columns sit end to end, so area is the number of PRs and the horizontal axis is not an evenly spaced timeline. The narrow bands between columns only show how one week joins the next and are not data. Three weeks have just 2 or 3 new PRs, so their shares jump, but those columns are narrow too. The marker is the first week in which the Agent service repo opened more PRs than the App repo. Bottom: each creation month summed to 100%, placed under the same months in the chart above (the week of Sep 28 spans September and October, so the boundary falls inside that column, by count); August has only 3 PRs and is not shown. Layers follow the repository, matching the App repo and Agent service repo columns in the report’s monthly table. The report’s “Agent layer share” uses a different definition (by workstream theme, including Agent-related changes in the backend and content platform): 22.1% in September, 24.4% in October, 82.4% in November.</span></p></section>
 
 <section class="pn an mt-0" id="d-flow"><div class="pn-h"><div><p class="dz-eb"><span class="l-zh">04 · 结构</span><span class="l-en">04 · Structure</span></p><h2><span class="l-zh">Bug 群来的 PR 有 67% 落在 App；Paseo 来的有 60% 落在 Agent 服务。<em>后端仓合入率最低，58%。</em></span><span class="l-en">67% of PRs from the bug group landed in the App; 60% of those from Paseo landed in the Agent service. <em>The backend repo has the lowest merge rate, 58%.</em></span></h2></div></div>
 <div id="c-sankey"></div>
 <p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">带宽与 PR 数成正比，三列各自合计 172。报告里来源可多选（Bug 群 85、Paseo 52、私聊 43、群聊 26）；这里为了让每个 PR 只走一条带，按“含 Bug 群 → 否则含 Paseo → 其余为 AI 助手私聊或群聊”取一个，所以 Paseo 是 45 而不是 52。状态取自 11-25。</span><span class="l-en">Band width is proportional to PR count; each column totals 172. In the report a PR can have several sources (bug group 85, Paseo 52, direct chats 43, group chats 26). Here each PR follows one band, assigned as “bug group if present, otherwise Paseo, otherwise AI assistant direct or group chat”, so Paseo is 45 rather than 52. Status as of Nov 25.</span></p></section>
 
+<div class="chp an"><div class="chp-nw rise" aria-hidden="true"><div class="chp-n sd" data-sd="cover" style="--kf:ch-n">05</div></div><i class="chp-l sd" data-sd="cover" style="--kf:ch-l" aria-hidden="true"></i><div class="chp-m rise" style="--i:1"><div class="chp-t sd" data-sd="cover" style="--kf:ch-t"><span class="l-zh">需求线</span><span class="l-en">Requirements</span></div></div><div class="chp-m rise" style="--i:2"><p class="chp-s sd" data-sd="cover" style="--kf:ch-s"><span class="l-zh">一条需求，几个仓库一起动。</span><span class="l-en">One requirement, several repos moving together.</span></p></div></div>
 <section class="pn an" id="d-lanes"><div class="pn-h"><div><p class="dz-eb"><span class="l-zh">05 · 需求线</span><span class="l-en">05 · Cross-repo requirements</span></p><h2><span class="l-zh">17 条跨仓需求线里，12 条的各端 PR 在同一小时内提出；11 条已全部合入。</span><span class="l-en">Of 17 cross-repo requirements, 12 had every repo’s PR opened within the same hour; 11 are fully merged.</span></h2></div></div>
 <div class="dz-lg" id="lg-lanes"></div><div id="c-lanes"></div>
 <p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">报告“跨端需求定义”一节的 17 条需求线、41 个 PR。每条细线是一个 PR，从创建画到合入或关闭；未合入的画到 11-25。同一条需求线的 PR 在创建处分叉。“同一小时内”= 该线各 PR 创建时间的最大间隔不超过 60 分钟。报告写“12 条已合入”，其中 1 条（日报训练建议不截断）是 3 个 PR 里合入 2 个、关闭 1 个，这里按逐个 PR 的状态画。</span><span class="l-en">The 17 requirements and 41 PRs from the report’s section on cross-repo requirements. Each thin line is one PR, drawn from creation to merge or close; open PRs run to Nov 25. PRs of one requirement branch from the point of creation. “Within the same hour” means the largest gap between creation times in that requirement is 60 minutes or less. The report says “12 merged”; one of those (Day Report drill advice not truncated) has 2 of 3 PRs merged and 1 closed, and is drawn here by each PR’s own status.</span></p></section>
 
+<div class="chp an"><div class="chp-nw rise" aria-hidden="true"><div class="chp-n sd" data-sd="cover" style="--kf:ch-n">06<i>–</i>07</div></div><i class="chp-l sd" data-sd="cover" style="--kf:ch-l" aria-hidden="true"></i><div class="chp-m rise" style="--i:1"><div class="chp-t sd" data-sd="cover" style="--kf:ch-t"><span class="l-zh">速度</span><span class="l-en">Speed</span></div></div><div class="chp-m rise" style="--i:2"><p class="chp-s sd" data-sd="cover" style="--kf:ch-s"><span class="l-zh">多快，多大，谁看过。</span><span class="l-en">How fast, how big, and who looked.</span></p></div></div>
 <section class="stg" id="d-speed"><div class="pn-h an"><div><p class="dz-eb rise"><span class="l-zh">06 · 速度与规模</span><span class="l-en">06 · Speed and size</span></p><h2 class="rise" style="--i:1"><span class="l-zh">快而小：合入中位 1.4 小时，Bug 群指令到 PR 中位 6 分钟，单个 PR 中位 106.5 行。</span><span class="l-en">Fast and small: median time to merge 1.4 h, median 6 min from bug-group instruction to PR, median PR size 106.5 lines.</span></h2></div></div>
 <div class="dz-3">
 <div class="pn an dz-sub" style="--cd:0"><h3><span class="l-zh">建 PR → 合入</span><span class="l-en">PR open → merge</span></h3><div class="dz-bv" id="bv-h1"></div><p><span class="l-zh">63 个在 1 小时内合入，其中 47 个不到 10 分钟；16 个超过 3 天。</span><span class="l-en">63 merged within an hour, 47 of them in under 10 minutes; 16 took more than three days.</span></p><div id="c-h1"></div></div>
@@ -530,6 +627,7 @@ canvas.fx-ov{mix-blend-mode:plus-lighter}
 <div class="dz-split"><div><div class="dz-lg" id="lg-rev"></div><div id="c-rev"></div></div><div><div class="dz-st" id="st-rev"></div><p class="dz-cap" id="cap-rev"></p><p class="dz-cap"><span class="l-zh">bot 账号合并 92 个，合入中位 0.39 小时；人工合并 48 个，中位 12.96 小时。其中 42 个由 bot 在建 PR 后 10 分钟内合并。</span><span class="l-en">The bot account merged 92, with a median time to merge of 0.39 h; people merged 48, median 12.96 h. In 42 cases the bot merged within 10 minutes of the PR being opened.</span></p></div></div>
 <p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">按合入周堆叠 140 个已合入 PR。“无评审痕迹”= 由共享 bot 账号合并，且 GitHub 上没有任何其他人的 review 或评论，合计 88 个，同报告。月度占比的分母是当月合入数（8 月只有 1 个，未列）。飞书里的评审不在数据内，所以这是 GitHub 侧痕迹的下限，不等于“没人看过”。</span><span class="l-en">The 140 merged PRs, stacked by merge week. “No review trace” means merged by the shared bot account with no review or comment from anyone else on GitHub: 88 in total, as in the report. Monthly shares use that month’s merges as the denominator (August has only 1 and is not shown). Reviews in Feishu are not in the data, so this is a lower bound on what GitHub shows, not proof that nobody looked.</span></p></section>
 
+<div class="chp an"><div class="chp-nw rise" aria-hidden="true"><div class="chp-n sd" data-sd="cover" style="--kf:ch-n">08<i>–</i>10</div></div><i class="chp-l sd" data-sd="cover" style="--kf:ch-l" aria-hidden="true"></i><div class="chp-m rise" style="--i:1"><div class="chp-t sd" data-sd="cover" style="--kf:ch-t"><span class="l-zh">相关</span><span class="l-en">Correlation</span></div></div><div class="chp-m rise" style="--i:2"><p class="chp-s sd" data-sd="cover" style="--kf:ch-s"><span class="l-zh">一起出现的事，不等于因果。</span><span class="l-en">Things that happen together are not causes.</span></p></div></div>
 <section class="pn an" id="d-gate"><div class="pn-h"><div><p class="dz-eb"><span class="l-zh">08 · 相关，不是因果</span><span class="l-en">08 · Correlation, not causation</span></p><h2><span class="l-zh">回归门禁合入后的 8 天里，Agent 服务仓 8 个新 PR 没有返工；之前是 36 个里 9 个。<em>样本太小，下不了结论。</em></span><span class="l-en">In the 8 days after the regression gate merged, the Agent service repo’s 8 new PRs had no rework; before it, 9 of 36 did. <em>The sample is too small to conclude anything.</em></span></h2></div><span class="dz-chip"><span class="l-zh">时间先后，不等于因果</span><span class="l-en">Sequence is not causation</span></span></div>
 <div class="dz-split"><div><div class="dz-lg" id="lg-gate"></div><div id="c-gate"></div></div><div><div class="dz-st" id="st-gate" style="grid-template-columns:1fr 1fr"></div><p class="dz-cap"><span class="l-zh">Fisher 精确检验 p = 0.17，不显著。11-16 当天同一问题连出 6 个提示词 PR（含 1 个回滚），门禁 PR 同一天提出、次日合入。反方向的信号也在：机械指标“7 天内再次改动同一文件”从 25/36 变为 8/8，门禁之后仍在同一批文件上密集迭代。全部仓库口径是 14/157 对 0/15。第二个门禁 PR 目前只观察、不拦截。</span><span class="l-en">Fisher’s exact test gives p = 0.17, not significant. On Nov 16, 6 prompt PRs (one a revert) were opened for the same issue; the gate PR was opened the same day and merged the next. There is a signal in the other direction too: the mechanical measure “touches a file changed in the previous 7 days” went from 25/36 to 8/8, so the same files were still being iterated on heavily after the gate. Across all repositories the figures are 14/157 versus 0/15. The second gate PR currently observes only and does not block.</span></p></div></div>
 <p class="pn-f"><b><span class="l-zh">口径</span><span class="l-en">Method</span></b><span class="l-zh">Agent 服务仓的 44 个核心 PR，一点一个，按创建时间排列、同一时间段内向上堆叠。分界线是回归门禁 PR 的合入时刻（11-17 17:04）。“返工”沿用报告的人工认定（14 个，其中 9 个在本仓）。“7 天内再次改动同一文件”是这一页新算的机械指标：该 PR 改动的非测试、非生成文件，与同仓此前 7 天内任一核心 PR 有重合。检验为 Fisher 双侧精确检验。</span><span class="l-en">The Agent service repo’s 44 core PRs, one dot each, ordered by creation time and stacked upward within a time bin. The dividing line is the moment the regression-gate PR merged (Nov 17, 17:04). “Rework” follows the report’s manual classification (14 in total, 9 in this repo). “Touches a file changed in the previous 7 days” is a mechanical measure computed for this page: the PR’s non-test, non-generated files overlap with those of any core PR in the same repo in the 7 days before. The test is Fisher’s exact test, two-sided.</span></p></section>
@@ -600,20 +698,20 @@ function odo(el,str,base){el.textContent='';el.setAttribute('role','img');el.set
   else H('span',null,el,ch).setAttribute('aria-hidden','true')})}
 
 /* ---------- tooltip 与悬停聚焦 ---------- */
-var tipOn=null,focC=null;
+var tipOn=null,focC=null,focX=null;
 function tipHTML(o){tin.textContent='';if(o.t)H('b',null,tin,o.t);if(o.s)H('span','tt',tin,o.s);(o.r||[]).forEach(function(r){var d=H('div','rw',tin),a=H('span',null,d);if(r[2]){var i=H('i',null,a);i.style.background=r[2]}a.appendChild(document.createTextNode(r[0]));H('span',null,d,r[1])});if(o.n)H('span','tt',tin,o.n).style.margin='6px 0 0'}
-function tipAt(x,y){var w=tin.offsetWidth,h=tin.offsetHeight,X=x+16,Y=y-h-14,ox='0%',oy='100%';if(X+w>innerWidth-8){X=x-w-16;ox='100%'}if(X<8)X=8;if(Y<56){Y=y+18;oy='0%'}if(Y+h>innerHeight-8)Y=Math.max(8,innerHeight-h-8);
+function tipAt(x,y,xl){var w=tin.offsetWidth,h=tin.offsetHeight,X=x+16,Y=y-h-14,ox='0%',oy='100%';if(X+w>innerWidth-8){X=(xl==null?x:xl)-w-16;ox='100%'}if(X<8)X=8;if(Y<56){Y=y+18;oy='0%'}if(Y+h>innerHeight-8)Y=Math.max(8,innerHeight-h-8);
  tin.style.transformOrigin=ox+' '+oy;tip.style.transform='translate3d('+Math.round(X)+'px,'+Math.round(Y)+'px,0)'}
-function tipShow(o,x,y){tipHTML(o);if(!tip.classList.contains('on')){tip.style.transition='none';tipAt(x,y);void tip.offsetWidth;tip.style.transition='';tip.classList.add('on')}else tipAt(x,y)}
+function tipShow(o,x,y,xl){tipHTML(o);if(!tip.classList.contains('on')){tip.style.transition='none';tipAt(x,y,xl);void tip.offsetWidth;tip.style.transition='';tip.classList.add('on')}else tipAt(x,y,xl)}
 function tipHide(){tip.classList.remove('on');tipOn=null;focOff()}
-function focOn(o){focOff();var c=o.closest?o.closest('[data-foc]'):null;if(!c)return;var k=o.getAttribute('data-k'),nd=o.getAttribute('data-node'),q=nd!=null?'[data-a="'+nd+'"],[data-b="'+nd+'"]':k!=null?'[data-k="'+k+'"]':null;
+function focOn(o){focOff();if(o.__on){focX=o;o.__on()}var c=o.closest?o.closest('[data-foc]'):null;if(!c)return;var k=o.getAttribute('data-k'),nd=o.getAttribute('data-node'),q=nd!=null?'[data-a="'+nd+'"],[data-b="'+nd+'"]':k!=null?'[data-k="'+k+'"]':null;
  if(q)[].forEach.call(c.querySelectorAll(q),function(e){e.classList.add('on')});o.classList.add('on');c.classList.add('foc');focC=c}
-function focOff(){if(!focC)return;focC.classList.remove('foc');[].forEach.call(focC.querySelectorAll('.on'),function(e){e.classList.remove('on')});focC=null}
+function focOff(){if(focX){var x=focX;focX=null;x.__off()}if(!focC)return;focC.classList.remove('foc');[].forEach.call(focC.querySelectorAll('.on'),function(e){e.classList.remove('on')});focC=null}
 function owner(n){while(n&&n!==view){if(n.__tip)return n;n=n.parentNode}return null}
-view.addEventListener('pointerover',function(e){var o=owner(e.target);if(o){if(o!==tipOn&&!o.__sticky)focOn(o);tipOn=o;tipShow(o.__tip(),e.clientX,e.clientY)}else if(tipOn&&!tipOn.__sticky)tipHide()});
-view.addEventListener('pointermove',function(e){if(tipOn&&!tipOn.__sticky&&e.pointerType==='mouse')tipAt(e.clientX,e.clientY)});
+view.addEventListener('pointerover',function(e){var o=owner(e.target);if(o){if(o!==tipOn&&!o.__sticky)focOn(o);tipOn=o;var a=o.__at?o.__at():[e.clientX,e.clientY];tipShow(o.__tip(),a[0],a[1],a[2])}else if(tipOn&&!tipOn.__sticky)tipHide()});
+view.addEventListener('pointermove',function(e){if(tipOn&&!tipOn.__sticky&&!tipOn.__at&&e.pointerType==='mouse')tipAt(e.clientX,e.clientY)});
 view.addEventListener('pointerleave',function(){tipHide()});
-view.addEventListener('focusin',function(e){var o=owner(e.target);if(o&&o.matches(':focus-visible')){var r=o.getBoundingClientRect();if(!o.__sticky)focOn(o);tipOn=o;tipShow(o.__tip(),r.left+r.width/2,r.top)}});
+view.addEventListener('focusin',function(e){var o=owner(e.target);if(o&&o.matches(':focus-visible')){var r=o.getBoundingClientRect(),a=o.__at?o.__at():[r.left+r.width/2,r.top];if(!o.__sticky)focOn(o);tipOn=o;tipShow(o.__tip(),a[0],a[1],a[2])}});
 view.addEventListener('focusout',function(){if(tipOn&&!tipOn.__sticky)tipHide()});
 document.addEventListener('pointerdown',function(e){if(!owner(e.target))tipHide()});
 window.addEventListener('scroll',function(){if(tipOn)tipHide()},{passive:true});
@@ -679,19 +777,20 @@ function cum(){var el=$('c-cum'),W=el.clientWidth,m=W<720,ov=window.matchMedia('
  blur('cg-f1',m?11:19,70);blur('cg-f2',m?4.5:6.5,30);blur('cg-f3',1.5,12);cumY0=y0;
  var ev=D.cum.ev.map(function(e,i){return{d:e.d,d2:e.d2,t:EN?D.en.ev[i].t:e.t,s:EN?D.en.ev[i].s:e.s}});
  ev.forEach(function(e,i){if(e.d2==null)return;var x=X(e.d),x2=X(e.d2),g=S('g',{class:'fx',style:'--i:'+(20+i*14)},s);S('rect',{x:x,y:mt,width:x2-x,height:y0-mt,fill:gB},g);S('line',{x1:x,x2:x2,y1:mt+.5,y2:mt+.5,stroke:'rgba(255,255,255,.3)','stroke-width':1,'shape-rendering':'crispEdges'},g)});
- [0,.25,.5,.75,1].forEach(function(p){S('line',{class:p?'g':'ax',x1:ovW&&Y(p)<ovH?ovW:ml,x2:xe,y1:Y(p),y2:Y(p)},s);S('text',{x:W,y:Y(p)+4,'text-anchor':'end',class:'s10 t2'},s,Math.round(p*100)+'%')});
+ [0,.25,.5,.75,1].forEach(function(p){S('line',{class:p?'g':'ax',x1:ovW&&Y(p)<ovH?ovW:ml,x2:xe,y1:Y(p),y2:Y(p)},s);S('text',{x:W,y:Y(p)+4,'text-anchor':'end',class:'s10 '+(p===1?'t1':'t2')},s,Math.round(p*100)+'%')});
  months(s,X,mt,y0,Hh-9,false);
  function P(a,tot){return a.map(function(v,i){return[X(i),Y(v/tot)]})}
  var dP=curve(P(D.cum.pr,N)),dL=curve(P(D.cum.ln,LT));
- S('path',{d:dP+'L'+f1(xe)+','+y0+'L'+f1(X(0))+','+y0+'Z',fill:gA,class:'fx',style:'--i:70','pointer-events':'none'},s);
+ var uf=S('g',{class:'unf'},s);s.style.setProperty('--y0',f1(y0)+'px');
+ S('path',{d:dP+'L'+f1(xe)+','+y0+'L'+f1(X(0))+','+y0+'Z',fill:gA,class:'fx',style:'--i:70','pointer-events':'none'},uf);
  /* bloom：宽、中、紧三层模糊描线叠在一起，再压一根白热芯线 */
- var bl=S('g',{class:'fx',style:'--i:110','pointer-events':'none'},s);
+ var bl=S('g',{class:'fx',style:'--i:110','pointer-events':'none'},uf);
  S('path',{d:dP,fill:'none',stroke:C.acc,'stroke-width':m?12:18,opacity:.3,filter:'url(#cg-f1)'},bl);
  S('path',{d:dP,fill:'none',stroke:'#3aa0ff','stroke-width':7,opacity:.5,filter:'url(#cg-f2)'},bl);
  S('path',{d:dP,fill:'none',stroke:'#8fd8ff','stroke-width':3,opacity:.5,filter:'url(#cg-f3)'},bl);
- drawable(S('path',{d:dL,fill:'none',stroke:C.wht,'stroke-width':1.25,opacity:.72,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.45s'},s));
- var core=drawable(S('path',{d:dP,fill:'none',stroke:gS,'stroke-width':2.25,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.2s'},s));
- drawable(S('path',{d:dP,fill:'none',stroke:'#f2f9ff','stroke-width':.75,opacity:.62,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.2s','pointer-events':'none'},s));
+ drawable(S('path',{d:dL,fill:'none',stroke:C.wht,'stroke-width':1.25,opacity:.72,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.45s'},uf));
+ var core=drawable(S('path',{d:dP,fill:'none',stroke:gS,'stroke-width':2.25,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.2s'},uf));
+ drawable(S('path',{d:dP,fill:'none',stroke:'#f2f9ff','stroke-width':.75,opacity:.62,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dl:.2s','pointer-events':'none'},uf));
  var eg=S('g',{class:'fx',style:'--i:140','pointer-events':'none'},s),ey=Y(1);S('circle',{cx:xe,cy:ey,r:m?12:17,fill:C.acc,class:'pulse'},eg);
  S('circle',{cx:xe,cy:ey,r:m?6:10,fill:'#7cc8ff',opacity:.6,filter:'url(#cg-f'+(m?3:2)+')'},eg);
  if(!m)S('line',{x1:xe-15,x2:xe+15,y1:ey,y2:ey,stroke:lg(df,'cg-fh',xe-15,0,xe+15,0,[[0,'#cfeaff',0],[.5,'#fff',.95],[1,'#cfeaff',0]]),'stroke-width':1},eg);
@@ -722,6 +821,7 @@ function cum(){var el=$('c-cum'),W=el.clientWidth,m=W<720,ov=window.matchMedia('
  hit.addEventListener('pointermove',mv);hit.addEventListener('pointerdown',mv);hit.addEventListener('pointerleave',off);
  hit.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();at(cur+(e.key==='ArrowLeft'?-1:1))}});hit.addEventListener('focus',function(){if(hit.matches(':focus-visible'))at(cur)});hit.addEventListener('blur',off);
  /* 流光：一颗光点带三段渐短的尾迹沿 PR 曲线走一遍，每 9 秒一次；画在独立的合成层上，不让底图的模糊滤镜重绘 */
+ if(SC.on){var bm=H('i','beam',el);bm.style.top=f1(y0-1)+'px';bm.style.width=f1(xe)+'px'}
  if(cumFx){fxDel(cumFx);cumFx=null}
  if(!RM){var so=S('svg',{class:'fx-ov',width:W,height:Hh,viewBox:'0 0 '+W+' '+Hh,'aria-hidden':'true',style:'opacity:0'},el),rg=S('radialGradient',{id:'cm-g'},S('defs',null,so)),tot=core.getTotalLength(),shown=false;
   [[0,'#fff',.95],[.16,'#c8ecff',.7],[.5,'#3aa0ff',.2],[1,'#2997ff',0]].forEach(function(q){S('stop',{offset:q[0],'stop-color':q[1],'stop-opacity':q[2]},rg)});
@@ -894,34 +994,113 @@ function skyFrame(t,dt){var gl=SK.gl,cv=SK.cv,i,k;if(!SK.on||gl.isContextLost())
  /* 标注：月份、星期、最高日，投影到屏幕后只改 transform */
  if(Math.abs(e[0])>1.2)SK.sx=e[0]<0?1:-1;if(Math.abs(e[2])>1.2)SK.sz=e[2]<0?-1:1;SK.lab.forEach(function(l){var p=proj(l.f(SK.sz||1,SK.sx||1));l.e.style.transform='translate3d('+p[0].toFixed(1)+'px,'+p[1].toFixed(1)+'px,0) translate(-50%,'+(l.pk?'-100%) translateY(-9px)':'-50%)');l.e.style.opacity=p[2]>0&&p[0]>-8&&p[0]<SK.W+8&&p[1]>-8&&p[1]<SK.H+14?(l.pk?SK.gE:1):0});
  return !RM||busy}
-function stage(){var vr=view.getBoundingClientRect(),fl=$('dz-floor'),ob=$('dz-orbs'),cr=$('c-cum').getBoundingClientRect();fl.style.setProperty('--hz',Math.round(cr.top-vr.top+cumY0)+'px');fl.classList.add('on');view.style.setProperty('--ds',Math.round($('d-kpi').getBoundingClientRect().bottom-vr.top-60)+'px');
+function stage(){var vr=view.getBoundingClientRect(),fl=$('dz-floor'),ob=$('dz-orbs');fl.style.setProperty('--hz',Math.round(offY($('c-cum'))+cumY0)+'px');fl.classList.add('on');view.style.setProperty('--ds',Math.round(offY($('d-kpi'))+$('d-kpi').offsetHeight-60)+'px');
  if(!stage.io&&'IntersectionObserver' in window){stage.io=new IntersectionObserver(function(es){fl.classList.toggle('run',es[0].isIntersecting)});stage.io.observe(fl)}
  var O=[['d-heat',.9,.34,'rgba(41,151,255,.17)',900],['d-shift',.16,.5,'rgba(41,151,255,.09)',1100],['d-flow',.06,.84,'rgba(70,190,255,.15)',820],['d-lanes',.92,.3,'rgba(41,151,255,.12)',900],['d-rev',.86,.16,'rgba(232,100,44,.15)',820],['d-gate',.1,.75,'rgba(232,100,44,.1)',760],['d-assoc',.3,.08,'rgba(41,151,255,.13)',860],['d-scat',.9,.92,'rgba(70,190,255,.1)',760]];
  if(!ob.firstChild)O.forEach(function(){H('i',null,ob)});
- O.forEach(function(o,i){var r=$(o[0]).getBoundingClientRect(),e=ob.children[i],sz=Math.min(o[4],vr.width*1.1);e.style.cssText='left:'+Math.round(r.left-vr.left+r.width*o[1])+'px;top:'+Math.round(r.top-vr.top+r.height*o[2])+'px;width:'+sz+'px;height:'+Math.round(sz*.78)+'px;--c:'+o[3]})}
+ O.forEach(function(o,i){var e0=$(o[0]),e=ob.children[i],sz=Math.min(o[4],vr.width*1.1);e.style.cssText='left:'+Math.round(offX(e0)+e0.offsetWidth*o[1])+'px;top:'+Math.round(offY(e0)+e0.offsetHeight*o[2])+'px;width:'+sz+'px;height:'+Math.round(sz*.78)+'px;--c:'+o[3]})}
 
-/* ---------- 03 结构 ---------- */
-function stream(){var el=$('c-stream'),W=el.clientWidth,m=W<720,Hh=m?260:Math.max(320,Math.min(400,Math.round(W*.32))),ml=0,mr=m?26:36,mt=18,mb=30,s=svg(el,W,Hh,L('每周新建 PR 数，按仓库层堆叠','New PRs per week, stacked by repository layer')),df=S('defs',null,s),G=D.week.g,MX=36;
- legend($('lg-shift'),GRP().map(function(n,i){return[GC[i],n]}));
- var X=function(w){return ml+w/(NW-1)*(W-ml-mr)},Y=function(v){return mt+(1-v/MX)*(Hh-mt-mb)},y0=Y(0),xe=X(NW-1);
- [0,12,24,36].forEach(function(v){S('line',{class:v?'g':'ax',x1:ml,x2:xe,y1:Y(v),y2:Y(v)},s);S('text',{x:W,y:Y(v)+4,'text-anchor':'end',class:'s10'},s,v)});
- var base=[],w;for(w=0;w<NW;w++)base.push(0);var prev=mono(base.map(function(v,w){return[X(w),y0]})),lay=S('g',{class:'grow'},s),labs=[],tops=[];
- G.forEach(function(row,gi){var lo=base.slice(),top=row.map(function(v,w){base[w]+=v;return[X(w),Y(base[w])]}),sg=mono(top),a=gi===0?[.62,.2]:gi===3?[.9,.42]:[.92,.34];
-  S('path',{d:'M'+pt(sg[0][0])+segF(sg)+'L'+pt(prev[prev.length-1][3])+segR(prev)+'Z',fill:lg(df,'sg'+gi,0,mt,0,y0,[[0,GC[gi],a[0]],[1,GC[gi],a[1]]]),stroke:C.k,'stroke-width':2,'stroke-linejoin':'round'},lay);prev=sg;tops.push(base.slice());
-  var bw=0;row.forEach(function(v,w){if(v>row[bw])bw=w});labs.push({gi:gi,w:bw,yt:Y(lo[bw]+row[bw]),yb:Y(lo[bw])})});
- labs.forEach(function(l){if(l.yb-l.yt<20)return;S('text',{x:X(l.w),y:(l.yt+l.yb)/2+4,'text-anchor':l.w===0?'start':l.w>=NW-2&&m?'end':'middle',class:'t1 b fx'+(m?'':' s12'),style:'--i:'+(46+l.gi*8)+';pointer-events:none;paint-order:stroke;stroke:rgba(0,0,0,.55);stroke-width:3px;stroke-linejoin:round'},s,m||EN?GSH()[l.gi]:D.meta.grp[l.gi])});
- for(var i=0;i<NW;i+=(W<420?3:2)){S('line',{x1:X(i),x2:X(i),y1:y0,y2:y0+5,stroke:'rgba(255,255,255,.26)','stroke-width':1,'shape-rendering':'crispEdges'},s);S('text',{x:X(i),y:Hh-8,'text-anchor':i?'middle':'start'},s,dl(i*7))}
- var ch=S('g',{style:'display:none','pointer-events':'none'},s),cl=S('line',{y1:mt-6,y2:y0,stroke:'rgba(255,255,255,.5)','stroke-width':1},ch),dots=G.map(function(r,gi){return S('circle',{r:3.5,fill:gi===3?'#a0a0a8':GC[gi],stroke:C.k,'stroke-width':1.5},ch)});
- for(w=0;w<NW;w++)(function(w){var bw=(W-ml-mr)/(NW-1),hx=Math.max(ml,X(w)-bw/2),r=S('rect',{class:'hit',x:hx,y:mt,width:Math.min(xe,X(w)+bw/2)-hx,height:y0-mt,tabindex:0},s);
-  T(r,function(){return{t:wk(w*7)+(EN?' · '+D.week.n[w]+' new':' · 新建 '+D.week.n[w]+' 个'),r:G.map(function(row,gi){return[GRP()[gi],cnt(row[w]),GC[gi]]}).reverse()}});
-  function on(){ch.style.display='';cl.setAttribute('x1',X(w));cl.setAttribute('x2',X(w));dots.forEach(function(d,gi){d.setAttribute('cx',X(w));d.setAttribute('cy',Y(tops[gi][w]));d.style.display=G[gi][w]?'':'none'})}
-  function off(){ch.style.display='none'}r.addEventListener('pointerenter',on);r.addEventListener('pointerleave',off);r.addEventListener('focus',on);r.addEventListener('blur',off)})(w)}
-function month(){var el=$('c-month');el.textContent='';var gl=EN&&el.clientWidth<520?['App','Agent','Backend','Other']:GSH();D.months.forEach(function(mo,i){var c=H('div','rise',el);c.style.setProperty('--i',i*1.5);
- var hd=H('div','mo-h',c),mn=EN?MOF[mo.m-1]:mo.m+' 月';H('b',null,hd,mn);H('span',null,hd,EN?mo.n+' new':'新建 '+mo.n+' 个');var bar=H('div','mo-b',c);bar.setAttribute('role','img');bar.setAttribute('aria-label',(EN?'New PRs in '+mn+' by repository layer: ':mo.m+' 月新建 PR 的仓库层构成：')+mo.g.map(function(v,gi){return GRP()[gi]+' '+pc(v,mo.n)}).join(EN?', ':'，'));
- mo.g.forEach(function(v,gi){var b=H('i','dm growx',bar);b.style.flex=v+' 0 0';b.style.background=GC[gi];b.style.setProperty('--i',20+i*8+gi*5);b.setAttribute('data-k',gi);b.setAttribute('tabindex','0');
-  T(b,function(){return{t:mn+' · '+GRP()[gi],r:[[L('新建 PR','New PRs'),cnt(v)],[L('占当月','Share of month'),pc(v,mo.n,1)]]}})});
- var gr=H('div','mo-g',c);mo.g.forEach(function(v,gi){var d=H('div','dm',gr);d.setAttribute('data-k',gi);H('div','n',d,pc(v,mo.n));var l=H('div','l',d),sw=H('i',null,l);sw.style.background=GC[gi];l.appendChild(document.createTextNode(gl[gi]));
-  T(d,function(){return{t:mn+' · '+GRP()[gi],r:[[L('新建 PR','New PRs'),cnt(v)],[L('占当月','Share of month'),pc(v,mo.n,1)]]}})})})}
+/* ---------- 03 结构：份额迁移 ----------
+   一列一周：列高归一到 100%（自下而上 Agent 服务 / App / 后端 / 其他），列宽与当周新建数成正比；
+   列与列之间的连带用同一条缓动曲线过渡（每层厚度在两周之间单调变化，不会出现数据里没有的鼓包），画得比列暗。 */
+var SHO=[1,0,2,3],SHK=['#e6e9f0','#2f9bff','#58ad98','#7c7c86'],SH={},shFx=null;
+function shAx(W,m){var pw=W-(m?30:44),N=D.week.n,tot=N.reduce(function(a,b){return a+b},0),gap=m?4:10,u=(pw-gap*(NW-1))/tot,col=[],cum=[0],x=0,w;
+ for(w=0;w<NW;w++){col.push([x,x+N[w]*u]);x+=N[w]*u+gap;cum.push(cum[w]+N[w])}
+ return{xe:pw,col:col,gap:gap,cum:cum,X:function(i){if(i<=0)return 0;if(i>=tot)return pw;for(var w=0;w<NW;w++)if(i<cum[w+1])return i===cum[w]?col[w][0]-gap/2:col[w][0]+(i-cum[w])*u;return pw}}}
+function shGrad(df,p){var st=[[[0,'#6cbcff',.98],[.3,'#2f95ff',.74],[1,'#1c6fdc',.36]],[[0,'#ffffff',.9],[.05,'#f4f7fc',.46],[.24,'#e9eef7',.2],[1,'#e2e8f2',.075]],[[0,'#7cc4b0',.6],[.25,'#58a793',.34],[1,'#3e8f7b',.14]],[[0,'#a0a0ab',.46],[.25,'#80808a',.26],[1,'#6a6a74',.12]]];
+ return st.map(function(q,k){var g=S('linearGradient',{id:p+k,x1:0,y1:0,x2:0,y2:1},df);q.forEach(function(o){S('stop',{offset:o[0],'stop-color':o[1],'stop-opacity':o[2]},g)});return'url(#'+p+k+')'})}
+function shPH(W,m,el){var PH=m?236:Math.max(300,Math.min(372,Math.round(W*.3)));if(SC.on&&!m){var hd=$('d-shift').querySelector('.pn-h'),cp=el.previousElementSibling,fit=innerHeight-navH()-28-(hd.offsetHeight+28+cp.offsetHeight+6+188)-86-30;if(fit>=232&&fit<PH)PH=fit}return PH}
+function shTip(title,g,n,d){return{t:title,r:g.map(function(v,gi){return[GRP()[gi],pc(v,n,d)+' · '+cnt(v),SHK[gi]]})}}
+function shift(){var el=$('c-shift'),W=el.clientWidth,m=W<720,ax=shAx(W,m),xe=ax.xe,PH=shPH(W,m,el),mt=m?72:86,mb=30,Hh=mt+PH+mb,y0=mt+PH,
+  s=svg(el,W,Hh,L('每周新建 PR 的仓库层占比，列宽为当周新建数','Share of each week’s new PRs by repository layer; column width is the number opened that week')),base=s,rv=H('div','rv',el),rvi=H('div','rv-i',rv),G=D.week.g,N=D.week.n,w,k,B=[];s=S('svg',{width:W,height:Hh,viewBox:'0 0 '+W+' '+Hh,role:'presentation'},rvi);var df=S('defs',null,s);rv.className='rv sdp';rvi.className='rv-i sdp';[rv,rvi].forEach(function(e,i){e.setAttribute('data-sd','pin');e.style.setProperty('--kf',i?'sc-rvi':'sc-rvo')});var rh=H('i','rv-h',rv);rh.style.top=(80+mt)+'px';rh.style.height=PH+'px';SH.rv=rv;
+ var Y=function(p){return mt+(1-p)*PH},cx=function(w){return(ax.col[w][0]+ax.col[w][1])/2},hw=function(w){return(ax.col[w][1]-ax.col[w][0])/2},yb=function(w,k){return Y(B[w][k])};
+ for(w=0;w<NW;w++){var a=[0],c=0;SHO.forEach(function(gi){c+=N[w]?G[gi][w]/N[w]:0;a.push(c)});if(N[w])a[4]=1;B.push(a)}
+ var gf=shGrad(df,'sh-g'),RC=['#2f8fff','#e9edf5','#58ad98','#8a8a94'],RA=[.15,.06,.075,.055];
+ legend($('lg-shift'),m?[[SHK[2],GSH()[2]],[SHK[3],GSH()[3]]]:[]);
+ /* 轴：0 / 50% / 100%，读数在尾侧 */
+ S('line',{class:'g',x1:0,x2:xe,y1:mt-.5,y2:mt-.5},base);S('line',{class:'ax',x1:0,x2:xe,y1:y0+.5,y2:y0+.5},base);
+ [0,.5,1].forEach(function(p){S('text',{x:W,y:Y(p)+4,'text-anchor':'end',class:'s10 t2'},base,Math.round(p*100)+'%')});
+ /* 流入：整层从左到右揭开 */
+ S('rect',{class:'wipe',x:0,y:mt-4,width:f1(xe+2),height:PH+8},S('clipPath',{id:'sh-cl'},df));
+ var lay=S('g',{'clip-path':'url(#sh-cl)'},s),rb=S('g',null,lay),bk=S('g',null,lay);
+ function edge(x0,ya,x1,yb2){var mx=f1((x0+x1)/2);return'C'+mx+','+f1(ya)+' '+mx+','+f1(yb2)+' '+f1(x1)+','+f1(yb2)}
+ for(w=0;w<NW-1;w++){var x0=cx(w)+hw(w),x1=cx(w+1)-hw(w+1);for(k=0;k<4;k++){if(B[w][k+1]-B[w][k]<=0&&B[w+1][k+1]-B[w+1][k]<=0)continue;
+   S('path',{d:'M'+f1(x0)+','+f1(yb(w,k+1))+edge(x0,yb(w,k+1),x1,yb(w+1,k+1))+'L'+f1(x1)+','+f1(yb(w+1,k))+edge(x1,yb(w+1,k),x0,yb(w,k))+'Z',fill:RC[k],opacity:RA[k]},rb);
+   if(k===1||k===2)S('path',{d:'M'+f1(x0)+','+f1(yb(w,k+1))+edge(x0,yb(w,k+1),x1,yb(w+1,k+1)),fill:'none',stroke:RC[k],'stroke-width':1,opacity:k===1?.24:.2},rb)}}
+ var HL=['#b9e2ff','#ffffff','#9bd8c6','#b0b0ba'];
+ for(w=0;w<NW;w++){if(!N[w])continue;var bx=cx(w)-hw(w),bw=2*hw(w);for(k=0;k<4;k++){var yt=yb(w,k+1),hh=yb(w,k)-yt;if(hh<=0)continue;var gp=k<3&&hh>3?1:0,rx=Math.min(2.5,bw/2,(hh-gp)/2);
+   S('rect',{x:f1(bx),y:f1(yt+gp),width:f1(bw),height:f1(hh-gp),rx:f1(rx),fill:gf[k]},bk);
+   if(k===1&&bw>=8&&hh-gp>8)S('rect',{x:f1(bx+.5),y:f1(yt+gp+.5),width:f1(bw-1),height:f1(hh-gp-1),rx:f1(rx),fill:'none',stroke:'#fff','stroke-opacity':.17,'stroke-width':1},bk);
+   if(bw>=3&&hh-gp>3)S('rect',{x:f1(bx+rx*.6),y:f1(yt+gp),width:f1(bw-rx*1.2),height:1,fill:HL[k],opacity:k?.5:.9},bk)}}
+ /* 50% 参考线压在层上 */
+ S('line',{x1:0,x2:xe,y1:Y(.5),y2:Y(.5),stroke:'rgba(255,255,255,.2)','stroke-width':1,'stroke-dasharray':'1 5','stroke-linecap':'round','pointer-events':'none'},s);
+ /* 交界线：Agent 服务层的上沿。与 01 同一套光：宽、中、紧三层模糊 + 渐变芯线 + 白热细线；列上全亮，连带上压暗 */
+ var fd='',pen=false;for(w=0;w<NW;w++){var v=B[w][1],fy=f1(yb(w,1)),xa=cx(w)-hw(w),xb=cx(w)+hw(w);if(v>0&&!pen){fd+='M'+f1(xa)+','+fy;pen=true}if(pen)fd+='H'+f1(xb);
+  if(w<NW-1){if(v>0||B[w+1][1]>0){if(!pen){fd+='M'+f1(xb)+','+fy;pen=true}fd+=edge(xb,yb(w,1),cx(w+1)-hw(w+1),yb(w+1,1))}else pen=false}}
+ function blur(id,sd){S('feGaussianBlur',{stdDeviation:sd},S('filter',{id:id,x:'-6%',y:'-60%',width:'112%',height:'220%','color-interpolation-filters':'sRGB'},df))}
+ blur('sh-f1',m?9:15);blur('sh-f2',m?3.5:5.5);blur('sh-f3',1.4);blur('sh-f4',2.5);
+ var mk=S('mask',{id:'sh-mk',maskUnits:'userSpaceOnUse',x:-30,y:mt-70,width:W+60,height:PH+140},df);S('rect',{x:-30,y:mt-70,width:W+60,height:PH+140,fill:'#fff',opacity:.3},mk);
+ var mkb=S('g',{filter:'url(#sh-f4)'},mk);for(w=0;w<NW;w++)if(N[w])S('rect',{x:f1(cx(w)-hw(w)-1),y:mt-70,width:f1(2*hw(w)+2),height:PH+140,fill:'#fff'},mkb);
+ var gS=lg(df,'sh-s',0,0,xe,0,[[0,'#1f72e6',1],[.55,'#2f9bff',1],[1,'#8fe2ff',1]]),fr=S('g',{mask:'url(#sh-mk)','pointer-events':'none'},s),bl=S('g',{class:'fx',style:'--i:95'},fr);
+ S('path',{d:fd,fill:'none',stroke:C.acc,'stroke-width':m?10:16,opacity:.34,filter:'url(#sh-f1)'},bl);
+ S('path',{d:fd,fill:'none',stroke:'#3aa0ff','stroke-width':6,opacity:.55,filter:'url(#sh-f2)'},bl);
+ S('path',{d:fd,fill:'none',stroke:'#8fd8ff','stroke-width':3,opacity:.5,filter:'url(#sh-f3)'},bl);
+ var core=drawable(S('path',{d:fd,fill:'none',stroke:gS,'stroke-width':2.25,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dd:2.1s;--dl:.25s'},fr));
+ drawable(S('path',{d:fd,fill:'none',stroke:'#f2f9ff','stroke-width':.75,opacity:.7,'stroke-linejoin':'round','stroke-linecap':'round',style:'--dd:2.1s;--dl:.25s'},fr));
+ /* 列顶：当周新建数 */
+ for(w=0;w<NW;w++)if(2*hw(w)>=(m?9:0))S('text',{x:f1(cx(w)),y:mt-9,'text-anchor':'middle',class:(N[w]>=12?'t1 b ':'t2 ')+'s10 fx',style:'--i:'+(18+w*5)},base,N[w]);
+ for(w=0;w<NW;w++)if(2*hw(w)>=(m?40:46))S('text',{x:f1(cx(w)),y:Hh-9,'text-anchor':'middle',class:'s10'},base,dl(w*7));
+ /* 层名直接写在该层 PR 最多的那一列上；手机上后端与其他放不下，改用图上方的两项小图例 */
+ var nmD=[GRP()[0],GRP()[1],GSH()[2],GSH()[3]],nmM=EN?['App','Agent','Backend','Other']:['App','Agent','后端','其他'];
+ SHO.forEach(function(gi,k){if(m&&k>1)return;var lw=0;G[gi].forEach(function(v,i){if(v>G[gi][lw])lw=i});var yt=yb(lw,k+1),yl=yb(lw,k);if(yl-yt<22)return;
+  S('text',{x:f1(cx(lw)),y:f1(k<2?yt+(yl-yt)*.72+4:(yt+yl)/2+4),'text-anchor':'middle',class:'t1 b fx'+(m?'':' s12'),style:'--i:'+(70+k*8)+';pointer-events:none'},s,(m?nmM:nmD)[gi])});
+ /* 事件：Agent 服务仓当周新建数第一次多于 App 仓、此后没有再落后的那一周 */
+ var wx=-1,w1=-1;for(w=NW-1;w>=0;w--){if(G[1][w]<G[0][w])break;if(G[1][w]>G[0][w])wx=w}for(w=0;w<NW;w++)if(G[1][w]>G[0][w]){w1=w;break}
+ SH.evg=null;if(wx>=0&&wx===w1){var eg=S('g',{class:'fx bt',style:'--i:120','pointer-events':'none'},base),eg2=S('g',{class:'fx',style:'--i:120','pointer-events':'none'},s),ex=cx(wx),ey=yb(wx,1);SH.evg=eg;SH.evq=Math.min(.97,(ex+hw(wx))/W);var t1=S('text',{y:mt-(m?46:52),class:'t1 b'+(m?'':' s12')},eg,m?L('Agent 首次超过 App','Agent passes App for the first time'):L('Agent 服务首次超过 App','Agent service passes the App for the first time')),
+   t2=S('text',{y:mt-(m?32:36),class:'t2'+(m?' s10':'')},eg,(EN?'Week of '+dl(wx*7)+' · '+G[1][wx]+' vs '+G[0][wx]:dl(wx*7)+' 起一周 · '+G[1][wx]+' 对 '+G[0][wx])+(m?'':L('，此后没有再落后',', never behind since'))),tw=Math.max(t1.getComputedTextLength(),t2.getComputedTextLength()),tx=Math.max(0,Math.min(xe-tw,ex-tw/2));
+  t1.setAttribute('x',f1(tx));t2.setAttribute('x',f1(tx));S('line',{x1:f1(ex),x2:f1(ex),y1:mt-(m?27:30),y2:mt-21,stroke:'rgba(255,255,255,.5)','stroke-width':1},eg);
+  S('circle',{cx:f1(ex),cy:f1(ey),r:m?9:12,fill:C.acc,opacity:.22},eg2);S('circle',{cx:f1(ex),cy:f1(ey),r:m?5:7,fill:'#7cc8ff',opacity:.55,filter:'url(#sh-f3)'},eg2);S('circle',{cx:f1(ex),cy:f1(ey),r:m?3.25:4,fill:'#e4f3ff',stroke:C.k,'stroke-width':1.5},eg2)}
+ /* 悬停一周：其余压暗，该列描边；下方对应月份亮起 */
+ var sdL=S('rect',{class:'sh-sd',x:-2,y:mt-22,height:PH+24+mb,fill:'#000'},s),sdR=S('rect',{class:'sh-sd',y:mt-22,height:PH+24+mb,fill:'#000'},s),rg=S('rect',{class:'sh-rg',y:mt-3.5,height:PH+7,rx:5,fill:'none',stroke:'rgba(255,255,255,.62)','stroke-width':1},s);
+ SH.shade=function(xa,xb){if(xa==null){sdL.style.opacity=sdR.style.opacity=0;return}sdL.setAttribute('width',f1(Math.max(0,xa+2)));sdR.setAttribute('x',f1(xb));sdR.setAttribute('width',f1(Math.max(0,xe-xb+2)));sdL.style.opacity=sdR.style.opacity=.64};
+ for(w=0;w<NW;w++)(function(w){var r=S('rect',{class:'hit',x:f1(Math.max(0,ax.col[w][0]-ax.gap/2)),y:mt-22,width:f1(2*hw(w)+ax.gap),height:PH+22+mb,tabindex:0},base);
+  T(r,function(){return shTip(wk(w*7)+(EN?' · '+N[w]+' new':' · 新建 '+N[w]+' 个'),G.map(function(g){return g[w]}),N[w]||1)});
+  r.__on=function(){var h=Math.max(hw(w),3);SH.shade(cx(w)-h-5,cx(w)+h+5);rg.setAttribute('x',f1(cx(w)-h-3.5));rg.setAttribute('width',f1(2*h+7));rg.style.opacity=1;if(SH.months)SH.months([-1,0,1,2].filter(function(i){return i<0?ax.cum[w]<SH.sp[0][0]:ax.cum[w]<SH.sp[i][1]&&ax.cum[w+1]>SH.sp[i][0]}))};
+  r.__off=function(){SH.shade(null);rg.style.opacity=0;if(SH.months)SH.months(null)};
+  r.__at=function(){var b=base.getBoundingClientRect(),h=Math.max(hw(w),3);return[b.left+cx(w)+h-4,b.top+mt+PH*.56,b.left+cx(w)-h+4]}})(w);
+ /* 流光：沿交界线走一遍，每 9 秒一次，画在独立合成层上 */
+ if(shFx){fxDel(shFx);shFx=null}
+ if(!RM&&fd){var so=S('svg',{class:'fx-ov',width:W,height:Hh,viewBox:'0 0 '+W+' '+Hh,'aria-hidden':'true',style:'opacity:0'},rvi),rgd=S('radialGradient',{id:'sh-cm'},S('defs',null,so)),tot=core.getTotalLength(),shown=false;
+  [[0,'#fff',.95],[.16,'#c8ecff',.7],[.5,'#3aa0ff',.2],[1,'#2997ff',0]].forEach(function(q){S('stop',{offset:q[0],'stop-color':q[1],'stop-opacity':q[2]},rgd)});
+  var tr=[[.16,'#2f9bff',.3,3.5],[.07,'#7fd4ff',.55,2.75],[.025,'#f2fbff',.95,2]].map(function(q){var T2=tot*q[0];return{T:T2,p:S('path',{d:fd,fill:'none',stroke:q[1],'stroke-width':q[3],'stroke-linecap':'round',opacity:q[2],'stroke-dasharray':f1(T2)+' '+f1(tot+T2+9)},so)}}),hd=S('circle',{r:m?11:15,fill:'url(#sh-cm)'},so);
+  shFx=fxAdd(el,function(t){var ph=(t-3.4)%9,u=ph/3.4;if(t<3.4||u>1||SC.p3<1){if(shown){so.style.opacity=0;shown=false}return}
+   var e=u<.5?2*u*u:1-2*(1-u)*(1-u),sl=e*tot,p0=core.getPointAtLength(sl);shown=true;so.style.opacity=Math.min(1,u*9,(1-u)*5).toFixed(3);
+   tr.forEach(function(q){q.p.setAttribute('stroke-dashoffset',f1(q.T-sl))});hd.setAttribute('cx',f1(p0.x));hd.setAttribute('cy',f1(p0.y))})}}
+/* 月度：三个月各一根竖向 100% 条（层序同上图），位置与上图的月份区间对齐；两个主角的数字用引线接到各自的段上 */
+function month(){var el=$('c-month'),W=el.clientWidth,m=W<720,ax=shAx(W,m),X=ax.X,Hh=m?186:184,s=svg(el,W,Hh,L('各月新建 PR 的仓库层构成，位置与上图的月份对齐','Composition of each month’s new PRs by repository layer, aligned with the months above')),df=S('defs',null,s),
+  sp=[],FL=['#2f9bff','#e6e9f0','#58ad98','#70707a'],nm=m?(EN?['App','Agent','Backend','Other']:['App','Agent','后端','其他']):GSH(),groups=[],aug=D.week.n.reduce(function(a,b){return a+b},0)-D.months.reduce(function(a,x){return a+x.n},0),c0=aug;
+ D.months.forEach(function(mo){sp.push([c0,c0+mo.n]);c0+=mo.n});SH.sp=sp;S('feGaussianBlur',{stdDeviation:5},S('filter',{id:'shm-f',x:'-300%',y:'-30%',width:'700%',height:'160%'},df));
+ function brk(x0,x1,o,g){return S('path',{d:'M'+f1(x0)+',1.5v5H'+f1(x1)+'v-5',fill:'none',stroke:'rgba(255,255,255,'+o+')','stroke-width':1,class:'fx'},g)}
+ var ag=S('g',{class:'dm'},s);if(X(aug)>=24)brk(1,X(aug)-4,.16,ag);if(X(aug)>=24)S('text',{x:1,y:22,class:'t4 s10 fx'},ag,EN?'Aug':'8 月');
+ D.months.forEach(function(mo,i){var x0=X(sp[i][0])+3,x1=X(sp[i][1])-(i<2?3:0),g=S('g',{class:'dm'},s),gx=x0+(m?1:2),mn=EN?(m?MOE:MOF)[mo.m-1]:mo.m+' 月',ct=m?46:50,ch=m?98:100,cw=m?8:10,acc=0,cen=[];groups.push(g);
+  brk(x0,x1,.3,g).style.setProperty('--i',i*10);
+  var tn=S('text',{x:gx,y:31,class:'t1 b fx',style:'font-size:15px;--i:'+(4+i*10)},g,mn);S('text',{x:f1(gx+tn.getComputedTextLength()+8),y:31,class:'s12 fx',style:'--i:'+(6+i*10)},g,EN?mo.n+' new':m?mo.n+' 个':'新建 '+mo.n+' 个');
+  S('rect',{x:gx,y:ct,width:cw,height:ch,rx:cw/2},S('clipPath',{id:'shm-c'+i},df));var glow=S('g',{class:'fx',style:'--i:'+(40+i*10)+';pointer-events:none'},g),col=S('g',{'clip-path':'url(#shm-c'+i+')'},g);
+  SHO.forEach(function(gi,k){var v=mo.g[gi]/mo.n,hh=ch*v,yt=ct+ch*(1-acc-v),gp=k<3?1:0;cen[k]=yt+hh/2;acc+=v;
+   if(k===0)S('rect',{x:gx,y:f1(yt),width:cw,height:f1(hh),fill:C.acc,opacity:.6,filter:'url(#shm-f)'},glow);
+   S('rect',{x:gx,y:f1(yt+gp),width:cw,height:f1(Math.max(.5,hh-gp)),fill:FL[k],opacity:k<2?1:.9,class:'grow',style:'--i:'+(12+i*10+k*5)},col)});
+  var nx=gx+cw+(m?14:24),fs=m?25:38;
+  [[1,ct+ch*(m?.2:.25)],[0,ct+ch*(m?.7:.76)]].forEach(function(r,ri){var k=r[0],gi=SHO[k],cy=r[1],v=mo.g[gi],by=cy+fs*.35,dly=24+i*10+ri*6;
+   S('path',{d:'M'+(gx+cw+2.5)+','+f1(cen[k])+'H'+(gx+cw+(m?6:11))+'V'+f1(cy)+'H'+(nx-(m?4:7)),fill:'none',stroke:FL[k],'stroke-width':1,opacity:.5,class:'fx',style:'--i:'+dly},g);S('circle',{cx:gx+cw+2.5,cy:f1(cen[k]),r:1.5,fill:FL[k],class:'fx',style:'--i:'+dly},g);
+   var tx=S('text',{x:nx,y:f1(by),class:'sh-n fx',style:'font-size:'+fs+'px;fill:'+(k?C.i1:'#58b0ff')+';--i:'+dly},g,pc(v,mo.n));
+   if(m)S('text',{x:nx+1,y:f1(by+15),class:'t2 s10 fx',style:'--i:'+(dly+2)},g,nm[gi]+' · '+v);
+   else{var lt=S('text',{x:f1(nx+tx.getComputedTextLength()+10),y:f1(by-1),class:'t1 s12 fx',style:'--i:'+(dly+2)},g,nm[gi]);S('tspan',{dx:8,style:'fill:var(--i3)'},lt,prs(v))}});
+  var sx=gx,sy=ct+ch+(m?20:26);[2,3].forEach(function(k,j){var gi=SHO[k],v=mo.g[gi];if(m){sx=gx;if(j)sy+=15}
+   S('rect',{x:f1(sx),y:sy-7,width:6,height:6,rx:2,fill:FL[k],class:'fx',style:'--i:'+(44+i*10)},g);var t=S('text',{x:f1(sx+11),y:sy,class:(m?'s10 ':'')+'fx',style:'--i:'+(44+i*10)},g,nm[gi]+' ');S('tspan',{class:'t2',style:'fill:var(--i2);font-weight:500'},t,pc(v,mo.n));sx+=11+t.getComputedTextLength()+18});
+  var h=S('rect',{class:'hit',x:f1(x0-2),y:0,width:f1(x1-x0+4),height:Hh,tabindex:0},g);T(h,function(){return shTip((EN?MOF[mo.m-1]+' · '+mo.n+' new':mo.m+' 月 · 新建 '+mo.n+' 个'),mo.g,mo.n,1)});
+  h.__on=function(){SH.months([i]);if(SH.shade)SH.shade(X(sp[i][0]),X(sp[i][1]))};h.__off=function(){SH.months(null);if(SH.shade)SH.shade(null)}});
+ SH.mg=[ag].concat(groups);SH.mq=[.02].concat(sp.map(function(q){return Math.min(.97,(X(q[0])+40)/W)}));SH.mg.forEach(function(g){g.classList.add('bt')});if(SH.evg){SH.mg.push(SH.evg);SH.mq.push(SH.evq)}
+ SH.months=function(set){s.classList.toggle('foc',!!set);ag.classList.toggle('on',!!set&&set.indexOf(-1)>=0);groups.forEach(function(g,i){g.classList.toggle('on',!!set&&set.indexOf(i)>=0)})}}
 
 /* ---------- 04 流向 ---------- */
 var skFx=null;
@@ -934,7 +1113,7 @@ function sankey(){var LK=[],el=$('c-sankey'),W=el.clientWidth,m=W<720,Hh=m?420:4
  var links=S('g',null,s);
  GC.forEach(function(col,gi){var a=gi===0?.3:gi===3?.5:.46;lg(df,'sk0'+gi,xs[0]+nw,0,xs[1],0,[[0,col,a*.3],[1,col,a]]);lg(df,'sk1'+gi,xs[1]+nw,0,xs[2],0,[[0,col,a],[1,col,a*.4]])});
  function link(ci,si,ti,gi,v,tipf){if(!v)return;var a=pos[ci][si],b=pos[ci+1][ti],x0=xs[ci]+nw+1,x1=xs[ci+1]-1,y0=a.y+a.o,y1=b.y+b.i,h=v*k,mx=(x0+x1)/2;a.o+=h;b.i+=h;
-  var p=S('path',{class:'lk dm fx',style:'--i:'+(ci*14+si*5+ti*2),d:'M'+f1(x0)+','+f1(y0)+'C'+f1(mx)+','+f1(y0)+' '+f1(mx)+','+f1(y1)+' '+f1(x1)+','+f1(y1)+'L'+f1(x1)+','+f1(y1+h)+'C'+f1(mx)+','+f1(y1+h)+' '+f1(mx)+','+f1(y0+h)+' '+f1(x0)+','+f1(y0+h)+'Z',fill:'url(#sk'+ci+gi+')','data-a':ci+'-'+si,'data-b':(ci+1)+'-'+ti,tabindex:0},links);T(p,tipf);LK.push({x0:x0,x1:x1,y0:y0,y1:y1,h:h,gi:gi,v:v,el:p,ci:ci})}
+  var p=S('path',{class:'lk dm fx',style:'--i:'+(ci*14+si*5+ti*2)+';--f:'+LK.length,d:'M'+f1(x0)+','+f1(y0)+'C'+f1(mx)+','+f1(y0)+' '+f1(mx)+','+f1(y1)+' '+f1(x1)+','+f1(y1)+'L'+f1(x1)+','+f1(y1+h)+'C'+f1(mx)+','+f1(y1+h)+' '+f1(mx)+','+f1(y0+h)+' '+f1(x0)+','+f1(y0+h)+'Z',fill:'url(#sk'+ci+gi+')','data-a':ci+'-'+si,'data-b':(ci+1)+'-'+ti,tabindex:0},links);T(p,tipf);LK.push({x0:x0,x1:x1,y0:y0,y1:y1,h:h,gi:gi,v:v,el:p,ci:ci,f:LK.length})}
  A.forEach(function(r,si){r.forEach(function(v,gi){link(0,si,gi,gi,v,function(){return{t:SRC()[si]+' → '+GRP()[gi],r:[[L('PR','PRs'),cnt(v)],[L('占该来源','Share of source'),pc(v,cols[0][si])],[L('占该仓库层','Share of layer'),pc(v,cols[1][gi])]]}})})});
  B.forEach(function(r,gi){r.forEach(function(v,ti){link(1,gi,ti,gi,v,function(){return{t:GRP()[gi]+' → '+STA()[ti],r:[[L('PR','PRs'),cnt(v)],[L('占该仓库层','Share of layer'),pc(v,cols[1][gi])],[L('占该状态','Share of status'),pc(v,cols[2][ti])]]}})})});
  var halo='paint-order:stroke;stroke:rgba(8,8,10,.6);stroke-width:3px;stroke-linejoin:round;pointer-events:none';
@@ -949,34 +1128,46 @@ function sankey(){var LK=[],el=$('c-sankey'),W=el.clientWidth,m=W<720,Hh=m?420:4
  if(!RM&&!m){var dpr=Math.min(2,window.devicePixelRatio||1),cv=H('canvas','fx-ov',el),cx=cv.getContext('2d'),PT=[];cv.width=Math.round(W*dpr);cv.height=Math.round(Hh*dpr);cv.style.width=W+'px';cv.style.height=Hh+'px';cv.setAttribute('aria-hidden','true');
   var spr=['#d9d9e0','#58b0ff','#3fd69f','#9a9aa4'].map(function(c){var o=document.createElement('canvas');o.width=o.height=32;var g=o.getContext('2d'),r=g.createRadialGradient(16,16,0,16,16,16);r.addColorStop(0,'#fff');r.addColorStop(.2,c);r.addColorStop(.5,c+'55');r.addColorStop(1,c+'00');g.fillStyle=r;g.fillRect(0,0,32,32);return o});
   LK.forEach(function(l){var n=Math.max(1,Math.round(l.v/4));for(var i=0;i<n;i++)PT.push({l:l,t:(i+Math.random())/n,o:.14+.72*Math.random(),sp:.15+.07*Math.random()})});
-  skFx=fxAdd(el,function(t,dt){cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,Hh);cx.globalCompositeOperation='lighter';var foc=s.classList.contains('foc');
-   PT.forEach(function(p){p.t+=dt*p.sp;if(p.t>1){p.t-=1;p.o=.14+.72*Math.random()}var l=p.l,a=Math.max(0,Math.min(1,l.ci?(p.t-.2)*6:p.t*7,(1-p.t)*7))*(foc?(l.el.classList.contains('on')?1:.06):.62);if(a<.02)return;
+  skFx=fxAdd(el,function(t,dt){cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,Hh);cx.globalCompositeOperation='lighter';var foc=s.classList.contains('foc'),lit=SC.on&&t<3.2;
+   PT.forEach(function(p){p.t+=dt*p.sp;if(p.t>1){p.t-=1;p.o=.14+.72*Math.random()}var l=p.l,a=Math.max(0,Math.min(1,l.ci?(p.t-.2)*6:p.t*7,(1-p.t)*7))*(foc?(l.el.classList.contains('on')?1:.06):.62)*(lit?Math.max(0,Math.min(1,(t-.7-l.f*.06)/.5)):1);if(a<.02)return;
     for(var k=0;k<3;k++){var u=p.t-k*.013;if(u<0)break;var x=l.x0+(l.x1-l.x0)*(1.5*u-1.5*u*u+u*u*u),y=l.y0+p.o*l.h+(l.y1-l.y0)*(3*u*u-2*u*u*u),sz=k?6.5:9;cx.globalAlpha=a*(k?.45/k:1);cx.drawImage(spr[l.gi],x-sz/2,y-sz/2,sz,sz)}})});
   skFx.low=function(){if(skFx){fxDel(skFx);skFx=null}cv.remove()}}}
 
 /* ---------- 05 泳道 ---------- */
-function lanes(){var el=$('c-lanes'),W=el.clientWidth,m=W<720,ll=m?0:220,lr=m?0:EN?140:112,sub=12,top=26,y=top,LS=D.lanes,NOW=93.75,rows=[];
- legend($('lg-lanes'),GRP().map(function(n,i){return[i===3?'#8e8e96':GC[i],n,'ln']}).concat(['|',[C.i2,L('合入','Merged'),'c'],[C.i2,L('未合入','Open'),'rg'],[C.i2,L('关闭 ×','Closed ×'),'x']]));
+function lanes(){var el=$('c-lanes'),W=el.clientWidth,m=W<720,ll=m?0:220,lr=m?0:EN?140:112,sub=12,top=26,y=top,LS=D.lanes,NOW=93.75,rows=[],LC=[C.app,C.acc,C.aqu,'#8e8e96'];
+ legend($('lg-lanes'),GRP().map(function(n,i){return[LC[i],n,'ln']}).concat(['|',[C.i2,L('合入','Merged'),'c'],[C.i2,L('未合入','Open'),'rg'],[C.i2,L('关闭 ×','Closed ×'),'x'],'|',['#eaf6ff',L('各端 PR 同一小时内提出','All PRs opened within the same hour'),'vb']]));
  var lgc=$('lg-lanes').children;lgc[7].firstChild.style.display='none';
  LS.forEach(function(l){var h=(m?24:0)+l.prs.length*sub+(m?14:18);rows.push({y:y,h:h});y+=h});
- var Hh=y+6,s=svg(el,W,Hh,L('17 条跨仓需求线的时间泳道','Timeline of the 17 cross-repo requirements')),X=function(d){return ll+8+d/94*(W-ll-lr-18)};s.setAttribute('data-foc','');
+ var Hh=y+6,s=svg(el,W,Hh,L('17 条跨仓需求线的时间泳道','Timeline of the 17 cross-repo requirements')),df=S('defs',null,s),X=function(d){return ll+8+d/94*(W-ll-lr-18)};s.setAttribute('data-foc','');
+ /* 线条沿时间方向由淡到实；未合入的反过来，越靠近今天越淡 */
+ LC.forEach(function(c,gi){var a=S('linearGradient',{id:'ln-a'+gi,x1:0,y1:0,x2:1,y2:0},df),b=S('linearGradient',{id:'ln-b'+gi,x1:0,y1:0,x2:1,y2:0},df),h=S('radialGradient',{id:'ln-h'+gi},df);
+  [[0,.42],[1,1]].forEach(function(q){S('stop',{offset:q[0],'stop-color':c,'stop-opacity':q[1]},a)});[[0,.85],[1,.22]].forEach(function(q){S('stop',{offset:q[0],'stop-color':c,'stop-opacity':q[1]},b)});
+  [[0,.55],[.4,.22],[1,0]].forEach(function(q){S('stop',{offset:q[0],'stop-color':c,'stop-opacity':q[1]},h)})});
+ S('feGaussianBlur',{stdDeviation:2.2},S('filter',{id:'ln-f',x:'-600%',y:'-30%',width:'1300%',height:'160%'},df));
  months(s,X,top-4,Hh-4,12,true);
- LS.forEach(function(l,li){var r=rows[li],g=S('g',{class:'dm fx',style:'--i:'+li*5,'data-k':li},s),y0=r.y+(m?27:10),all=l.merged===l.n,nm=EN?D.en.lanes[li]:l.name;
-  S('rect',{class:'row-bg',x:-10,y:r.y+1,width:W+20,height:r.h-2,rx:8},g);
+ var xn=X(NOW);S('line',{x1:f1(xn),x2:f1(xn),y1:top-4,y2:Hh-4,stroke:'rgba(255,255,255,.26)','stroke-width':1,'stroke-dasharray':'1 4','stroke-linecap':'round'},s);S('text',{x:f1(xn-5),y:12,'text-anchor':'end',class:'t4 s10'},s,dl(93));
+ var LG=[];SC.lr=SC.on?{g:LG,rows:rows}:null;
+ LS.forEach(function(l,li){var r=rows[li],g=S('g',{class:'dm fx'+(SC.on?' lr'+(li<=SC.lmax?' go dn':''):''),style:'--i:'+li*5,'data-k':li},s),y0=r.y+(m?27:10),all=l.merged===l.n,nm=EN?D.en.lanes[li]:l.name;
+  LG.push(g);S('rect',{class:'row-bg',x:-10,y:r.y+1,width:W+20,height:r.h-2,rx:8},g);
   if(li)S('line',{class:'g',x1:0,x2:W,y1:r.y-.5,y2:r.y-.5},g);
   var mid=m?r.y+16:y0+(l.prs.length-1)*sub/2+4;
   S('text',{x:0,y:mid,class:'t1 s13'},g,nm);
-  var mt=S('text',{x:W,y:mid,'text-anchor':'end',class:'t4'},g,l.repos+L(' 仓 · ',' repos · '));S('tspan',{style:'fill:var(--'+(all?'i1':'i3')+');font-weight:'+(all?600:400)},mt,l.merged+'/'+l.n);S('tspan',null,mt,L(' 合入',' merged'));
-  var c0=Math.min.apply(0,l.prs.map(function(p){return p.c})),yl=y0+(l.prs.length-1)*sub;
-  S('line',{x1:X(c0),x2:X(c0),y1:y0-4,y2:yl+4,stroke:'rgba(255,255,255,.3)','stroke-width':1},g);
-  l.prs.forEach(function(p,pi){var yy=y0+pi*sub,x0=X(p.c),x1=X(p.e==null?NOW:p.e),col=p.g===3?'#8e8e96':GC[p.g];
-   if(x0-X(c0)>1)S('line',{x1:X(c0),x2:x0,y1:yy,y2:yy,stroke:'rgba(255,255,255,.22)','stroke-width':1},g);
-   S('line',{x1:x0,x2:Math.max(x1,x0+.5),y1:yy,y2:yy,stroke:col,'stroke-width':2,'stroke-linecap':'round',opacity:p.s===1?.5:.95},g);
-   if(p.s===0)S('circle',{cx:x1,cy:yy,r:4,fill:col,stroke:C.s1,'stroke-width':1.5},g);
-   else if(p.s===1)S('circle',{cx:x1,cy:yy,r:3.5,fill:C.s1,stroke:col,'stroke-width':1.5},g);
-   else S('path',{d:'M'+(x1-3)+','+(yy-3)+'l6,6m0,-6l-6,6',stroke:col,'stroke-width':1.5,'stroke-linecap':'round',fill:'none'},g);
+  var mt=S('text',{x:W,y:mid,'text-anchor':'end',class:'t4'},g,l.repos+L(' 仓 · ',' repos · '));S('tspan',{style:'fill:var(--'+(all?'i1':'i2')+');font-weight:'+(all?600:400)},mt,l.merged+'/'+l.n);S('tspan',null,mt,L(' 合入',' merged'));
+  var cs=l.prs.map(function(p){return p.c}),c0=Math.min.apply(0,cs),same=Math.max.apply(0,cs)-c0<=1/24,yl=y0+(l.prs.length-1)*sub,xc=f1(X(c0));
+  /* 起点竖线：各端 PR 在同一小时内提出的需求线，竖线是亮的 */
+  if(same){S('line',{class:'lfk',x1:xc,x2:xc,y1:y0-4,y2:yl+4,stroke:C.cy,'stroke-width':3,opacity:.75,filter:'url(#ln-f)'},g);S('line',{class:'lfk',x1:xc,x2:xc,y1:y0-4.5,y2:yl+4.5,stroke:'#eaf6ff','stroke-width':1.5,'stroke-linecap':'round'},g)}
+  else S('line',{class:'lfk',x1:xc,x2:xc,y1:y0-4,y2:yl+4,stroke:'rgba(255,255,255,.3)','stroke-width':1},g);
+  /* 创建时间在数据里精确到 0.001 天（约 1.4 分钟），所以最小只说“不到 3 分钟” */
+  var gap=(Math.max.apply(0,cs)-c0)*24,xr=Math.max.apply(0,l.prs.map(function(p){return X(p.e==null?NOW:p.e)})),gt=S('text',{y:f1((y0+yl)/2+3.5),class:(same?'t2':'t4')+' s10 lf'},g,gap<=.025?L('前后不到 3 分钟','opened under 3 min apart'):EN?'opened about '+dur(gap)+' apart':'前后相隔约 '+dur(gap)),gw=gt.getComputedTextLength();
+  if(xr+12+gw<(m?W:W-lr-4))gt.setAttribute('x',f1(xr+12));else{gt.setAttribute('x',f1(X(c0)-9));gt.setAttribute('text-anchor','end')}
+  l.prs.forEach(function(p,pi){var yy=y0+pi*sub,x0=X(p.c),x1=X(p.e==null?NOW:p.e),col=LC[p.g];
+   if(x0-X(c0)>1)S('line',{class:'lf',x1:X(c0),x2:f1(x0),y1:yy,y2:yy,stroke:'rgba(255,255,255,.24)','stroke-width':1,'stroke-dasharray':'1 3','stroke-linecap':'round'},g);
+   if(x1-x0>=3)S('rect',{class:'lgx',x:f1(x0),y:yy-1,width:f1(x1-x0),height:2,rx:1,fill:'url(#ln-'+(p.s===1?'b':'a')+p.g+')'},g);
+   if(p.s===0){S('circle',{class:'ln-g lpop',cx:f1(x1),cy:yy,r:9,fill:'url(#ln-h'+p.g+')'},g);S('circle',{class:'lpop',cx:f1(x1),cy:yy,r:3.5,fill:col,stroke:C.s1,'stroke-width':1.25},g);S('circle',{class:'lpop',cx:f1(x1-.9),cy:yy-.9,r:1.1,fill:'#fff',opacity:.55},g)}
+   else if(p.s===1)S('circle',{class:'lpop',cx:f1(x1),cy:yy,r:3.25,fill:C.s1,stroke:col,'stroke-width':1.5},g);
+   else S('path',{class:'lpop',d:'M'+f1(x1-3)+','+(yy-3)+'l6,6m0,-6l-6,6',stroke:col,'stroke-width':1.5,'stroke-linecap':'round',fill:'none'},g);
    var h=S('line',{class:'hit',x1:Math.min(x0,x1)-10,x2:Math.max(x0,x1)+10,y1:yy,y2:yy,style:'stroke-width:'+sub+'px;stroke:transparent','data-k':li,tabindex:0},g);
-   T(h,function(){var od=Math.max(0,Math.round(NOW-p.c));return{t:p.id,s:p.t,r:[[L('需求线','Requirement'),nm],[L('创建','Opened'),dt(p.c)],[p.s===0?L('合入','Merged'):p.s===2?L('关闭','Closed'):L('状态','Status'),p.e==null?(EN?'Open for '+od+' days':'未合入，已 '+od+' 天'):dt(p.e)],p.e!=null?[L('历时','Duration'),dur((p.e-p.c)*24)]:null].filter(Boolean)}})})})}
+   T(h,function(){var od=Math.max(0,Math.round(NOW-p.c));return{t:p.id,s:p.t,r:[[L('需求线','Requirement'),nm],[L('创建','Opened'),dt(p.c)],[p.s===0?L('合入','Merged'):p.s===2?L('关闭','Closed'):L('状态','Status'),p.e==null?(EN?'Open for '+od+' days':'未合入，已 '+od+' 天'):dt(p.e)],p.e!=null?[L('历时','Duration'),dur((p.e-p.c)*24)]:null,same&&l.prs.length>1?[L('各端 PR','All PRs'),L('同一小时内提出','opened within the same hour')]:null].filter(Boolean)}})})})}
 
 /* ---------- 06 分布 ---------- */
 function hist(id,bv,ki,h,label,unit,ci,enl){var k=D.kpi[ki],b=$(bv);b.textContent='';odo(H('span',null,b),k.v,ci*2);H('small',null,b,EN?D.en.kpi[ki].u:k.u);H('small',null,b,L('中位 · n=','median · n=')+h.n);
@@ -1022,43 +1213,111 @@ function gate(){var el=$('c-gate'),W=el.clientWidth,G=D.gate,r=W<520?3.2:4.5,ste
   var mt2=H('div','mt',d),f=H('i','growx',mt2);f.style.width=(x[1].rew/x[1].n*100)+'%';f.style.setProperty('--i',30+i*10);H('div','f',d,x[0]);H('div','l',d,L('返工 / 新建 · ','Rework / new · ')+pc(x[1].rew,x[1].n))})}
 
 /* ---------- 09 关联 ---------- */
-function assoc(){var el=$('c-assoc');el.textContent='';D.assoc.forEach(function(a0,i){var a={name:EN?D.en.assoc[i].name:a0.name,note:EN?D.en.assoc[i].note:a0.note,a:a0.a,b:a0.b,c:a0.c,d:a0.d,p:a0.p},sig=a.p<.05,r=H('div','r'+(sig?'':' ns'),el),nm=H('div','nm',r,a.name);H('span','nt',nm,a.note);var pl=H('div',null,r),W=Math.max(80,pl.clientWidth),s=S('svg',{width:W,height:28,viewBox:'0 0 '+W+' 28',role:'img','aria-label':a.name+(EN?': ':'：')+a.a+'/'+a.b+vs()+a.c+'/'+a.d},pl);
-  var X=function(v){return 8+v/.45*(W-16)},p1=a.a/a.b,p0=a.c/a.d,last=i===D.assoc.length-1;S('line',{x1:8,x2:W-8,y1:12.5,y2:12.5,stroke:'rgba(255,255,255,.1)','stroke-width':1,'shape-rendering':'crispEdges'},s);
-  [0,.15,.3,.45].forEach(function(v){S('line',{x1:X(v),x2:X(v),y1:9,y2:16,stroke:'rgba(255,255,255,.16)','stroke-width':1,'shape-rendering':'crispEdges'},s);if(last)S('text',{x:X(v),y:28,'text-anchor':'middle',class:'t4',style:'font-size:9px'},s,Math.round(v*100)+'%')});
-  S('line',{x1:X(p0),x2:X(p1),y1:12.5,y2:12.5,stroke:sig?C.acc:'#77777d','stroke-width':2,'stroke-linecap':'round',opacity:sig?.9:.8,class:'growx',style:'--i:'+(20+i*8)},s);
-  S('circle',{cx:X(p0),cy:12.5,r:4.5,fill:C.s1,stroke:C.i2,'stroke-width':1.5,class:'pop',style:'--i:'+(16+i*8)},s);
-  if(sig)S('circle',{cx:X(p1),cy:12.5,r:9,fill:C.acc,opacity:.2,class:'pop',style:'--i:'+(40+i*8)},s);
-  S('circle',{cx:X(p1),cy:12.5,r:5,fill:sig?C.acc:'#8e8e96',stroke:C.s1,'stroke-width':1.5,class:'pop',style:'--i:'+(36+i*8)},s);
-  var h=S('rect',{class:'hit',x:0,y:0,width:W,height:26,tabindex:0},s);T(h,function(){return{t:a.name,r:[[L('该组返工','Rework in group'),a.a+'/'+a.b+' = '+pc(a.a,a.b,1)],[L('其余返工','Rework in rest'),a.c+'/'+a.d+' = '+pc(a.c,a.d,1)],['Fisher p',a.p<.001?'< 0.001':String(a.p)]],n:a.note}});
-  var st=H('div','stt',r);H('b',null,st,pc(a.a,a.b)+vs()+pc(a.c,a.d));H('span',null,st,a.a+'/'+a.b+vs()+a.c+'/'+a.d);H('span',null,st,'p '+(a.p<.001?'< 0.001':'= '+a.p)+(sig?'':L('（不显著）',' (n.s.)')))});
+function assoc(){var el=$('c-assoc');el.textContent='';el.setAttribute('data-foc','');D.assoc.forEach(function(a0,i){var a={name:EN?D.en.assoc[i].name:a0.name,note:EN?D.en.assoc[i].note:a0.note,a:a0.a,b:a0.b,c:a0.c,d:a0.d,p:a0.p},sig=a.p<.05,r=H('div','r dm'+(sig?'':' ns'),el),nm=H('div','nm',r,a.name);H('span','nt',nm,a.note);r.setAttribute('data-k',i);
+  var pl=H('div',null,r),W=Math.max(80,pl.clientWidth),last=i===D.assoc.length-1,s=S('svg',{width:W,height:last?40:30,viewBox:'0 0 '+W+' '+(last?40:30),role:'img','aria-label':a.name+(EN?': ':'：')+a.a+'/'+a.b+vs()+a.c+'/'+a.d},pl),df=S('defs',null,s);
+  var X=function(v){return 8+v/.45*(W-16)},p1=a.a/a.b,p0=a.c/a.d,cy=14.5,xa=X(Math.min(p0,p1)),xb=X(Math.max(p0,p1)),rev=p1<p0;
+  S('line',{x1:8,x2:W-8,y1:cy,y2:cy,stroke:lg(df,'as-t'+i,8,0,W-8,0,[[0,'#fff',.2],[.5,'#fff',.1],[1,'#fff',.03]]),'stroke-width':1,'shape-rendering':'crispEdges'},s);
+  [0,.15,.3,.45].forEach(function(v){S('line',{x1:X(v),x2:X(v),y1:cy-3.5,y2:cy+3.5,stroke:'rgba(255,255,255,.2)','stroke-width':1,'shape-rendering':'crispEdges'},s);if(last)S('text',{x:X(v),y:38,'text-anchor':v?v===.45?'end':'middle':'start',class:'t4',style:'font-size:10px'},s,Math.round(v*100)+'%')});
+  if(sig){S('feGaussianBlur',{stdDeviation:3},S('filter',{id:'as-f'+i,x:'-20%',y:'-400%',width:'140%',height:'900%'},df));var hg=S('radialGradient',{id:'as-h'+i},df);[[0,.6],[.4,.26],[1,0]].forEach(function(q){S('stop',{offset:q[0],'stop-color':'#3aa0ff','stop-opacity':q[1]},hg)});
+   S('rect',{x:f1(xa),y:cy-2,width:f1(xb-xa),height:4,rx:2,fill:C.acc,opacity:.55,filter:'url(#as-f'+i+')',class:'fx',style:'--i:'+(44+i*8)},s)}
+  S('rect',{x:f1(xa),y:cy-(sig?1.25:.75),width:f1(Math.max(1,xb-xa)),height:sig?2.5:1.5,rx:1,fill:sig?lg(df,'as-l'+i,xa,0,xb,0,rev?[[0,'#7cc8ff',1],[1,'#8e8e96',.7]]:[[0,'#8e8e96',.7],[1,'#7cc8ff',1]]):'#6c6c74',class:'growx',style:'--i:'+(20+i*8)},s);
+  S('circle',{cx:f1(X(p0)),cy:cy,r:4.25,fill:C.s1,stroke:sig?C.i2:'#8e8e96','stroke-width':1.5,class:'pop',style:'--i:'+(16+i*8)},s);
+  if(sig)S('circle',{cx:f1(X(p1)),cy:cy,r:13,fill:'url(#as-h'+i+')',class:'pop',style:'--i:'+(40+i*8)},s);
+  S('circle',{cx:f1(X(p1)),cy:cy,r:sig?5:4.5,fill:sig?'#3ea2ff':'#8e8e96',stroke:C.s1,'stroke-width':1.5,class:'pop',style:'--i:'+(36+i*8)},s);
+  if(sig)S('circle',{cx:f1(X(p1)-1.3),cy:cy-1.3,r:1.4,fill:'#fff',opacity:.6,class:'pop',style:'--i:'+(38+i*8)},s);
+  T(r,function(){return{t:a.name,r:[[L('该组返工','Rework in group'),a.a+'/'+a.b+' = '+pc(a.a,a.b,1)],[L('其余返工','Rework in rest'),a.c+'/'+a.d+' = '+pc(a.c,a.d,1)],['Fisher p',a.p<.001?'< 0.001':String(a.p)]],n:a.note}},true);
+  var st=H('div','stt',r),b=H('b',null,st,pc(a.a,a.b));H('i',null,b,vs()+pc(a.c,a.d));H('span',null,st,a.a+'/'+a.b+vs()+a.c+'/'+a.d);H('span','pv'+(sig?' sg':''),st,'p '+(a.p<.001?'< 0.001':'= '+a.p)+(sig?'':L('（不显著）',' (n.s.)')))});
  var tb=$('tb-cmp');tb.textContent='';var tr=H('tr',null,H('thead',null,tb));(EN?['Group (yes vs no)','Merge rate','Median time to merge']:['分组（是 对 否）','合入率','合入中位时长']).forEach(function(x){H('th',null,tr,x)});var bd=H('tbody',null,tb);
  D.cmp.forEach(function(c,ci){var r=H('tr',null,bd);H('td',null,r,EN?D.en.cmp[ci]:c.name);var d=H('td',null,r,pc(c.am,c.an)+vs()+pc(c.bm,c.bn));H('span','nt',d,c.am+'/'+c.an+' · '+c.bm+'/'+c.bn);H('td',null,r,c.at+vs()+c.bt+L(' 小时',' h'))})}
 
 /* ---------- 10 散点 ---------- */
-function scat(){var el=$('c-scat');el.textContent='';var W=el.clientWidth,two=window.matchMedia('(min-width:1001px)').matches,Hh=mob()?310:two?Math.max(380,Math.min(700,el.clientHeight)):400,ml=EN?46:40,mr=8,mt=12,mb=42,s=svg(el,W,Hh,L('已合入 PR 的规模与合入时长散点图','Scatter of PR size against time to merge, merged PRs'));s.setAttribute('data-foc','');
- legend($('lg-scat'),[[C.acc,L('bot 账号合并','Merged by bot'),'c',cnt(D.rev.bot)],['#9a9aa1',L('人工合并','Merged by a person'),'c',cnt(D.rho.n-D.rev.bot)]]);
- var lx=function(v){return Math.log(Math.max(1,v))/Math.LN10},ly=function(v){return Math.log(Math.max(1/60,v))/Math.LN10},x0=0,x1=4,y0=ly(1/60),y1=ly(1500);
- var X=function(v){return ml+(lx(v)-x0)/(x1-x0)*(W-ml-mr)},Y=function(v){return mt+(1-(ly(v)-y0)/(y1-y0))*(Hh-mt-mb)};
- (EN?[[1/60,'1 min'],[1/6,'10 min'],[1,'1 h'],[24,'1 d'],[240,'10 d']]:[[1/60,'1 分'],[1/6,'10 分'],[1,'1 时'],[24,'1 天'],[240,'10 天']]).forEach(function(t){S('line',{class:'g',x1:ml,x2:W-mr,y1:Y(t[0]),y2:Y(t[0])},s);S('text',{x:ml-10,y:Y(t[0])+4,'text-anchor':'end',class:'s10'},s,t[1])});
- [1,10,100,1000,10000].forEach(function(v){S('line',{class:'g',x1:X(v),x2:X(v),y1:mt,y2:Hh-mb},s);S('text',{x:X(v),y:Hh-mb+17,'text-anchor':v===10000?'end':v===1?'start':'middle',class:'s10'},s,nf(v))});
- S('text',{x:W-mr,y:Hh-6,'text-anchor':'end',class:'t4 s10'},s,L('有效行（对数）→','Lines changed (log) →'));
- [[D.rev.hummed,'#9a9aa1',EN?'Person-merged median '+D.rev.hummed+' h':'人工合并中位 '+D.rev.hummed+' 时','h'],[D.rev.botmed,C.acc,EN?'Bot-merged median '+D.rev.botmed+' h':'bot 合并中位 '+D.rev.botmed+' 时','b']].forEach(function(mm,i){var y=Y(mm[0]),g=S('g',{class:'fx dm','data-k':mm[3],style:'--i:'+(70+i*10)},s);S('line',{x1:ml,x2:W-mr,y1:y,y2:y,stroke:mm[1],'stroke-width':1,opacity:.75,'shape-rendering':'crispEdges'},g);
-  var tx=S('text',{x:W-mr-6,y:y-7,'text-anchor':'end',class:'t1 b',style:'paint-order:stroke;stroke:'+C.s1+';stroke-width:4px;stroke-linejoin:round'},g,mm[2])});
- D.scatter.slice().sort(function(a,b){return a.b-b.b}).forEach(function(p,i){var g=S('g',{class:'dm pop','data-k':p.b?'b':'h',style:'--i:'+(i>>1)},s),cx=f1(X(p.x)),cy=f1(Y(p.y));
-  S('circle',{cx:cx,cy:cy,r:3.6,fill:p.b?C.acc:'#9a9aa1',opacity:p.b?.92:.8,stroke:C.s1,'stroke-width':1},g);S('circle',{class:'hit',cx:cx,cy:cy,r:8},g);
-  T(g,function(){return{t:p.id,r:[[L('有效行','Lines changed'),lns(p.x)],[L('建 → 合','Open → merge'),dur(p.y)],[L('合并方','Merged by'),p.b?L('bot 账号','Bot'):L('人工','Person')]]}})})}
+function scat(){var el=$('c-scat');el.textContent='';var W=el.clientWidth,two=window.matchMedia('(min-width:1001px)').matches,Hh=mob()?320:two?Math.max(380,Math.min(700,el.clientHeight)):400,ml=EN?46:40,mr=8,mt=24,mb=42,s=svg(el,W,Hh,L('已合入 PR 的规模与合入时长散点图','Scatter of PR size against time to merge, merged PRs')),df=S('defs',null,s);s.setAttribute('data-foc','');
+ var PB='#3ea2ff',PH='#b4b4bc';
+ legend($('lg-scat'),[[PB,L('bot 账号合并','Merged by bot'),'c',cnt(D.rev.bot)],[PH,L('人工合并','Merged by a person'),'c',cnt(D.rho.n-D.rev.bot)]]);
+ var lx=function(v){return Math.log(Math.max(1,v))/Math.LN10},ly=function(v){return Math.log(Math.max(1/60,v))/Math.LN10},x0=0,x1=4,y0=ly(1/60),y1=ly(1500),xr=W-mr,yb=Hh-mb;
+ var X=function(v){return ml+(lx(v)-x0)/(x1-x0)*(xr-ml)},Y=function(v){return mt+(1-(ly(v)-y0)/(y1-y0))*(yb-mt)};
+ (EN?[[1/60,'1 min'],[1/6,'10 min'],[1,'1 h'],[24,'1 d'],[240,'10 d']]:[[1/60,'1 分'],[1/6,'10 分'],[1,'1 时'],[24,'1 天'],[240,'10 天']]).forEach(function(t){S('line',{class:'g',x1:ml,x2:xr,y1:Y(t[0]),y2:Y(t[0])},s);S('line',{x1:ml-4,x2:ml,y1:Y(t[0]),y2:Y(t[0]),stroke:'rgba(255,255,255,.26)','stroke-width':1,'shape-rendering':'crispEdges'},s);S('text',{x:ml-9,y:Y(t[0])+4,'text-anchor':'end',class:'s10'},s,t[1])});
+ [1,10,100,1000,10000].forEach(function(v){S('line',{class:'g',x1:X(v),x2:X(v),y1:mt,y2:yb},s);S('line',{x1:X(v),x2:X(v),y1:yb,y2:yb+5,stroke:'rgba(255,255,255,.3)','stroke-width':1,'shape-rendering':'crispEdges'},s);S('text',{x:X(v),y:yb+19,'text-anchor':v===10000?'end':v===1?'start':'middle',class:'s10'},s,nf(v));
+  if(v<10000)for(var q=2;q<10;q++)S('line',{x1:f1(X(v*q)),x2:f1(X(v*q)),y1:yb,y2:yb+2.5,stroke:'rgba(255,255,255,.16)','stroke-width':1},s)});
+ S('line',{class:'ax',x1:ml,x2:xr,y1:yb+.5,y2:yb+.5},s);
+ S('text',{x:xr,y:Hh-5,'text-anchor':'end',class:'t4 s10'},s,L('有效行（对数）→','Lines changed (log) →'));S('text',{x:0,y:10,class:'t4 s10'},s,L('↑ 建 PR → 合入（对数）','↑ Open → merge (log)'));
+ /* bot 合并的点垫一层柔光，人工合并的点不发光 */
+ S('feGaussianBlur',{stdDeviation:4.5},S('filter',{id:'sc-f',x:'-10%',y:'-10%',width:'120%',height:'120%'},df));S('feGaussianBlur',{stdDeviation:2.5},S('filter',{id:'sc-f2',x:'-5%',y:'-2000%',width:'110%',height:'4100%'},df));
+ var gl=S('g',{class:'dm fx','data-k':'b',style:'--i:60;pointer-events:none',filter:'url(#sc-f)',opacity:.55},s),P=D.scatter.map(function(p){return{p:p,x:X(p.x),y:Y(p.y)}});
+ P.forEach(function(q){if(q.p.b)S('circle',{cx:f1(q.x),cy:f1(q.y),r:5.5,fill:C.acc},gl)});
+ /* 中位线：两端渐隐的细线；标签是一枚深色小牌，放在压住的点最少的一端 */
+ var med=[[D.rev.hummed,PH,EN?'Person-merged median '+D.rev.hummed+' h':'人工合并中位 '+D.rev.hummed+' 时','h'],[D.rev.botmed,PB,EN?'Bot-merged median '+D.rev.botmed+' h':'bot 合并中位 '+D.rev.botmed+' 时','b']],pills=[];
+ med.forEach(function(mm,i){var y=Math.round(Y(mm[0]))+.5,g=S('g',{class:'fx dm','data-k':mm[3],style:'--i:'+(70+i*10)+';pointer-events:none'},s),st=lg(df,'sc-m'+i,ml,0,xr,0,[[0,mm[1],.15],[.12,mm[1],.9],[.88,mm[1],.9],[1,mm[1],.15]]);
+  if(mm[3]==='b')S('rect',{x:ml,y:y-1.5,width:xr-ml,height:3,fill:C.acc,opacity:.5,filter:'url(#sc-f2)'},g);
+  S('rect',{x:ml,y:y-.5,width:xr-ml,height:1,fill:st},g);pills.push({y:y,mm:mm,i:i})});
+ var pts=S('g',null,s),ring=S('g',{style:'display:none','pointer-events':'none'},s),gh=S('line',{stroke:'rgba(255,255,255,.4)','stroke-width':1,'stroke-dasharray':'1 3','stroke-linecap':'round'},ring),gv=S('line',{stroke:'rgba(255,255,255,.4)','stroke-width':1,'stroke-dasharray':'1 3','stroke-linecap':'round'},ring),rc=S('circle',{r:7.5,fill:'none',stroke:'#fff','stroke-width':1.25,opacity:.9},ring);
+ P.slice().sort(function(a,b){return a.p.b-b.p.b}).forEach(function(q,i){var p=q.p,g=S('g',{class:'dm pop','data-k':p.b?'b':'h',style:'--i:'+(i>>1)},pts),cx=f1(q.x),cy=f1(q.y);
+  S('circle',{cx:cx,cy:cy,r:p.b?3.5:3.25,fill:p.b?PB:PH,opacity:p.b?.95:.82,stroke:'rgba(6,8,12,.7)','stroke-width':.75},g);S('circle',{class:'hit',cx:cx,cy:cy,r:8},g);
+  T(g,function(){return{t:p.id,r:[[L('有效行','Lines changed'),lns(p.x)],[L('建 → 合','Open → merge'),dur(p.y)],[L('合并方','Merged by'),p.b?L('bot 账号','Bot'):L('人工','Person')]]}});
+  g.__on=function(){ring.style.display='';rc.setAttribute('cx',cx);rc.setAttribute('cy',cy);gh.setAttribute('x1',ml);gh.setAttribute('x2',cx-8);gh.setAttribute('y1',cy);gh.setAttribute('y2',cy);gv.setAttribute('x1',cx);gv.setAttribute('x2',cx);gv.setAttribute('y1',+cy+8);gv.setAttribute('y2',yb)};g.__off=function(){ring.style.display='none'}});
+ pills.forEach(function(o){var g=S('g',{class:'fx dm','data-k':o.mm[3],style:'--i:'+(74+o.i*10)+';pointer-events:none'},s),t=S('text',{y:0,class:'t1 b'},g,o.mm[2]),tw=t.getComputedTextLength(),pw=tw+27,ph=20,best=null;
+  [[xr-pw-6,o.y-ph-5],[ml+8,o.y-ph-5],[xr-pw-6,o.y+5],[ml+8,o.y+5]].forEach(function(c){var n=0;P.forEach(function(q){if(q.x>c[0]-5&&q.x<c[0]+pw+5&&q.y>c[1]-5&&q.y<c[1]+ph+5)n++});if(!best||n<best[2])best=[c[0],c[1],n]});
+  var r=S('rect',{x:f1(best[0]),y:f1(best[1]),width:f1(pw),height:ph,rx:10,fill:'rgba(13,14,18,.9)',stroke:'rgba(255,255,255,.16)','stroke-width':1},g);g.insertBefore(r,t);
+  S('circle',{cx:f1(best[0]+10),cy:f1(best[1]+ph/2),r:3,fill:o.mm[1]},g);t.setAttribute('x',f1(best[0]+18));t.setAttribute('y',f1(best[1]+14))});s.appendChild(ring)}
 
 /* 结论句里“数字 + 量词”之间不折行（只把普通空格换成不换行空格） */
 [].forEach.call(view.querySelectorAll('h2'),function(h){var w=document.createTreeWalker(h,NodeFilter.SHOW_TEXT),n;while((n=w.nextNode()))n.nodeValue=n.nodeValue.replace(/([0-9%]) (?=[月个天条行小分周])/g,'$1\u00a0').replace(/\u00a0(小|分)(时|钟)/g,'\u00a0$1\u2060$2').replace(/(PR|Bug|Agent|App|Paseo|GitHub|bot) (?=[群仓服有没的在上自])/g,'$1\u00a0')});
+/* ---------- 滚动分镜（v5）----------
+   跟手的量（位移 / 缩放 / 遮罩范围）走 CSS scroll-driven animations；不支持时同一套关键帧以暂停态挂着，这里按滚动位置写 --p。
+   需要淡入淡出的地方不跟手：滚到阈值只切一个 class，由时间动画走完，所以停在任何位置都是完整画面。
+   位置在布局时量好（offsetTop，不受 transform 与 sticky 影响），滚动中只读 scrollY。?fx=js 强制走脚本路径，?fx=off 关闭分镜（自检用）。 */
+var SC={on:false,css:false,items:[],pins:[],pinBy:{},lmax:-1,kb:-2,p3:1,raf:0,lr:null},NAV=document.querySelector('nav'),FXQ=/[?&]fx=(js|off)\b/.exec(location.search);
+function navH(){return NAV?NAV.offsetHeight:48}
+function offY(e){var y=0;while(e&&e!==view){y+=e.offsetTop;e=e.offsetParent}return y}
+function offX(e){var x=0;while(e&&e!==view){x+=e.offsetLeft;e=e.offsetParent}return x}
+function scMode(){var on=!RM&&!(FXQ&&FXQ[1]==='off')&&view.clientWidth>=900&&innerHeight>=620;SC.on=on;
+ SC.css=on&&!(FXQ&&FXQ[1]==='js')&&!!(window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()')&&CSS.supports('animation-range','cover 0vh cover 46vh'));
+ root.classList.toggle('scn',on);root.classList.toggle('sct',SC.css);root.classList.toggle('scj',on&&!SC.css)}
+function scInit(){if(SC.init)return;SC.init=true;
+ [['pw-kpi',.7,.5,null],['pw-shift',.9,.5,'d-shift']].forEach(function(a){var w=$(a[0]),P={w:w,st:w.firstElementChild,sp:w.lastElementChild,e:a[1],bias:a[2],on:false};SC.pins.push(P);if(a[3])SC.pinBy[a[3]]=P});
+ [].forEach.call(view.querySelectorAll('.pn'),function(e){var par=e.parentNode,k='sc-in',a=0;if(par.classList.contains('dz-3'))a=[].indexOf.call(par.children,e)*5;else if(par.classList.contains('dz2'))k=e===par.firstElementChild?'sc-inl':'sc-inr';
+  e.classList.add('sd');e.setAttribute('data-sd','vh:'+a+':46');e.style.setProperty('--kf',k)});
+ var hero=view.querySelector('.dz-hero');hero.classList.add('sd');hero.setAttribute('data-sd','root:0:620');hero.style.setProperty('--kf','sc-hero');
+ window.addEventListener('scroll',function(){if(SC.on&&!SC.raf)SC.raf=requestAnimationFrame(scTick)},{passive:true});
+ if('ResizeObserver' in window)new ResizeObserver(function(){if(SC.h&&Math.abs(view.offsetHeight-SC.h)>2){clearTimeout(SC.rt);SC.rt=setTimeout(function(){if(root.classList.contains('dash')){scLayout();stage()}},120)}}).observe(view)}
+function scLayout(){scInit();var vh=innerHeight,nh=navH();
+ SC.pins.forEach(function(P){P.w.classList.toggle('pin-on',SC.on);var H=P.st.offsetHeight,ok=SC.on&&H>0&&H<=vh-nh-16;P.on=ok;P.w.classList.toggle('pin-on',ok);
+  if(ok){P.H=H;P.T=Math.round(nh+Math.max(8,(vh-nh-H)*P.bias));P.E=Math.round(vh*P.e);P.sp.style.height=P.E+'px';P.w.style.setProperty('--pt',P.T+'px');P.w.style.setProperty('--vi0',P.T+'px');P.w.style.setProperty('--vi1',Math.max(0,vh-P.T-H)+'px')}else P.sp.style.height='';
+  [].forEach.call(P.w.querySelectorAll('.sdp'),function(e){e.classList.toggle('sd',ok)})});
+ var vt=view.getBoundingClientRect().top+window.scrollY;SC.vt=vt;SC.items=[];
+ SC.pins.forEach(function(P){P.top=vt+offY(P.w)});
+ [].forEach.call(view.querySelectorAll('.sd'),function(e){var a=e.getAttribute('data-sd').split(':'),k=a[0],it={el:e,k:k,a:+a[1]||0,b:+a[2]||0,pv:-1},sub=k==='cover'?e.closest('.chp'):k==='pin'?e.closest('.pinw'):e;
+  if(k==='pin')it.P=SC.pins.filter(function(P){return P.w===sub})[0];else if(k!=='root'){it.top=vt+offY(sub);it.h=sub.offsetHeight}
+  e.style.setProperty('--tl',k==='cover'?'--ch':k==='pin'?'--pin':k==='root'?'scroll(root block)':'view()');
+  e.style.setProperty('--rg',k==='vh'?'cover '+it.a+'vh cover '+(it.a+it.b)+'vh':k==='root'?it.a+'px '+it.b+'px':k==='pin'?'entry 50% contain 85%':'cover 0% cover 100%');SC.items.push(it)});
+ if(SC.lr)SC.lr.top=vt+offY($('c-lanes'));SC.kb=-2;SC.km=null;if(SC.pins[0].on){var kb0=$('kbig'),bx=offX(kb0),by=offY(kb0)+kb0.offsetHeight;SC.km={w:kb0.offsetWidth,F:parseFloat(getComputedStyle(kb0).getPropertyValue('--kbf'))||0,c:[].map.call($('d-kpi').children,function(c){var v=c.querySelector('.v');return{x:offX(v)-bx,y:offY(v)+v.offsetHeight-by,fs:parseFloat(getComputedStyle(v).fontSize)}})}}SC.h=view.offsetHeight;scTick()}
+/* 关键数字的大读数：k = 选中第几格；now = 直接换（首次、重排、切语言），否则旧数字缩回它那一格、新数字从它那一格放大飞出 */
+function kbig(k,now){var box=$('kbig'),M=SC.km,old=null;[].slice.call(box.children).forEach(function(o){if(o.__out||now||k<0||!M||!o.animate)box.removeChild(o);else old=o});
+ if(k<0||!M)return;var d=D.kpi[k],e=D.en.kpi[k],n=H('div','kb-i',box),c=M.c[k];H('div','kb-k',n,EN?e.k:d.k);var v=H('div','kb-v',n,d.v),un=EN?e.u:d.u;if(un)H('small',null,v,un);
+ var tx=Math.max(0,Math.min(c.x,M.w-n.offsetWidth)),to='translate3d('+f1(tx)+'px,0,0) scale(1)',cell=function(c){return'translate3d('+f1(c.x)+'px,'+f1(c.y)+'px,0) scale('+(c.fs/(M.F||c.fs)).toFixed(4)+')'};n.__c=c;n.style.transform=to;
+ if(now||!n.animate)return;
+ n.animate([{transform:cell(c),opacity:0},{opacity:1,offset:.3},{transform:to,opacity:1}],{duration:760,easing:'cubic-bezier(.16,1,.3,1)'});
+ if(old){old.__out=1;var a=old.animate([{opacity:1},{opacity:0,offset:.5},{transform:cell(old.__c),opacity:0}],{duration:420,easing:'cubic-bezier(.5,0,.3,1)',fill:'forwards'});a.onfinish=a.oncancel=function(){if(old.parentNode)old.parentNode.removeChild(old)}}}
+function scPin(P,y){return P&&P.on?(y-(P.top-P.T)+.5*P.H)/(.5*P.H+.85*P.E):1}
+function scTick(){SC.raf=0;if(!SC.on||!root.classList.contains('dash'))return;var vh=innerHeight,y=window.scrollY,i,it,p;
+ if(!SC.css)for(i=0;i<SC.items.length;i++){it=SC.items[i];p=it.k==='root'?(y-it.a)/(it.b-it.a):it.k==='vh'?((y+vh-it.top)/vh*100-it.a)/it.b:it.k==='cover'?(y+vh-it.top)/(vh+it.h):scPin(it.P,y);
+  p=p<0?0:p>1?1:Math.round(p*2000)/2000;if(p!==it.pv){it.pv=p;it.el.style.setProperty('--p',p)}}
+ /* 拍点一：关键数字逐格聚焦（pin 之前停在第 1 格，之后停在第 6 格，中间按滚动距离换格） */
+ var K=SC.pins[0],kb=-1;if(K.on){var u=(y-(K.top-K.T)+vh*.1)/(K.E+vh*.1);kb=u<=0?0:Math.min(5,Math.floor(u/.9*6))}
+ if(kb!==SC.kb){kbig(kb,SC.kb===-2);SC.kb=kb;var ke=$('d-kpi');ke.classList.toggle('kf',kb>=0);if(kb>=0)ke.style.setProperty('--k',kb);[].forEach.call(ke.children,function(c,j){c.classList.toggle('on',j===kb)})}
+ /* 拍点二：03 揭到每个月的起点，下方该月的读数出现 */
+ var P3=SC.pins[1];SC.p3=P3.on?Math.max(0,Math.min(1,scPin(P3,y))):1;if(SH.mg)SH.mg.forEach(function(g,j){g.classList.toggle('mh',P3.on&&SC.p3<SH.mq[j])});if(SH.rv)SH.rv.classList.toggle('scan',P3.on&&SC.p3>.004&&SC.p3<.996);
+ /* 拍点三：05 滚到哪一行，哪一行分叉；已经分叉过的不再重播 */
+ var LR=SC.lr;if(LR&&LR.top!=null&&SC.lmax<LR.g.length-1){var q=0;for(i=SC.lmax+1;i<LR.g.length;i++){if(LR.top+LR.rows[i].y+LR.rows[i].h*.5-y<vh*.84){LR.g[i].style.setProperty('--q',q++);LR.g[i].classList.add('go');SC.lmax=i}else break}}}
 /* ---------- 调度 ---------- */
-var charts=[kpi,cum,skyLayout,heat,stream,month,sankey,lanes,function(){hist('c-h1','bv-h1',3,D.hist.ttm,L('建 PR 到合入的时长分布','Distribution of time from PR open to merge'),null,0,D.en.hist.ttm)},function(){hist('c-h2','bv-h2',4,D.hist.lat,L('Bug 群指令到建出 PR 的时长分布','Distribution of time from bug-group instruction to PR'),null,1,D.en.hist.lat)},function(){hist('c-h3','bv-h3',2,D.hist.net,L('单个 PR 有效行数分布','Distribution of PR size in lines changed'),L(' 行',' lines'),2,null)},rev,gate,assoc,scat];
-var lastW=0,io=null;
-function render(){var w=view.clientWidth;if(!w||w===lastW)return;lastW=w;charts.forEach(function(f){try{f()}catch(e){console.error('dash chart failed',f.name,e)}});stage();observe();fxKick()}
+var charts=[kpi,cum,skyLayout,heat,shift,month,sankey,lanes,function(){hist('c-h1','bv-h1',3,D.hist.ttm,L('建 PR 到合入的时长分布','Distribution of time from PR open to merge'),null,0,D.en.hist.ttm)},function(){hist('c-h2','bv-h2',4,D.hist.lat,L('Bug 群指令到建出 PR 的时长分布','Distribution of time from bug-group instruction to PR'),null,1,D.en.hist.lat)},function(){hist('c-h3','bv-h3',2,D.hist.net,L('单个 PR 有效行数分布','Distribution of PR size in lines changed'),L(' 行',' lines'),2,null)},rev,gate,assoc,scat];
+var lastW=0,lastH=0,io=null;
+function render(){var w=view.clientWidth;if(!w||w===lastW)return;lastW=w;lastH=innerHeight;scMode();charts.forEach(function(f){try{f()}catch(e){console.error('dash chart failed',f.name,e)}});scLayout();stage();observe();fxKick()}
 function observe(){var ps=view.querySelectorAll('.an');if(!('IntersectionObserver' in window)){[].forEach.call(ps,function(p){p.classList.add('in')});return}
  if(!io)io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.add('done')},3200)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});[].forEach.call(ps,function(p){if(!p.classList.contains('in'))io.observe(p)})}
 var tg=$('tg-heat'),tgB=tg.querySelectorAll('button');
 [].forEach.call(tgB,function(b){b.addEventListener('click',function(){heatM=+b.getAttribute('data-m');tg.style.setProperty('--n',heatM);[].forEach.call(tgB,function(x){x.setAttribute('aria-pressed',x===b)});var cd=$('d-heat');cd.classList.remove('done');heat(true);if(SK.on)skyData(true);setTimeout(function(){cd.classList.add('done')},1300)})});
-var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(root.classList.contains('dash'))render()},160)});
+var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(root.classList.contains('dash')){if(Math.abs(innerHeight-lastH)>40)lastW=0;render()}},160)});
 /* 克制的滚动视差：只有背景光晕随滚动慢移，transform-only */
 var aura=$('dz-aura'),tick=false;
 if(!RM)window.addEventListener('scroll',function(){if(tick||!root.classList.contains('dash'))return;tick=true;requestAnimationFrame(function(){tick=false;var y=window.scrollY;if(y<1500)aura.style.transform='translate3d(0,'+(y*.22).toFixed(1)+'px,0)'})},{passive:true});
@@ -1087,6 +1346,6 @@ function route(){var h=location.hash||'',dash=h.indexOf('#dashboard')===0;root.c
  else if(was===true){var t=h.length>1&&h!=='#report'?document.getElementById(h.slice(1)):null;if(t)t.scrollIntoView({behavior:'instant'});else window.scrollTo({top:0,behavior:'instant'})}
  was=dash}
 window.addEventListener('hashchange',route);route();fxKick();
-[].forEach.call(document.querySelectorAll('.dnav a'),function(a){a.setAttribute('tabindex','0');a.setAttribute('role','button');function go(e){e.preventDefault();var k=a.getAttribute('data-go'),sm=RM?'instant':'smooth';if(k==='top'){window.scrollTo({top:0,behavior:sm});return}var t=$(k);if(t)t.scrollIntoView({behavior:sm,block:'start'})}a.addEventListener('click',go);a.addEventListener('keydown',function(e){if(e.key==='Enter')go(e)})});
+[].forEach.call(document.querySelectorAll('.dnav a'),function(a){a.setAttribute('tabindex','0');a.setAttribute('role','button');function go(e){e.preventDefault();var k=a.getAttribute('data-go'),sm=RM?'instant':'smooth';if(k==='top'){window.scrollTo({top:0,behavior:sm});return}var P=SC.pinBy[k];if(P&&P.on){window.scrollTo({top:Math.round(P.top-P.T+P.E*.92),behavior:sm});return}var t=$(k);if(t)t.scrollIntoView({behavior:sm,block:'start'})}a.addEventListener('click',go);a.addEventListener('keydown',function(e){if(e.key==='Enter')go(e)})});
 })();
 </script></body></html>
